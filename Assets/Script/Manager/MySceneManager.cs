@@ -5,19 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public static void GoTitle(){
-		VSave.isVersus = false;
-		ESave.isEndless = false;
 		SceneManager.LoadScene("Title");
 	}
 
@@ -62,14 +50,10 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 	}
 
 	public static void GoEndless(){
-		ESave.isEndless = true;
-		ESave.isResult = false;
 		SceneManager.LoadScene("Endless");
 	}
 
 	public static void GoEndless2(){
-		ESave.isEndless = true;
-		ESave.isResult = false;
 		SceneManager.LoadScene("Endless2");
 	}
 
@@ -78,12 +62,10 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 	}
 
 	public static void GoEndlessResult(){
-		ESave.isResult = true;
 		SceneManager.LoadScene("EndlessResult");
 	}
 
 	public static void GoEndlessNakane(){
-		ESave.isResult = true;
 		SceneManager.LoadScene("Nakane");
 	}
 
