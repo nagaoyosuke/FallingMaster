@@ -9,7 +9,12 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 		SceneManager.LoadScene("Title");
 	}
 
-	public static void GoLobby(){
+    public static void GoMain()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public static void GoLobby(){
 		SceneManager.LoadScene("Lobby");
 	}
 
