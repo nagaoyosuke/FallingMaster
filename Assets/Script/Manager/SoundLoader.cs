@@ -12,7 +12,18 @@ using UnityEngine;
 public class SoundLoader : MonoBehaviour {
 
 	void Awake () {
-		Sound.LoadSe("mageSound01", "mageSound01");
+        //20190228豊田
+        //se3種類追加
+        //https://soundeffect-lab.info/sound/anime/
+
+        Sound.LoadSe("taiko01", "drum-japanese1");
+        Sound.LoadSe("taiko02", "drum-japanese2");
+        Sound.LoadSe("osu01", "mens-ou1");
+
+
+
+
+        Sound.LoadSe("mageSound01", "mageSound01");
 		Sound.LoadSe("mageSound02", "mageSound02");
 
 		Sound.LoadSe ("castSpell", "castSpell");
