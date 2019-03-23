@@ -6,23 +6,26 @@ using DG.Tweening;
 public class CameraMove : MonoBehaviour {
 
     private Transform trans;
+    [SerializeField]
+    private Transform Player;
+
 
 	// Use this for initialization
 	void Start () {
         trans = transform;
         StartCameraMove();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
+    
+    void FixedUpdate(){
+        if (Save.maingameFlag == Save.MainGameFlag.FALLING)
+            ThrowCameraMove();
+    }
 
     void StartCameraMove(){
         Sequence seq = DOTween.Sequence();
         var MovePoint = new Vector3(5,trans.position.y,trans.position.z);
         seq.Append(
-            transform.DOMove(MovePoint,1.0f)
+            trans.DOMove(MovePoint,1.0f)
         );
 
         MovePoint = new Vector3(1.28f,5.32f,-3.08f);
@@ -33,6 +36,15 @@ public class CameraMove : MonoBehaviour {
         seq.Join(
                trans.DORotate(new Vector3(60,-20,0),1.0f)
         );
+
+        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+    }
+
+    void ThrowCameraMove(){
+        //投げられてる時のカメラワークをここに実装
+
+        trans.position = Player.position + new Vector3(0.93f,4.41f, -2.5f);
+        //trans.position = new Vector3(Player.position.x + 0.5f, Player.position.y + 4.09f, Player.position.z + 2.73f);
     }
 
 }
