@@ -11,9 +11,9 @@ public class CameraMove : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         trans = transform;
-        StartCameraMove();
+        //StartCameraMove();
 	}
     
     void FixedUpdate(){
@@ -21,9 +21,9 @@ public class CameraMove : MonoBehaviour {
             ThrowCameraMove();
     }
 
-    void StartCameraMove(){
-        Sequence seq = DOTween.Sequence();
-        var MovePoint = new Vector3(5,trans.position.y,trans.position.z);
+    public void StartCameraMove(Sequence seq){
+        //Sequence seq = DOTween.Sequence();
+        Vector3 MovePoint = new Vector3(5,trans.position.y,trans.position.z);
         seq.Append(
             trans.DOMove(MovePoint,1.0f)
         );
@@ -37,7 +37,8 @@ public class CameraMove : MonoBehaviour {
                trans.DORotate(new Vector3(60,-20,0),1.0f)
         );
 
-        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+        seq.OnComplete(() => Save.maingameFlag = Save.MainGameFlag.STARTWAIT);
+
     }
 
     void ThrowCameraMove(){
