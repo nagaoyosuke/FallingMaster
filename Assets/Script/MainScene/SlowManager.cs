@@ -13,7 +13,7 @@ public class SlowManager : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other){
         if(other.tag == "Player"){
             Rigidbody rb = other.GetComponent<Rigidbody>();
             StartCoroutine(Slow(rb));
@@ -27,6 +27,8 @@ public class SlowManager : MonoBehaviour
         Vector3 ang = rb.angularVelocity;
         Vector3 anve = ang / f;
         while (true){
+            if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
+                break;
             rb.velocity = vel;
             rb.angularVelocity = anve;
             yield return new WaitForFixedUpdate();
