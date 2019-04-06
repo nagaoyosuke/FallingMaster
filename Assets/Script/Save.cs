@@ -110,6 +110,11 @@ public static class Save{
     /// </summary>
     public static UkemiRank ukemiRank = UkemiRank.NONE;
 
+    /// <summary>
+    /// 受け身入力をしたかどうか
+    /// </summary>
+    public static bool isUkemi = false;
+
     public enum AddUkemi{
         NONE,
         CENTER,
@@ -139,5 +144,6 @@ public static class Save{
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemi = AddUkemi.NONE;
+        isUkemi = false;
     }
 }

@@ -48,9 +48,17 @@ public class UkemiStartEffect : MonoBehaviour
     }
 
     /// <summary>
-    /// 失敗時の演出かく
+    /// 失敗時の演出書く
     /// </summary>
     void FailureEffect()
+    {
+
+    }
+
+    /// <summary>
+    /// 受け身入力せず着地した時の演出書く
+    /// </summary>
+    void FailureNoUkemiEffect()
     {
 
     }
