@@ -13,9 +13,9 @@ public class PlaneHit : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             if (!Save.isUkemi)
             {

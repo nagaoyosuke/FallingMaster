@@ -4,29 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 受け身開始時の演出(04/04 長尾)
+/// 受け身関連の演出(04/04 長尾)
 /// </summary>
-public class UkemiStartEffect : MonoBehaviour
+public class UkemiEffecManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    /// <summary>
+    /// 受け身入力が開始された時に表示されるテキスト
+    /// </summary>
     [SerializeField]
-    private Text text;
+    private Text UkemiStartText;
 
-    private bool isEne;
+    private bool isEnd;
 
     void Start()
     {
-        text.enabled = false;
+        UkemiStartText.enabled = false;
     }
 
     void Update()
     {
-        if (!isEne)
+        if (!isEnd)
         {
             if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
             {
                 Effect();
-                isEne = true;
+                isEnd = true;
             }
         }
     }
@@ -36,7 +39,7 @@ public class UkemiStartEffect : MonoBehaviour
     /// </summary>
     void Effect()
     {
-        text.enabled = true;
+        UkemiStartText.enabled = true;
     }
 
     /// <summary>

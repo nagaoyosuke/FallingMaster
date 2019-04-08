@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class SlowManager : MonoBehaviour
 {
+    Transform Tartget;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +23,16 @@ public class SlowManager : MonoBehaviour
     }
 
     IEnumerator Slow(Rigidbody rb){
+        Tartget = rb.transform;
         float f = 10.0f;
         Vector3 v = rb.velocity;
         Vector3 vel = v / f;
         Vector3 ang = rb.angularVelocity;
         Vector3 anve = ang / f;
-        while (true){
-            //if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
-            //    break;
-            rb.velocity = vel;
-            rb.angularVelocity = anve;
-            yield return new WaitForFixedUpdate();
-        }
+        rb.velocity = vel;
+        rb.angularVelocity = anve;
+
+        yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.UKEMI);
+
     }
 }
