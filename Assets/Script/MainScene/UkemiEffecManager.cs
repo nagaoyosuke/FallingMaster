@@ -8,7 +8,16 @@ using UnityEngine.UI;
 /// </summary>
 public class UkemiEffecManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// 受け身するオブシェクト
+    /// </summary>
+    [SerializeField]
+    private GameObject Player;
+
+    [SerializeField]
+    private Rigidbody PlayerRb;
+
     /// <summary>
     /// 受け身入力が開始された時に表示されるテキスト
     /// </summary>
@@ -35,7 +44,7 @@ public class UkemiEffecManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ここに共通の受け身時の演出かく
+    /// ここに共通の受け身開始時の演出かく
     /// </summary>
     void Effect()
     {
@@ -43,17 +52,31 @@ public class UkemiEffecManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 完璧成功時の演出書く
+    /// </summary>
+    public void PerfectEffect()
+    {
+        PlayerRb.velocity = Vector3.zero;
+        Player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        Player.transform.position += new Vector3(0, -3, 0);
+    }
+
+    /// <summary>
     /// 成功時の演出書く
     /// </summary>
-    void SuccessEffect()
+    public void GoodEffect()
     {
-
+        PlayerRb.velocity = Vector3.zero;
+        PlayerRb.AddForce(new Vector3(0, 0, -100));
+        Player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        Player.transform.position += new Vector3(0, -3, 0);
     }
+
 
     /// <summary>
     /// 失敗時の演出書く
     /// </summary>
-    void FailureEffect()
+    public void BadEffect()
     {
 
     }
@@ -61,7 +84,7 @@ public class UkemiEffecManager : MonoBehaviour
     /// <summary>
     /// 受け身入力せず着地した時の演出書く
     /// </summary>
-    void FailureNoUkemiEffect()
+    public void FailureNoUkemiEffect()
     {
 
     }

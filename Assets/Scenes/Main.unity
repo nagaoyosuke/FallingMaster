@@ -573,6 +573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4a5e06a1b634e55b1ad446cf649b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1702163240}
+  PlayerRb: {fileID: 1702163241}
   UkemiStartText: {fileID: 380520826}
 --- !u!4 &47092725
 Transform:
@@ -7512,7 +7514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1184ab17f3fe4158a35dbdd644a6222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parfectFlame: 20
+  parfectFlame: 14
+  Effect: {fileID: 47092724}
 --- !u!54 &868151835
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13272,6 +13275,18 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 1.380296, z: 0.075430006}
     m_Extent: {x: 0.05102, y: 0.012729168, z: 0.0063499957}
   m_DirtyAABB: 0
+--- !u!1 &1702163240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 900098792, guid: 3ae6ef092004c4d918ba5583d75e3abb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1246738228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1702163241 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 900098795, guid: 3ae6ef092004c4d918ba5583d75e3abb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1246738228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703406300
 GameObject:
   m_ObjectHideFlags: 0

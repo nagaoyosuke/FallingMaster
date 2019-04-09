@@ -100,6 +100,7 @@ public static class Save{
 
     public enum UkemiRank{
         NONE,
+        NOUKEMI,
         BAD,
         GOOD,
         PERFECT

@@ -28,7 +28,6 @@ public class UkemiButton : MonoBehaviour
                 }
             }
         }
-       
     }
 
     /// <summary>

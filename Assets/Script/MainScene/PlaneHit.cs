@@ -19,7 +19,7 @@ public class PlaneHit : MonoBehaviour
         {
             if (!Save.isUkemi)
             {
-                Save.ukemiRank = Save.UkemiRank.BAD;
+                Save.ukemiRank = Save.UkemiRank.NOUKEMI;
             }
         }
     }

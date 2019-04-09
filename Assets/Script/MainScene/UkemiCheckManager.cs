@@ -14,6 +14,13 @@ public class UkemiCheckManager : MonoBehaviour
     [SerializeField]
     private int parfectFlame;
 
+    /// <summary>
+    /// UkemiEffecManagerから成功失敗の演出参照
+    /// </summary>
+    [SerializeField]
+    private UkemiEffecManager Effect;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,14 +72,41 @@ public class UkemiCheckManager : MonoBehaviour
             }
 
             /// 床に当たったら(PlaneHit.cs参照)
-            if (Save.ukemiRank == Save.UkemiRank.BAD)
+            if (Save.ukemiRank == Save.UkemiRank.NOUKEMI)
                 break;
 
             yield return new WaitForFixedUpdate();
             flame++;
         }
 
+        ChoiceEffect();
+
         print(Save.ukemiRank);
+    }
+
+    /// <summary>
+    /// UkemiRankに応じて演出切り替え
+    /// </summary>
+    void ChoiceEffect()
+    {
+        switch (Save.ukemiRank)
+        {
+            case Save.UkemiRank.NOUKEMI:
+                Effect.FailureNoUkemiEffect();
+                break;
+
+            case Save.UkemiRank.BAD:
+                Effect.BadEffect();
+                break;
+
+            case Save.UkemiRank.GOOD:
+                Effect.GoodEffect();
+                break;
+
+            case Save.UkemiRank.PERFECT:
+                Effect.PerfectEffect();
+                break;
+        }
     }
 
 }
