@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 画面タップを管理するクラス(02/02豊田)
+/// </summary>
+
 public class GetTap : MonoBehaviour
 {
+    private bool isTapped = false;
+
 
     // Use this for initialization
     void Start()
@@ -14,9 +20,10 @@ public class GetTap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isTapped)
         {
             Sound.PlaySe("osu01");
+            isTapped = true;
             StartCoroutine(WaitingFadeOut());
 
         }
