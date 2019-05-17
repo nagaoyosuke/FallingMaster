@@ -79,6 +79,8 @@ public class UkemiCheckManager : MonoBehaviour
             flame++;
         }
 
+        Save.maingameFlag = Save.MainGameFlag.UKEMIANIMETION;
+
         ChoiceEffect();
 
         print(Save.ukemiRank);
