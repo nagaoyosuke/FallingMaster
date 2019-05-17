@@ -32,7 +32,6 @@ public class SlowManager : MonoBehaviour
         rb.velocity = vel;
         rb.angularVelocity = anve;
         Save.maingameFlag = Save.MainGameFlag.SLOWSTART;
-
         yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.UKEMI);
 
     }
