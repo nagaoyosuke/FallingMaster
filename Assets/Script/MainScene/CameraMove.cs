@@ -23,18 +23,22 @@ public class CameraMove : MonoBehaviour {
 
     public void StartCameraMove(Sequence seq){
         //Sequence seq = DOTween.Sequence();
-        Vector3 MovePoint = new Vector3(5,trans.position.y,trans.position.z);
-        seq.Append(
-            trans.DOMove(MovePoint,1.0f)
-        );
+        //Vector3 MovePoint = new Vector3(5,trans.position.y,trans.position.z);
+        //seq.Append(
+        //    trans.DOMove(MovePoint,1.0f)
+        //);
 
-        MovePoint = new Vector3(1.28f,5.32f,-3.08f);
-        seq.Append(
-            trans.DOMove(MovePoint,1.0f)
-        );
+        //MovePoint = new Vector3(1.28f,5.32f,-3.08f);
+        //seq.Append(
+        //    trans.DOMove(MovePoint,1.0f)
+        //);
 
-        seq.Join(
-               trans.DORotate(new Vector3(60,-20,0),1.0f)
+        //seq.Join(
+        //       trans.DORotate(new Vector3(60,-20,0),1.0f)
+        //);
+
+        seq.Append(
+            trans.DOMove(new Vector3(10,2,1),8)
         );
 
         seq.OnComplete(() => Save.maingameFlag = Save.MainGameFlag.STARTWAIT);
