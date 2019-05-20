@@ -38,17 +38,20 @@ public class CameraMove : MonoBehaviour {
         //);
 
         seq.Append(
-            trans.DOMove(new Vector3(10,2,1),8)
+            trans.DOMove(new Vector3(10, 2, 1), 8).SetEase(Ease.Linear)
         );
-
-        seq.OnComplete(() => Save.maingameFlag = Save.MainGameFlag.STARTWAIT);
+        
+        //seq.OnComplete(() => { 
+        //    Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+        //    print("wsdfg");
+        //});
 
     }
 
     void ThrowCameraMove(){
         //投げられてる時のカメラワークをここに実装
 
-        trans.position = Player.position + new Vector3(0.93f,4.41f, -2.5f);
+        //trans.position = Player.position + new Vector3(0.93f,4.41f, -2.5f);
         //trans.position = new Vector3(Player.position.x + 0.5f, Player.position.y + 4.09f, Player.position.z + 2.73f);
     }
 
