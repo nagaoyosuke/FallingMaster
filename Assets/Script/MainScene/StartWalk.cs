@@ -9,6 +9,12 @@ public class StartWalk : MonoBehaviour
     [SerializeField]
     private Animator ani;
 
+    /// <summary>
+    /// ながられるポイントまで歩くための座標
+    /// </summary>
+    [SerializeField]
+    private Vector3 ThrowMovePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,7 @@ public class StartWalk : MonoBehaviour
     {
         //seq.SetEase(Ease.InSine);
         seq.Join(
-            transform.DOMove(new Vector3(0, 0, 2), 8).SetEase(Ease.Linear)
+            transform.DOMove(ThrowMovePoint,8).SetEase(Ease.Linear)
         ).AppendCallback(() =>
         {
             ani.SetBool("Idle", true);

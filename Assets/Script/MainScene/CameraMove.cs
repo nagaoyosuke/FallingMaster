@@ -9,6 +9,12 @@ public class CameraMove : MonoBehaviour {
     [SerializeField]
     private Transform Player;
 
+    /// <summary>
+    /// 最初の異動先
+    /// </summary>
+    [SerializeField]
+    private Vector3 FirstMovePoint;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -38,7 +44,7 @@ public class CameraMove : MonoBehaviour {
         //);
 
         seq.Append(
-            trans.DOMove(new Vector3(10, 2, 1), 8).SetEase(Ease.Linear)
+            trans.DOMove(new Vector3(10, 29.2f, 18), 8).SetEase(Ease.Linear)
         );
         
         //seq.OnComplete(() => { 
