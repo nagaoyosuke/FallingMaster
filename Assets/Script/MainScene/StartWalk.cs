@@ -25,7 +25,7 @@ public class StartWalk : MonoBehaviour
     {
         //seq.SetEase(Ease.InSine);
         seq.Join(
-            transform.DOMove(ThrowMovePoint,8).SetEase(Ease.Linear)
+            transform.DOMove(ThrowMovePoint,2).SetEase(Ease.Linear)
         ).AppendCallback(() =>
         {
             ani.SetBool("Idle", true);

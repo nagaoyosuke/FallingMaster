@@ -16,7 +16,7 @@ public class SlowManager : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.tag == "Player"){
+        if(other.gameObject.CompareTag("Player")){
             Rigidbody rb = other.GetComponent<Rigidbody>();
             StartCoroutine(Slow(rb));
         }
@@ -24,7 +24,7 @@ public class SlowManager : MonoBehaviour
 
     IEnumerator Slow(Rigidbody rb){
         Tartget = rb.transform;
-        float f = 10.0f;
+        float f = 40.0f;
         Vector3 v = rb.velocity;
         Vector3 vel = v / f;
         Vector3 ang = rb.angularVelocity;

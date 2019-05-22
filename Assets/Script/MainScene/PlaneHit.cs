@@ -15,10 +15,12 @@ public class PlaneHit : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             if (!Save.isUkemi)
             {
+                other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                other.transform.rotation = new Quaternion(0, 0, 0, 0);
                 Save.ukemiRank = Save.UkemiRank.NOUKEMI;
             }
         }

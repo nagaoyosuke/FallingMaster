@@ -18,6 +18,9 @@ public class UkemiEffecManager : MonoBehaviour
     [SerializeField]
     private Rigidbody PlayerRb;
 
+    [SerializeField]
+    private Animator PlayerAni;
+
     /// <summary>
     /// 受け身入力が開始された時に表示されるテキスト
     /// </summary>
@@ -58,7 +61,14 @@ public class UkemiEffecManager : MonoBehaviour
     {
         PlayerRb.velocity = Vector3.zero;
         Player.transform.rotation = new Quaternion(0, 0, 0, 0);
-        Player.transform.position += new Vector3(0, -3, 0);
+        //Player.transform.position += new Vector3(0, -3, 0);
+        PlayerAni.SetBool("UkemiSonoba",true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiSonoba", false)));
+        PlayerAni.SetBool("UkemiPerfect", true);
+        StartCoroutine(DelayClass.DelayCoroutin(60 * 12, () => PlayerAni.SetBool("UkemiPerfect", false)));
+        //StartCoroutine(DelayClass.DelayCoroutin(661, () => PlayerAni.SetBool("UkemiPerfect", false)));
+
+
     }
 
     /// <summary>
@@ -67,9 +77,12 @@ public class UkemiEffecManager : MonoBehaviour
     public void GoodEffect()
     {
         PlayerRb.velocity = Vector3.zero;
-        PlayerRb.AddForce(new Vector3(0, 0, -100));
         Player.transform.rotation = new Quaternion(0, 0, 0, 0);
-        Player.transform.position += new Vector3(0, -3, 0);
+        //Player.transform.position += new Vector3(0, -3, 0);
+        PlayerAni.SetBool("UkemiSonoba", true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiSonoba", false)));
+        PlayerAni.SetBool("UkemiGood", true);
+        StartCoroutine(DelayClass.DelayCoroutin(60 * 12, () => PlayerAni.SetBool("UkemiGood", false)));
     }
 
 
@@ -78,7 +91,10 @@ public class UkemiEffecManager : MonoBehaviour
     /// </summary>
     public void BadEffect()
     {
-
+        //PlayerRb.velocity = Vector3.zero;
+        //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        PlayerAni.SetBool("UkemiBad", true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiBad", false)));
     }
 
     /// <summary>
@@ -86,6 +102,9 @@ public class UkemiEffecManager : MonoBehaviour
     /// </summary>
     public void FailureNoUkemiEffect()
     {
-
+        //PlayerRb.velocity = Vector3.zero;
+        //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        PlayerAni.SetBool("UkemiBad", true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiBad", false)));
     }
 }

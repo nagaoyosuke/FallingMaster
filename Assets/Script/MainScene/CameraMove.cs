@@ -15,6 +15,8 @@ public class CameraMove : MonoBehaviour {
     [SerializeField]
     private Vector3 FirstMovePoint;
 
+    private bool isThrow;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -44,7 +46,7 @@ public class CameraMove : MonoBehaviour {
         //);
 
         seq.Append(
-            trans.DOMove(new Vector3(10, 29.2f, 18), 8).SetEase(Ease.Linear)
+            trans.DOMove(new Vector3(10, 29.2f, 18), 2).SetEase(Ease.Linear)
         );
         
         //seq.OnComplete(() => { 
@@ -57,7 +59,14 @@ public class CameraMove : MonoBehaviour {
     void ThrowCameraMove(){
         //投げられてる時のカメラワークをここに実装
 
-        //trans.position = Player.position + new Vector3(0.93f,4.41f, -2.5f);
+        trans.position = Player.position + new Vector3(2f, 2f, 2f);
+
+        if (!isThrow)
+        {
+            trans.Rotate(new Vector3(60, -20, 0));
+            isThrow = true;
+        }
+
         //trans.position = new Vector3(Player.position.x + 0.5f, Player.position.y + 4.09f, Player.position.z + 2.73f);
     }
 

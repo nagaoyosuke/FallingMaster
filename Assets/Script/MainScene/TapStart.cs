@@ -18,17 +18,29 @@ public class TapStart : MonoBehaviour
         text.enabled = false;
     }
 
-    void Update(){
-        if (!isEne){
-            if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT){
-                text.enabled = true;
-                isEne = true;
+    void Update()
+    {
+        if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
+        {
+
+            if (!isEne)
+            {
+                {
+                    text.enabled = true;
+                    isEne = true;
+                }
+            }
+
+            else if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            {
+                Tap();
             }
         }
     }
 
     public void Tap(){
         Save.maingameFlag = Save.MainGameFlag.THROW;
+        text.enabled = false;
     }
 
 }

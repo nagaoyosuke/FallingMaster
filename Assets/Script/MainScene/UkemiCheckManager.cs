@@ -30,7 +30,7 @@ public class UkemiCheckManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             UkemiStart();
 
