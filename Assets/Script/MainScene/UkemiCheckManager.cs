@@ -32,6 +32,7 @@ public class UkemiCheckManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if(Save.maingameFlag == Save.MainGameFlag.SLOWSTART)
             UkemiStart();
 
             /// わかりやすくするために動きを止めてるだけの仮実装

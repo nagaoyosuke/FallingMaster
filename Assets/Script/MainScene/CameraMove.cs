@@ -46,7 +46,7 @@ public class CameraMove : MonoBehaviour {
         //);
 
         seq.Append(
-            trans.DOMove(new Vector3(10, 29.2f, 18), 2).SetEase(Ease.Linear)
+            trans.DOMove(FirstMovePoint, 2).SetEase(Ease.Linear)
         );
         
         //seq.OnComplete(() => { 
