@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: 6cbfe9116ba9a4539a537a0334e95c1d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: body
+    100006: Body 1
+    100008: body 1
+    100010: Bone
+    100012: Bone 1
+    100014: Bone_ALL
+    100016: Bone_ALL 1
+    100018: Head
+    100020: head
+    100022: Head 1
+    100024: head 1
+    100026: IK_ALL
+    100028: IK_ALL 1
+    100030: IK_Left_Leg
+    100032: IK_Left_Leg 1
+    100034: IK_Right_Leg
+    100036: IK_Right_Leg 1
+    100038: Ketugou
+    100040: Ketugou 1
+    100042: left_arm
+    100044: left_arm 1
+    100046: Left_Arm1
+    100048: Left_Arm2
+    100050: Left_Arm3
+    100052: Left_Arm4
+    100054: left_foot
+    100056: left_foot 1
+    100058: left_hand
+    100060: left_hand 1
+    100062: Left_Hand1
+    100064: Left_Hand2
+    100066: Left_Hand3
+    100068: Left_Hand4
+    100070: Left_Hand5
+    100072: Left_Hand6
+    100074: left_leg
+    100076: left_leg 1
+    100078: Left_Leg1
+    100080: Left_Leg2
+    100082: Left_Leg3
+    100084: Left_Leg4
+    100086: Left_Leg5
+    100088: Left_Leg6
+    100090: left_shoulder
+    100092: left_shoulder 1
+    100094: Left_Toe1
+    100096: Left_Toe2
+    100098: Left_Toe3
+    100100: Left_Toe4
+    100102: pCube6
+    100104: pCube7
+    100106: pCylinder10
+    100108: pCylinder11
+    100110: pCylinder12
+    100112: pCylinder13
+    100114: pCylinder15
+    100116: pCylinder16
+    100118: pCylinder18
+    100120: pCylinder19
+    100122: Person
+    100124: Person 1
+    100126: right_arm
+    100128: right_arm 1
+    100130: Right_Arm1
+    100132: Right_Arm2
+    100134: Right_Arm3
+    100136: Right_Arm4
+    100138: right_foot
+    100140: right_foot 1
+    100142: right_hand
+    100144: right_hand 1
+    100146: Right_Hand1
+    100148: Right_Hand2
+    100150: Right_Hand3
+    100152: Right_Hand4
+    100154: Right_Hand5
+    100156: Right_Hand6
+    100158: right_leg
+    100160: right_leg 1
+    100162: Right_Leg1
+    100164: Right_Leg2
+    100166: Right_Leg3
+    100168: Right_Leg4
+    100170: Right_Leg5
+    100172: Right_Leg6
+    100174: right_shoulder
+    100176: right_shoulder 1
+    100178: Right_Toe1
+    100180: Right_Toe2
+    100182: Right_Toe3
+    100184: Right_Toe4
+    100186: transform1
+    100188: transform10
+    100190: transform11
+    100192: transform12
+    100194: transform13
+    100196: transform14
+    100198: transform15
+    100200: transform16
+    100202: transform17
+    100204: transform18
+    100206: transform19
+    100208: transform2
+    100210: transform20
+    100212: transform21
+    100214: transform22
+    100216: transform23
+    100218: transform24
+    100220: transform3
+    100222: transform4
+    100224: transform5
+    100226: transform6
+    100228: transform7
+    100230: transform8
+    100232: transform9
+    100234: Under_Body
+    100236: Under_Body 1
+    100238: Waist
+    100240: Waist 1
+    400000: //RootNode
+    400002: Body
+    400004: body
+    400006: Body 1
+    400008: body 1
+    400010: Bone
+    400012: Bone 1
+    400014: Bone_ALL
+    400016: Bone_ALL 1
+    400018: Head
+    400020: head
+    400022: Head 1
+    400024: head 1
+    400026: IK_ALL
+    400028: IK_ALL 1
+    400030: IK_Left_Leg
+    400032: IK_Left_Leg 1
+    400034: IK_Right_Leg
+    400036: IK_Right_Leg 1
+    400038: Ketugou
+    400040: Ketugou 1
+    400042: left_arm
+    400044: left_arm 1
+    400046: Left_Arm1
+    400048: Left_Arm2
+    400050: Left_Arm3
+    400052: Left_Arm4
+    400054: left_foot
+    400056: left_foot 1
+    400058: left_hand
+    400060: left_hand 1
+    400062: Left_Hand1
+    400064: Left_Hand2
+    400066: Left_Hand3
+    400068: Left_Hand4
+    400070: Left_Hand5
+    400072: Left_Hand6
+    400074: left_leg
+    400076: left_leg 1
+    400078: Left_Leg1
+    400080: Left_Leg2
+    400082: Left_Leg3
+    400084: Left_Leg4
+    400086: Left_Leg5
+    400088: Left_Leg6
+    400090: left_shoulder
+    400092: left_shoulder 1
+    400094: Left_Toe1
+    400096: Left_Toe2
+    400098: Left_Toe3
+    400100: Left_Toe4
+    400102: pCube6
+    400104: pCube7
+    400106: pCylinder10
+    400108: pCylinder11
+    400110: pCylinder12
+    400112: pCylinder13
+    400114: pCylinder15
+    400116: pCylinder16
+    400118: pCylinder18
+    400120: pCylinder19
+    400122: Person
+    400124: Person 1
+    400126: right_arm
+    400128: right_arm 1
+    400130: Right_Arm1
+    400132: Right_Arm2
+    400134: Right_Arm3
+    400136: Right_Arm4
+    400138: right_foot
+    400140: right_foot 1
+    400142: right_hand
+    400144: right_hand 1
+    400146: Right_Hand1
+    400148: Right_Hand2
+    400150: Right_Hand3
+    400152: Right_Hand4
+    400154: Right_Hand5
+    400156: Right_Hand6
+    400158: right_leg
+    400160: right_leg 1
+    400162: Right_Leg1
+    400164: Right_Leg2
+    400166: Right_Leg3
+    400168: Right_Leg4
+    400170: Right_Leg5
+    400172: Right_Leg6
+    400174: right_shoulder
+    400176: right_shoulder 1
+    400178: Right_Toe1
+    400180: Right_Toe2
+    400182: Right_Toe3
+    400184: Right_Toe4
+    400186: transform1
+    400188: transform10
+    400190: transform11
+    400192: transform12
+    400194: transform13
+    400196: transform14
+    400198: transform15
+    400200: transform16
+    400202: transform17
+    400204: transform18
+    400206: transform19
+    400208: transform2
+    400210: transform20
+    400212: transform21
+    400214: transform22
+    400216: transform23
+    400218: transform24
+    400220: transform3
+    400222: transform4
+    400224: transform5
+    400226: transform6
+    400228: transform7
+    400230: transform8
+    400232: transform9
+    400234: Under_Body
+    400236: Under_Body 1
+    400238: Waist
+    400240: Waist 1
+    2100000: ukeminoru_lambert4
+    2100002: ukeminoru_lambert5
+    2100004: lambert2
+    2100006: ukeminoru_lambert6
+    2100008: ukeminoru_lambert7
+    2100010: lambert3
+    4300000: Ketugou
+    4300002: Ketugou 1
+    7400000: Be_thrown_t2
+    9500000: //RootNode
+    13700000: Ketugou
+    13700002: Ketugou 1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Be_thrown_t2
+      takeName: Be_thrown_t2
+      firstFrame: 0
+      lastFrame: 645
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.001
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
