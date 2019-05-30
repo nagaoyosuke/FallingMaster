@@ -17,13 +17,14 @@ public class SlowManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player")){
-            Rigidbody rb = other.GetComponent<Rigidbody>();
+            Rigidbody rb = other.GetComponentInParent<Rigidbody>();
             StartCoroutine(Slow(rb));
         }
     }
 
     IEnumerator Slow(Rigidbody rb){
         Tartget = rb.transform;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         float f = 40.0f;
         Vector3 v = rb.velocity;
         Vector3 vel = v / f;

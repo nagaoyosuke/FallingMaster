@@ -19,7 +19,7 @@ public class PlaneHit : MonoBehaviour
         {
             if (!Save.isUkemi)
             {
-                other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
                 other.transform.rotation = new Quaternion(0, 0, 0, 0);
                 Save.ukemiRank = Save.UkemiRank.NOUKEMI;
             }

@@ -19,7 +19,7 @@ public class ThrowTest : MonoBehaviour
     {
         //ここに投げるアニメーションができたら実装する
 
-        GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -200.0f));
+        //GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -200.0f));
 
         yield return null;
         Save.maingameFlag = Save.MainGameFlag.FALLING;
