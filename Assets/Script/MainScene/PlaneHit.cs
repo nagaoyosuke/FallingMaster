@@ -19,10 +19,17 @@ public class PlaneHit : MonoBehaviour
         {
             if (!Save.isUkemi)
             {
-                other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
-                other.transform.rotation = new Quaternion(0, 0, 0, 0);
+                //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+                //other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
+                //other.gameObject.GetComponentInParent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                //other.transform.rotation = new Quaternion(0, 0, 0, 0);
                 Save.ukemiRank = Save.UkemiRank.NOUKEMI;
             }
+
+            //other.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
+            //other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
+            //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+
         }
     }
 }

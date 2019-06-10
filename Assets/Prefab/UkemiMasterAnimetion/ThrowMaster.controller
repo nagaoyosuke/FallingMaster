@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UkemiMaster
+  m_Name: ThrowMaster
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: BowBT
@@ -278,9 +278,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 1.1869812
-  m_TransitionOffset: 0.20770709
-  m_ExitTime: 0.64906865
+  m_TransitionDuration: 0.7950392
+  m_TransitionOffset: 0.23666856
+  m_ExitTime: 0.6714228
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 1

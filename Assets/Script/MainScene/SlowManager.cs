@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SlowManager : MonoBehaviour
 {
-    Transform Tartget;
+    private bool isHit;
 
     // Start is called before the first frame update
     void Start()
@@ -16,24 +16,25 @@ public class SlowManager : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.gameObject.CompareTag("Player")){
+        if(other.gameObject.CompareTag("Player") && !isHit){
             Rigidbody rb = other.GetComponentInParent<Rigidbody>();
             StartCoroutine(Slow(rb));
         }
     }
 
     IEnumerator Slow(Rigidbody rb){
-        Tartget = rb.transform;
+        isHit = true;
+        Time.timeScale = 0.4f;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         float f = 40.0f;
         Vector3 v = rb.velocity;
         Vector3 vel = v / f;
-        Vector3 ang = rb.angularVelocity;
-        Vector3 anve = ang / f;
         rb.velocity = vel;
-        rb.angularVelocity = anve;
         Save.maingameFlag = Save.MainGameFlag.SLOWSTART;
-        yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.UKEMI);
+        yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.UKEMIANIMETION);
+        rb.interpolation = RigidbodyInterpolation.None;
+        Time.timeScale = 1.0f;
 
     }
 }

@@ -19,6 +19,9 @@ public class UkemiEffecManager : MonoBehaviour
     private Rigidbody PlayerRb;
 
     [SerializeField]
+    private BoxCollider PlayerBox;
+
+    [SerializeField]
     private Animator PlayerAni;
 
     /// <summary>
@@ -104,7 +107,10 @@ public class UkemiEffecManager : MonoBehaviour
     {
         //PlayerRb.velocity = Vector3.zero;
         //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        //PlayerRb.AddForce(new Vector3(0, 500, -60));
         PlayerAni.SetBool("UkemiBad", true);
+        //Player.transform.position += new Vector3(0, 0, 1);
+
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiBad", false)));
     }
 }

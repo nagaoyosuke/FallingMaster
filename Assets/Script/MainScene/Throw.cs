@@ -48,9 +48,13 @@ public class Throw : MonoBehaviour
         UkemiAni.transform.position = UnderBody.transform.position;
         UkemiAni.transform.position += new Vector3(0, 0, -1);   //長られるアニメーションから落ちるアニメーションに変更したときに座標がずれるから
         UkemiAni.SetBool("Fall", true);
+        Save.maingameFlag = Save.MainGameFlag.FALLING;
 
         yield return null;
         UkemiAni.SetBool("Fall", false);
-        Save.maingameFlag = Save.MainGameFlag.FALLING;
+
+        ThrowAni.SetBool("Idle", true);
+        yield return null;
+        ThrowAni.SetBool("Idle", false);
     }
 }
