@@ -130,6 +130,12 @@ public static class Save{
     public static AddUkemi addUkemi = AddUkemi.NONE;
 
     /// <summary>
+    /// 受け身入力した回数
+    /// ２回目以降に受け身したいときに使えるフラグ
+    /// </summary>
+    public static int ukemiCounter;
+
+    /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>
     public static void ReSet(){
@@ -142,6 +148,19 @@ public static class Save{
     /// メインゲームの初期化,ステージ変わった時とかに使う
     /// </summary>
     public static void FlagReSet(){
+        maingameFlag = MainGameFlag.STARTCAMERA;
+        ukemiRank = UkemiRank.NONE;
+        addUkemi = AddUkemi.NONE;
+        isUkemi = false;
+        ukemiCounter = 0;
+    }
+
+    /// <summary>
+    /// ２回目以降に投げられる前にリセットするときに使う
+    /// </summary>
+    public static void ThrowReSet()
+    {
+        ukemiCounter++;
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemi = AddUkemi.NONE;
