@@ -23,4 +23,21 @@ public class AnimetionFlag : MonoBehaviour
     /// お辞儀アニメーションが終わるとき
     /// </summary>
     public bool BowEndPoint;
+    /// <summary>
+    /// その場受け身アニメーションが起き上がるとき
+    /// </summary>
+    public bool UkemiStandPoint;
+
+    /// <summary>
+    /// ガッツポーズアニメーションが終わるとき
+    /// </summary>
+    public bool GutEndPoint;
+    /// <summary>
+    /// 痛いポーズアニメーションが終わるとき
+    /// </summary>
+    public bool OuchEndPoint;
+    /// <summary>
+    /// 失敗アニメーションが終わるとき
+    /// </summary>
+    public bool ErrorEndPoint;
 }

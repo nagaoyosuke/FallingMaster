@@ -5,11 +5,16 @@ using UnityEngine;
 /// <summary>
 /// シーンによって処理を変えたいから親クラスにした(06/10長尾)
 /// </summary>
+[RequireComponent(typeof(Transform), typeof(AnimetionFlag))]
 public class CameraManager : MonoBehaviour
 {
     protected Transform trans;
+
     [SerializeField]
     protected Transform Player;
+
+    [SerializeField]
+    protected AnimetionFlag PlayerAniFlag;
 
     /// <summary>
     /// 最初に曲がるポイントまでの座標
@@ -40,4 +45,19 @@ public class CameraManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     protected Vector3 ThrowMovePoint;
+
+    virtual public IEnumerator PerfectEffect() { yield return null; }
+
+    virtual public IEnumerator GoodEffect() { yield return null; }
+
+    virtual public IEnumerator BadEffect() { yield return null; }
+
+    virtual public IEnumerator FailureNoUkemiEffect() { yield return null; }
+
+    void Reset()
+    {
+        GameObject Player_ = GameObject.Find("UkemiMaster");
+        Player = Player_.transform;
+        PlayerAniFlag = Player.GetComponent<AnimetionFlag>();
+    }
 }

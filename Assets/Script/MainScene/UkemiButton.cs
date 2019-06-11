@@ -28,6 +28,7 @@ public class UkemiButton : MonoBehaviour
                 }
             }
         }
+        print(Save.maingameFlag);
     }
 
     /// <summary>

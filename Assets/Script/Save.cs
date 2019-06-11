@@ -80,6 +80,14 @@ public static class Save{
         /// </summary>
         SLOWEND,
         /// <summary>
+        /// 受け身アニメーション終わったあとの演出開始
+        /// </summary>
+        UKEMIEFFECT,
+        /// <summary>
+        /// ２回目以降のカメラ演出開始
+        /// </summary>
+        MORECAMERA,
+        /// <summary>
         /// スローモーション終了後の派生アニメーション開始
         /// </summary>
         ENDANIMETION,
@@ -133,7 +141,7 @@ public static class Save{
     /// 受け身入力した回数
     /// ２回目以降に受け身したいときに使えるフラグ
     /// </summary>
-    public static int ukemiCounter;
+    public static int ukemiCounter = 1;
 
     /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
@@ -152,7 +160,7 @@ public static class Save{
         ukemiRank = UkemiRank.NONE;
         addUkemi = AddUkemi.NONE;
         isUkemi = false;
-        ukemiCounter = 0;
+        ukemiCounter = 1;
     }
 
     /// <summary>
@@ -161,7 +169,7 @@ public static class Save{
     public static void ThrowReSet()
     {
         ukemiCounter++;
-        maingameFlag = MainGameFlag.STARTCAMERA;
+        maingameFlag = MainGameFlag.MORECAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemi = AddUkemi.NONE;
         isUkemi = false;

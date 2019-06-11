@@ -10,6 +10,15 @@ using DG.Tweening;
 /// </summary>
 public class FirstStageEventManager : EventManager
 {
+    private bool isStart;
+
+    void OnEnable()
+    {
+        if(isStart)
+            StarttweenEvent.Invoke(Startsequence);
+        isStart = true;
+    }
+
     void Awake() {
         Startsequence = DOTween.Sequence();
     }

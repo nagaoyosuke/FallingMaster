@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// シーンによって処理を変えたいから親クラスにした(06/10長尾)
 /// </summary>
+[RequireComponent(typeof(Animator), typeof(GameObject), typeof(AnimetionFlag))]
 public class WalkManager : MonoBehaviour
 {
     [SerializeField]
@@ -42,4 +43,11 @@ public class WalkManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     protected Vector3 ThrowMovePoint;
+
+    virtual protected void Reset()
+    {
+        ani = GetComponent<Animator>();
+        aniFlag = GetComponent<AnimetionFlag>();
+
+    }
 }

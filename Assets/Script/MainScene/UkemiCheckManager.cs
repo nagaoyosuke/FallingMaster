@@ -14,26 +14,31 @@ public class UkemiCheckManager : MonoBehaviour
     [SerializeField]
     private int parfectFlame;
 
+    [SerializeField]
+    private GameObject EffectObject;
+
     /// <summary>
     /// UkemiEffecManagerから成功失敗の演出参照
     /// </summary>
-    [SerializeField]
-    private UkemiEffecManager Effect;
+    private IUkemiEffect Effect;
 
+    private bool isAction;
 
     // Start is called before the first frame update
     void Start()
     {
         if (parfectFlame == 0)
             parfectFlame = 20;
+
+        Effect = EffectObject.GetComponent<IUkemiEffect>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!isAction && other.gameObject.CompareTag("Player"))
         {
             if(Save.maingameFlag == Save.MainGameFlag.SLOWSTART)
-            UkemiStart();
+                UkemiStart();
 
             /// わかりやすくするために動きを止めてるだけの仮実装
             //other.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -49,6 +54,7 @@ public class UkemiCheckManager : MonoBehaviour
     void UkemiStart()
     {
         Save.maingameFlag = Save.MainGameFlag.UKEMI;
+        isAction = true;
         StartCoroutine(UkemiWait());
     }
 
@@ -82,6 +88,8 @@ public class UkemiCheckManager : MonoBehaviour
 
         Save.maingameFlag = Save.MainGameFlag.UKEMIANIMETION;
 
+        yield return null;
+        Effect.StartEffect();
         ChoiceEffect();
 
         print(Save.ukemiRank);
