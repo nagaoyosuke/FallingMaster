@@ -37,6 +37,12 @@ public class Throw : MonoBehaviour
 
         var rb = UkemiAni.gameObject.GetComponent<Rigidbody>();
 
+        //投げるアニメーションの再生速度を早くする
+        yield return new WaitUntil(() => UkemiFlag.ThrowSpeedPoint);
+        ThrowAni.speed = 2;
+        UkemiAni.speed = 2;
+
+
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowRBPoint);
         rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
@@ -49,7 +55,8 @@ public class Throw : MonoBehaviour
         UkemiAni.transform.position += new Vector3(0, 0, -1);   //長られるアニメーションから落ちるアニメーションに変更したときに座標がずれるから
         UkemiAni.SetBool("Fall", true);
         Save.maingameFlag = Save.MainGameFlag.FALLING;
-
+        ThrowAni.speed = 1;
+        UkemiAni.speed = 1;
         yield return null;
         UkemiAni.SetBool("Fall", false);
 

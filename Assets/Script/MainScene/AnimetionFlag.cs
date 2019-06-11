@@ -16,6 +16,10 @@ public class AnimetionFlag : MonoBehaviour
     /// </summary>
     public bool ThrowRBPoint;
     /// <summary>
+    /// 投げられるor投げるアニメーションが加速するとき
+    /// </summary>
+    public bool ThrowSpeedPoint;
+    /// <summary>
     /// お辞儀アニメーションが終わるとき
     /// </summary>
     public bool BowEndPoint;

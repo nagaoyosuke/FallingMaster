@@ -65,6 +65,7 @@ public class UkemiEffecManager : MonoBehaviour
         PlayerRb.velocity = Vector3.zero;
         Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
+        PlayerBox.material = null;
         PlayerAni.SetBool("UkemiSonoba",true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiSonoba", false)));
         PlayerAni.SetBool("UkemiPerfect", true);
@@ -82,6 +83,8 @@ public class UkemiEffecManager : MonoBehaviour
         PlayerRb.velocity = Vector3.zero;
         Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
+        PlayerBox.material = null;
+
         PlayerAni.SetBool("UkemiSonoba", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiSonoba", false)));
         PlayerAni.SetBool("UkemiGood", true);
