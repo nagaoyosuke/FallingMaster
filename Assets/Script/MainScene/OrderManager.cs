@@ -10,6 +10,11 @@ using UnityEngine;
 public class OrderManager : MonoBehaviour
 {
     /// <summary>
+    /// 一つ前の投げられるところにあるOrderManagerを入れる
+    /// </summary>
+    [SerializeField]
+    private OrderManager other;
+    /// <summary>
     /// 投げられる順番
     /// </summary>
     [SerializeField]
@@ -21,7 +26,7 @@ public class OrderManager : MonoBehaviour
     private List<MonoBehaviour> mono = new List<MonoBehaviour>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (number != Save.ukemiCounter)
             MonoSwitch(false);
@@ -40,8 +45,11 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    void MonoSwitch(bool value)
+    public void MonoSwitch(bool value)
     {
+        if (other != null && value)
+            other.MonoSwitch(false);
+
         foreach (MonoBehaviour m in mono)
         {
             m.enabled = value;
@@ -57,8 +65,16 @@ public class OrderManager : MonoBehaviour
         mono.Add(GetComponentInChildren<EventManager>());
         mono.Add(GetComponentInChildren<ThrowManager>());
         mono.Add(GetComponentInChildren<IdlingAnimetion>());
-        //CameraManagerをインスペクターから入れる
-        mono.Add(null);
+        mono.Add(GetComponentInChildren<TapStart>());
 
+        //CameraManagerを継承してるクラスをインスペクターから入れる
+        mono.Add(null);
+        //WalkManagerを継承してるクラスをインスペクターから入れる
+        mono.Add(null);
+    }
+
+    void OnDisable()
+    {
+        isSwitch = false;
     }
 }

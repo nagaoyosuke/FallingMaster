@@ -169,7 +169,7 @@ public static class Save{
     public static void ThrowReSet()
     {
         ukemiCounter++;
-        maingameFlag = MainGameFlag.MORECAMERA;
+        maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemi = AddUkemi.NONE;
         isUkemi = false;

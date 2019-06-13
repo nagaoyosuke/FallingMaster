@@ -24,6 +24,11 @@ public class UkemiCheckManager : MonoBehaviour
 
     private bool isAction;
 
+    void OnEnable()
+    {
+        isAction = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

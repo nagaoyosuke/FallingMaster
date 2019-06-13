@@ -12,13 +12,17 @@ public class SlowManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<BoxCollider>().enabled = true;
+        isHit = false;
     }
 
     void OnTriggerEnter(Collider other){
         if(other.gameObject.CompareTag("Player") && !isHit){
-            Rigidbody rb = other.GetComponentInParent<Rigidbody>();
-            StartCoroutine(Slow(rb));
+            if (enabled)
+            {
+                Rigidbody rb = other.GetComponentInParent<Rigidbody>();
+                StartCoroutine(Slow(rb));
+            }
         }
     }
 

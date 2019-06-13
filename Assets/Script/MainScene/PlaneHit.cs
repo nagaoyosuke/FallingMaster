@@ -10,14 +10,14 @@ public class PlaneHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && enabled)
         {
-            if (!Save.isUkemi)
+            if (!Save.isUkemi && Save.maingameFlag == Save.MainGameFlag.UKEMI)
             {
                 //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
                 //other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
@@ -31,5 +31,11 @@ public class PlaneHit : MonoBehaviour
             //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
 
         }
+    }
+
+    private void OnDisable()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+
     }
 }

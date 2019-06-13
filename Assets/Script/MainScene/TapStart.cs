@@ -14,6 +14,12 @@ public class TapStart : MonoBehaviour
 
     private bool isEne;
 
+
+    void OnEnable()
+    {
+        isEne = false;
+    }
+
     void Start(){
         text.enabled = false;
     }
@@ -42,5 +48,4 @@ public class TapStart : MonoBehaviour
         Save.maingameFlag = Save.MainGameFlag.THROW;
         text.enabled = false;
     }
-
 }

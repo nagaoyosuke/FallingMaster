@@ -13,7 +13,7 @@ public class UkemiButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isPush = false;
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class UkemiButton : MonoBehaviour
                 }
             }
         }
-        print(Save.maingameFlag);
     }
 
     /// <summary>
