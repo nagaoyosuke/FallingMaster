@@ -91,7 +91,7 @@ public class FirstStageFirstCamera : CameraManager {
     void ThrowCameraMove(){
         //投げられてる時のカメラワークをここに実装
 
-        trans.position = Player.position + new Vector3(2f, 2f, 2f);
+        trans.position = Player.position + new Vector3(1f, 3f, 1f);
 
         if (!isThrow)
         {
