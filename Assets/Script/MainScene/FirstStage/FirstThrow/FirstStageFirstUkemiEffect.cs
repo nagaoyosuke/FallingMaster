@@ -45,14 +45,13 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
         UkemiStartText.enabled = false;
 
         //0615 仮のパーティクル(時々正しく表示されなくなるバグ有り)豊田
-        GameObject ukemiMaster = GameObject.Find("UkemiMaster").gameObject;
-        GameObject particle = Instantiate(smokeParticle, ukemiMaster.transform.position, Quaternion.identity) as GameObject;
+        GameObject particle = Instantiate(smokeParticle, Player.transform.position, Quaternion.identity) as GameObject;
         var ps = particle.GetComponent<ParticleSystem>();
         ps.Stop();
 
         var main = ps.main;
-        main.customSimulationSpace = ukemiMaster.transform;
-        particle.transform.parent = ukemiMaster.gameObject.transform;
+        main.customSimulationSpace = Player.transform;
+        particle.transform.parent = Player.gameObject.transform;
         StartCoroutine(PlayParticle(ps,particle));
         //particle.transform.rotation = new Quaternion(0,90,0,0);
         //ここまで

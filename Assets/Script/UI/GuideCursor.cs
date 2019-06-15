@@ -93,7 +93,6 @@ public class GuideCursor : SwipeManager
 
     float AngleOverCheckX(float directionX)
     {
-        print(transform.localEulerAngles.z - directionX / 10);
         if (transform.localEulerAngles.z - directionX / 10 > MaxAngle)
         {
             return 0;

@@ -83,8 +83,10 @@ public class FirstStageFirstCamera : CameraManager {
         camera.orthographic = false;
         camera.fieldOfView = field_of_view;
         fader.isFadeIn = true;
-        yield return new WaitUntil(() => fader.isFadeIn == false);
+        yield return new WaitForSeconds(0.1f);
         Save.maingameFlag = Save.MainGameFlag.THROW;
+
+        yield return new WaitUntil(() => fader.isFadeIn == false);
     }
 
 

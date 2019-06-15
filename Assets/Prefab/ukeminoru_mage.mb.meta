@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4ed09b0be0e848fc80676841ec875db
+guid: 0c43edd7b78444bcfb817d4d36daf2d3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -12,58 +12,41 @@ ModelImporter:
     100012: IK_ALL
     100014: IK_Left_Leg
     100016: IK_Right_Leg
-    100018: Ketugou
-    100020: left_arm
-    100022: Left_Arm1
-    100024: Left_Arm2
-    100026: left_foot
-    100028: left_hand
-    100030: Left_Hand1
-    100032: Left_Hand2
-    100034: Left_Hand3
-    100036: left_leg
-    100038: Left_Leg1
-    100040: Left_Leg2
-    100042: Left_Leg3
-    100044: left_shoulder
-    100046: Left_Toe1
-    100048: Left_Toe2
-    100050: pCube6
-    100052: pCylinder10
-    100054: pCylinder12
-    100056: pCylinder15
-    100058: pCylinder18
-    100060: Person
-    100062: right_arm
-    100064: Right_Arm1
-    100066: Right_Arm2
-    100068: right_foot
-    100070: right_hand
-    100072: Right_Hand1
-    100074: Right_Hand2
-    100076: Right_Hand3
-    100078: right_leg
-    100080: Right_Leg1
-    100082: Right_Leg2
-    100084: Right_Leg3
-    100086: right_shoulder
-    100088: Right_Toe1
-    100090: Right_Toe2
-    100092: transform1
-    100094: transform10
-    100096: transform11
-    100098: transform12
-    100100: transform2
-    100102: transform3
-    100104: transform4
-    100106: transform5
-    100108: transform6
-    100110: transform7
-    100112: transform8
-    100114: transform9
-    100116: //RootNode
-    100118: Under_Body
-    100120: Waist
+    100018: left_arm
+    100020: Left_Arm1
+    100022: Left_Arm2
+    100024: left_foot
+    100026: left_hand
+    100028: Left_Hand1
+    100030: Left_Hand2
+    100032: Left_Hand3
+    100034: left_leg
+    100036: Left_Leg1
+    100038: Left_Leg2
+    100040: Left_Leg3
+    100042: left_shoulder
+    100044: Left_Toe1
+    100046: Left_Toe2
+    100048: mage
+    100050: right_arm
+    100052: Right_Arm1
+    100054: Right_Arm2
+    100056: right_foot
+    100058: right_hand
+    100060: Right_Hand1
+    100062: Right_Hand2
+    100064: Right_Hand3
+    100066: right_leg
+    100068: Right_Leg1
+    100070: Right_Leg2
+    100072: Right_Leg3
+    100074: right_shoulder
+    100076: Right_Toe1
+    100078: Right_Toe2
+    100080: ukemi_ALL
+    100082: //RootNode
+    100084: Under_Body
+    100086: Waist
     400000: Body
     400002: body
     400004: Bone
@@ -73,64 +56,72 @@ ModelImporter:
     400012: IK_ALL
     400014: IK_Left_Leg
     400016: IK_Right_Leg
-    400018: Ketugou
-    400020: left_arm
-    400022: Left_Arm1
-    400024: Left_Arm2
-    400026: left_foot
-    400028: left_hand
-    400030: Left_Hand1
-    400032: Left_Hand2
-    400034: Left_Hand3
-    400036: left_leg
-    400038: Left_Leg1
-    400040: Left_Leg2
-    400042: Left_Leg3
-    400044: left_shoulder
-    400046: Left_Toe1
-    400048: Left_Toe2
-    400050: pCube6
-    400052: pCylinder10
-    400054: pCylinder12
-    400056: pCylinder15
-    400058: pCylinder18
-    400060: Person
-    400062: right_arm
-    400064: Right_Arm1
-    400066: Right_Arm2
-    400068: right_foot
-    400070: right_hand
-    400072: Right_Hand1
-    400074: Right_Hand2
-    400076: Right_Hand3
-    400078: right_leg
-    400080: Right_Leg1
-    400082: Right_Leg2
-    400084: Right_Leg3
-    400086: right_shoulder
-    400088: Right_Toe1
-    400090: Right_Toe2
-    400092: transform1
-    400094: transform10
-    400096: transform11
-    400098: transform12
-    400100: transform2
-    400102: transform3
-    400104: transform4
-    400106: transform5
-    400108: transform6
-    400110: transform7
-    400112: transform8
-    400114: transform9
-    400116: //RootNode
-    400118: Under_Body
-    400120: Waist
-    2100000: ukeminoru_lambert4
-    2100002: ukeminoru_lambert5
+    400018: left_arm
+    400020: Left_Arm1
+    400022: Left_Arm2
+    400024: left_foot
+    400026: left_hand
+    400028: Left_Hand1
+    400030: Left_Hand2
+    400032: Left_Hand3
+    400034: left_leg
+    400036: Left_Leg1
+    400038: Left_Leg2
+    400040: Left_Leg3
+    400042: left_shoulder
+    400044: Left_Toe1
+    400046: Left_Toe2
+    400048: mage
+    400050: right_arm
+    400052: Right_Arm1
+    400054: Right_Arm2
+    400056: right_foot
+    400058: right_hand
+    400060: Right_Hand1
+    400062: Right_Hand2
+    400064: Right_Hand3
+    400066: right_leg
+    400068: Right_Leg1
+    400070: Right_Leg2
+    400072: Right_Leg3
+    400074: right_shoulder
+    400076: Right_Toe1
+    400078: Right_Toe2
+    400080: ukemi_ALL
+    400082: //RootNode
+    400084: Under_Body
+    400086: Waist
+    2100000: lambert2
+    2100002: lambert3
     2100004: lambert1
-    4300000: Ketugou
+    4300000: head
+    4300002: body
+    4300004: right_shoulder
+    4300006: left_shoulder
+    4300008: right_arm
+    4300010: left_arm
+    4300012: right_hand
+    4300014: left_hand
+    4300016: right_leg
+    4300018: left_leg
+    4300020: right_foot
+    4300022: left_foot
+    4300024: mage
     9500000: //RootNode
-    13700000: Ketugou
+    13700000: body
+    13700002: head
+    13700004: left_arm
+    13700006: left_foot
+    13700008: left_hand
+    13700010: left_leg
+    13700012: left_shoulder
+    13700014: mage
+    13700016: right_arm
+    13700018: right_foot
+    13700020: right_hand
+    13700022: right_leg
+    13700024: right_shoulder
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -183,7 +174,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.002
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
