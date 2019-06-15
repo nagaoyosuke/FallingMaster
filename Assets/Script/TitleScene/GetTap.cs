@@ -35,6 +35,6 @@ public class GetTap : MonoBehaviour
         GameObject.Find("Panel").GetComponent<ScreenFader>().isFadeOut = true;
         yield return new WaitForSeconds(1.5f);
 
-        MySceneManager.GoMain();
+        MySceneManager.GoMenu();
     }
 }
