@@ -852,6 +852,8 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4355971726104060451}
   UkemiStartText: {fileID: 380520826}
+  smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
 --- !u!4 &47092725
 Transform:
   m_ObjectHideFlags: 0
@@ -3733,6 +3735,7 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4355971726104060451}
   UkemiStartText: {fileID: 380520826}
+  smokeParticle: {fileID: 0}
 --- !u!1001 &269092312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12984,7 +12987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868151833}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.8, y: -31.79, z: 1.7}
+  m_LocalPosition: {x: 0.8, y: -33.15, z: 1.7}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1023365970}
@@ -19277,7 +19280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440064810}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.5000079, y: -29.330002, z: -0.5170836}
+  m_LocalPosition: {x: -1.5000079, y: -30.690002, z: -0.5170836}
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1023365970}
@@ -28396,7 +28399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076101844}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.8, y: -25.79, z: 1.7}
+  m_LocalPosition: {x: 0.8, y: -27.150002, z: 1.7}
   m_LocalScale: {x: 4, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 1023365970}
