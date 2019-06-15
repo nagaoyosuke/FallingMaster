@@ -7,6 +7,24 @@ using UnityEngine;
 /// </summary>
 public class CameraManager : MonoBehaviour
 {
+    [SerializeField]
+    protected Camera camera;
+
+    /// <summary>
+    /// ProjectionがperspectiveのときのField of viewの設定値
+    /// </summary>
+    [SerializeField]
+    protected float field_of_view;
+
+    /// <summary>
+    /// ProjectionがorthographicのときのSizeの設定値
+    /// </summary>
+    [SerializeField]
+    protected float size;
+
+    [SerializeField]
+    protected ScreenFader fader;
+
     protected Transform trans;
 
     [SerializeField]
@@ -44,6 +62,18 @@ public class CameraManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     protected Vector3 ThrowMovePoint;
+
+    /// <summary>
+    /// 全体を写すアングルの座標
+    /// </summary>
+    [SerializeField]
+    protected Vector3 AngleMovePoint;
+
+    /// <summary>
+    /// 全体を写すアングルの角度
+    /// </summary>
+    [SerializeField]
+    protected Vector3 AngleMoveRotate;
 
     protected bool isThrow;
 

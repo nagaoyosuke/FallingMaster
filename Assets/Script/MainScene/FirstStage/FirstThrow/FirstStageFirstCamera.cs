@@ -46,6 +46,27 @@ public class FirstStageFirstCamera : CameraManager {
         );
     }
 
+    public void AnglePointCameraMove(Sequence seq)
+    {
+        seq.AppendCallback(() => StartCoroutine(AngleMove()));
+    }
+
+    IEnumerator AngleMove()
+    {
+        yield return new WaitForSeconds(2.0f);
+        fader.isFadeOut = true;
+        yield return new WaitUntil(() => fader.isFadeOut == false);
+        trans.position = AngleMovePoint;
+        trans.DORotate(AngleMoveRotate, 0);
+        camera.orthographic = true;
+        camera.orthographicSize = size;
+        fader.isFadeIn = true;
+        yield return new WaitUntil(() => fader.isFadeIn == false);
+        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+
+
+    }
+
     void ThrowCameraMove(){
         //投げられてる時のカメラワークをここに実装
 

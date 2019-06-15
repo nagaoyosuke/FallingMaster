@@ -40,6 +40,5 @@ public class FirstStageSecondtWalk : WalkManager
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
         ani.SetBool("Idle", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
-        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
     }
 }
