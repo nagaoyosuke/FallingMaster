@@ -14,6 +14,11 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
         SceneManager.LoadScene("Main");
     }
 
+    public static void GoMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public static void GoLobby(){
 		SceneManager.LoadScene("Lobby");
 	}
