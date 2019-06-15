@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
 {
     private bool isEnd;
+    public GameObject smokeParticle;
 
     void Start()
     {
@@ -44,7 +45,32 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
         Save.maingameFlag = Save.MainGameFlag.UKEMIEFFECT;
         UkemiStartText.enabled = false;
 
+        //0615 仮のパーティクル(時々正しく表示されなくなるバグ有り)豊田
+        GameObject ukemiMaster = GameObject.Find("UkemiMaster").gameObject;
+        GameObject particle = Instantiate(smokeParticle, ukemiMaster.transform.position, Quaternion.identity) as GameObject;
+        var ps = particle.GetComponent<ParticleSystem>();
+        ps.Stop();
+
+        var main = ps.main;
+        main.customSimulationSpace = ukemiMaster.transform;
+        particle.transform.parent = ukemiMaster.gameObject.transform;
+        StartCoroutine(PlayParticle(ps,particle));
+        //particle.transform.rotation = new Quaternion(0,90,0,0);
+        //ここまで
+
+
         //Save.ThrowReSet();
+    }
+
+    private IEnumerator PlayParticle(ParticleSystem ps,GameObject particle){
+        yield return new WaitForSeconds(1f);
+        var shape = ps.shape;
+        shape.rotation = new Vector3(90, 0, 0);
+        shape.position = new Vector3(0, 0, 0.6f);
+        ps.Play();
+        Destroy(particle,5f);
+
+
     }
 
     /// <summary>
