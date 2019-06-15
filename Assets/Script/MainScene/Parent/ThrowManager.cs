@@ -13,6 +13,9 @@ public class ThrowManager : WalkManager
     [SerializeField]
     protected AnimetionFlag UkemiFlag;
 
+    [SerializeField]
+    protected Transform AngleArrow;
+
     override protected void Reset()
     {
         ani = GetComponent<Animator>();

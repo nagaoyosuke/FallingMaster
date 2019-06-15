@@ -63,9 +63,30 @@ public class FirstStageFirstCamera : CameraManager {
         fader.isFadeIn = true;
         yield return new WaitUntil(() => fader.isFadeIn == false);
         Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
-
-
     }
+
+    public void ThrowAngleCameraMove()
+    {
+        if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
+        {
+            Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
+            StartCoroutine(throwAnglCameraMove());
+        }
+    }
+
+    IEnumerator throwAnglCameraMove()
+    {
+        fader.isFadeOut = true;
+        yield return new WaitUntil(() => fader.isFadeOut == false);
+        trans.position = ThrowMovePoint;
+        trans.DORotate(CornerMoveRotate2, 0);
+        camera.orthographic = false;
+        camera.fieldOfView = field_of_view;
+        fader.isFadeIn = true;
+        yield return new WaitUntil(() => fader.isFadeIn == false);
+        Save.maingameFlag = Save.MainGameFlag.THROW;
+    }
+
 
     void ThrowCameraMove(){
         //投げられてる時のカメラワークをここに実装

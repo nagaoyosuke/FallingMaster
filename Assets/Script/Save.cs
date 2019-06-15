@@ -52,6 +52,10 @@ public static class Save{
         /// </summary>
         STARTWAIT,
         /// <summary>
+        /// タップされてから投げられるまで
+        /// </summary>
+        THROWMOVE,
+        /// <summary>
         /// 投げられてる時
         /// </summary>
         THROW,

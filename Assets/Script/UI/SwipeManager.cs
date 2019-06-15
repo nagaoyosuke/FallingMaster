@@ -30,6 +30,7 @@ public class SwipeManager : MonoBehaviour
     void Update()
     {
         Flick();
+        Update_();
     }
 
     void Flick()
@@ -122,6 +123,11 @@ public class SwipeManager : MonoBehaviour
                 //タッチされた時の処理
                 break;
         }
+
+    }
+
+    virtual protected void Update_()
+    {
 
     }
 
