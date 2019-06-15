@@ -77,7 +77,7 @@ public class GuideCursor : SwipeManager
         
     }
 
-    override protected void TouchUp(float directionx, float directionY)
+    override protected void TouchUp(float directionX, float directionY)
     {
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
         {
@@ -93,13 +93,14 @@ public class GuideCursor : SwipeManager
 
     float AngleOverCheckX(float directionX)
     {
+        print(transform.localEulerAngles.z - directionX / 10);
         if (transform.localEulerAngles.z - directionX / 10 > MaxAngle)
         {
-            return MaxAngle;
+            return 0;
         }
-        if (transform.localEulerAngles.z - directionX / 10 <= MinAngle)
+        if (transform.localEulerAngles.z - directionX / 10 < MinAngle)
         {
-            return MinAngle - 360;
+            return 0;
         }
         return directionX;
     }
@@ -108,11 +109,11 @@ public class GuideCursor : SwipeManager
     {
         if (transform.localEulerAngles.z + directionY / 10 > MaxAngle)
         {
-            return MaxAngle - 360;
+            return 0;
         }
-        if (transform.localEulerAngles.z + directionY / 10 <= MinAngle)
+        if (transform.localEulerAngles.z + directionY / 10 < MinAngle)
         {
-            return MinAngle;
+            return 0;
         }
 
         return directionY;

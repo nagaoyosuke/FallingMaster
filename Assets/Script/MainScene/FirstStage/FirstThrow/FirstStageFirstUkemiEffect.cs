@@ -8,7 +8,6 @@ using UnityEngine.UI;
 /// </summary>
 public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
 {
-    private bool isEnd;
     public GameObject smokeParticle;
 
     void Start()

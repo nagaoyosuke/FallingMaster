@@ -53,12 +53,12 @@ public class FirstStageFirstThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowRBPoint);
-        rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
+        //rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
         rb.useGravity = true;   //重力オン
 
         float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
         Vector3 vec = new Vector3(0,Mathf.Cos(rad) ,Mathf.Sin(rad));
-        rb.AddForce(vec * 600);   //手前に落ちるから力を与えて自然に
+        rb.AddForce(vec * 500);   //手前に落ちるから力を与えて自然に
 
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
