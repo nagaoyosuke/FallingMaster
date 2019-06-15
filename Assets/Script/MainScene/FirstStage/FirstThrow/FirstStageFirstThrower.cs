@@ -39,7 +39,7 @@ public class FirstStageFirstThrower : ThrowManager
         //GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, -200.0f));
         ani.SetBool("Throw1", true);
         UkemiAni.SetBool("Throwing1", true);
-        yield return null;
+        yield return new WaitForEndOfFrame();
         ani.SetBool("Throw1", false);
         UkemiAni.SetBool("Throwing1", false);
 
@@ -57,7 +57,7 @@ public class FirstStageFirstThrower : ThrowManager
         rb.useGravity = true;   //重力オン
 
         float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
-        Vector3 vec = new Vector3(0,-Mathf.Sin(rad) ,-Mathf.Cos(rad));
+        Vector3 vec = new Vector3(0,Mathf.Cos(rad) ,Mathf.Sin(rad));
         rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
 
         //アニメーションクリップのほうでフラグをオンにしてる
