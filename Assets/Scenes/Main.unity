@@ -11461,6 +11461,8 @@ MonoBehaviour:
   touchStartPos: {x: 0, y: 0, z: 0}
   touchEndPos: {x: 0, y: 0, z: 0}
   direction: 5
+  angle: {fileID: 0}
+  arrow: {fileID: 0}
   MaxAngle: 0
   MinAngle: 0
 --- !u!114 &718976330
@@ -29167,6 +29169,8 @@ MonoBehaviour:
   touchStartPos: {x: 0, y: 0, z: 0}
   touchEndPos: {x: 0, y: 0, z: 0}
   direction: 5
+  angle: {fileID: 95291310}
+  arrow: {fileID: 2117757654}
   MaxAngle: 270
   MinAngle: 180
 --- !u!212 &2117757654

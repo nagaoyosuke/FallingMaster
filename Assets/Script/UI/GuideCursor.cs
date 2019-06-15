@@ -5,6 +5,13 @@ using DG.Tweening;
 
 public class GuideCursor : SwipeManager
 {
+
+    [SerializeField]
+    private SpriteRenderer angle;
+    [SerializeField]
+    private SpriteRenderer arrow;
+
+
     private Tweener tweener;
 
     [SerializeField]
@@ -12,9 +19,21 @@ public class GuideCursor : SwipeManager
     [SerializeField]
     private float MinAngle;
 
+    void Start()
+    {
+        angle.enabled = false;
+        arrow.enabled = false;
+    }
+
     override protected void Update_()
     {
-        if(Save.maingameFlag == Save.MainGameFlag.THROWMOVE)
+        if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
+        {
+            angle.enabled = true;
+            arrow.enabled = true;
+        }
+
+        if (Save.maingameFlag == Save.MainGameFlag.THROWMOVE)
         {
             transform.parent.gameObject.SetActive(false);
         }
@@ -63,17 +82,22 @@ public class GuideCursor : SwipeManager
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
         {
             tweener.Kill();
+            if (transform.localEulerAngles.z > MaxAngle)
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, MaxAngle);
+            if (transform.localEulerAngles.z <= MinAngle)
+                transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, MinAngle);
+
             tweener = transform.DORotate(transform.localEulerAngles, 0);
         }
     }
 
     float AngleOverCheckX(float directionX)
     {
-        if (transform.localEulerAngles.z + directionX / 10 > MaxAngle)
+        if (transform.localEulerAngles.z - directionX / 10 > MaxAngle)
         {
             return MaxAngle;
         }
-        if (transform.localEulerAngles.z + directionX / 10 < MinAngle)
+        if (transform.localEulerAngles.z - directionX / 10 <= MinAngle)
         {
             return MinAngle - 360;
         }
@@ -86,7 +110,7 @@ public class GuideCursor : SwipeManager
         {
             return MaxAngle - 360;
         }
-        if (transform.localEulerAngles.z + directionY / 10 < MinAngle)
+        if (transform.localEulerAngles.z + directionY / 10 <= MinAngle)
         {
             return MinAngle;
         }

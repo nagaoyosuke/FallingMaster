@@ -61,8 +61,8 @@ public class FirstStageFirstCamera : CameraManager {
         camera.orthographic = true;
         camera.orthographicSize = size;
         fader.isFadeIn = true;
-        yield return new WaitUntil(() => fader.isFadeIn == false);
         Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+        yield return new WaitUntil(() => fader.isFadeIn == false);
     }
 
     public void ThrowAngleCameraMove()
