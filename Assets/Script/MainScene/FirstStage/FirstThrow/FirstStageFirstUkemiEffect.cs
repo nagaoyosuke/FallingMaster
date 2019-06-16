@@ -33,7 +33,14 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     /// </summary>
     public void StartEffect()
     {
+        int random = Random.Range(0, 1);
 
+        if(random == 1){
+            StartCoroutine(DelayClass.DelayCoroutin(10,() => Sound.PlaySe("seiya")));
+
+        } else{
+            StartCoroutine(DelayClass.DelayCoroutin(10, () => Sound.PlaySe("soiya")));
+        }
     }
 
     /// <summary>
