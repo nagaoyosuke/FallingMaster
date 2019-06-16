@@ -10,6 +10,8 @@ public class GuideCursor : SwipeManager
     private SpriteRenderer angle;
     [SerializeField]
     private SpriteRenderer arrow;
+    [SerializeField]
+    private GameObject Gesture;
 
 
     private Tweener tweener;
@@ -23,6 +25,7 @@ public class GuideCursor : SwipeManager
     {
         angle.enabled = false;
         arrow.enabled = false;
+        Gesture.SetActive(false);
     }
 
     override protected void Update_()
@@ -31,6 +34,7 @@ public class GuideCursor : SwipeManager
         {
             angle.enabled = true;
             arrow.enabled = true;
+            Gesture.SetActive(true);
         }
 
         if (Save.maingameFlag == Save.MainGameFlag.THROWMOVE)
