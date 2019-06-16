@@ -62,6 +62,7 @@ public class FirstStageFirstThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
+
         UkemiAni.transform.position = UnderBody.transform.position;
         //UkemiAni.transform.position += new Vector3(0, 0, -1);   //長られるアニメーションから落ちるアニメーションに変更したときに座標がずれるから
         UkemiAni.SetBool("Fall", true);

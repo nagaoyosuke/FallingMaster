@@ -26,7 +26,11 @@ public class test : MonoBehaviour
 
 
     IEnumerator wait(){
+        Sound.PlaySe("osu01");
+
         yield return new WaitForSeconds(1.5f);
+        Sound.StopBgm();
+
         MySceneManager.GoMain();
 
 

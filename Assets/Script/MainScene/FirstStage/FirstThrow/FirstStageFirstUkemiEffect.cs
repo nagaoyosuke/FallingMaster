@@ -62,6 +62,8 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
 
     private IEnumerator PlayParticle(ParticleSystem ps,GameObject particle){
         yield return new WaitForSeconds(1f);
+        Sound.PlaySe("ukemi01");
+
         var shape = ps.shape;
         shape.rotation = new Vector3(90, 0, 0);
         shape.position = new Vector3(0, 0, 0.6f);

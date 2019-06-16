@@ -25,7 +25,6 @@ public class WaterHit : MonoBehaviour
             {
                 isHit = false;
                 StartCoroutine(Effect(other.transform.position));
-
             }
         }
     }
@@ -36,6 +35,8 @@ public class WaterHit : MonoBehaviour
         spl.transform.position = pos;
         spl.transform.position += new Vector3(0, 2, 0);
         Time.timeScale = 1.0f;
+        Sound.PlaySe("waterdive");
+
 
         yield return new WaitForSeconds(1.0f);
         var bub = Instantiate(Bubble) as GameObject;

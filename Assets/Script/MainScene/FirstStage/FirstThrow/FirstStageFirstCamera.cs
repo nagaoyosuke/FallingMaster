@@ -70,7 +70,11 @@ public class FirstStageFirstCamera : CameraManager {
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
         {
             Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
+
+            Sound.PlaySe("osu01");
+
             StartCoroutine(throwAnglCameraMove());
+            StartCoroutine(DelayClass.DelayCoroutin(60*6 -20,() => Sound.PlayBgm("Play1")));
         }
     }
 
