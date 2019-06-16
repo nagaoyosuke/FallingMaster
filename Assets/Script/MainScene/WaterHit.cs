@@ -24,13 +24,14 @@ public class WaterHit : MonoBehaviour
             if (other.tag == "Player")
             {
                 isHit = false;
-                StartCoroutine(Effect(other.transform.position));
+                StartCoroutine(Effect(other.gameObject));
             }
         }
     }
 
-    IEnumerator Effect(Vector3 pos)
+    IEnumerator Effect(GameObject obj)
     {
+        var pos = obj.transform.position;
         var spl = Instantiate(Splash) as GameObject;
         spl.transform.position = pos;
         spl.transform.position += new Vector3(0, 2, 0);
@@ -42,6 +43,8 @@ public class WaterHit : MonoBehaviour
         var bub = Instantiate(Bubble) as GameObject;
         bub.transform.position = pos;
         bub.transform.position += new Vector3(0, 2, 0);
+        obj.GetComponent<Rigidbody>().useGravity = false;
+        obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
     }
 }
