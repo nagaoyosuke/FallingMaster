@@ -12,6 +12,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
 
     void Start()
     {
+
         UkemiStartText.enabled = false;
     }
 
@@ -35,11 +36,13 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     {
         int random = Random.Range(0, 1);
 
+        Sound.PlaySe("syakin");
+
         if(random == 1){
-            StartCoroutine(DelayClass.DelayCoroutin(10,() => Sound.PlaySe("seiya")));
+            StartCoroutine(DelayClass.DelayCoroutin(20,() => Sound.PlaySe("seiya")));
 
         } else{
-            StartCoroutine(DelayClass.DelayCoroutin(10, () => Sound.PlaySe("soiya")));
+            StartCoroutine(DelayClass.DelayCoroutin(20, () => Sound.PlaySe("soiya")));
         }
     }
 
