@@ -15,6 +15,12 @@ public class FirstStageEventManager : EventManager
     }
 
     void Start(){
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.STARTMOVE);
         Startsequence = DOTween.Sequence();
         StarttweenEvent.Invoke(Startsequence);
     }

@@ -44,9 +44,13 @@ public static class Save{
     /// </summary>
     public enum MainGameFlag{
         /// <summary>
-        /// 最初に共通の短いカメラ演出
+        /// ステージ名やズテージ全体を表示する
         /// </summary>
         STARTCAMERA,
+        /// <summary>
+        /// 最初に共通の短いカメラ演出
+        /// </summary>
+        STARTMOVE,
         /// <summary>
         /// タップで始まるのを待つ
         /// </summary>
