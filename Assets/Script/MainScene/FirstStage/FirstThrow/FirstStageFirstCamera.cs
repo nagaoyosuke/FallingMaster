@@ -142,27 +142,76 @@ public class FirstStageFirstCamera : CameraManager {
         yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
         seq.Kill();
         Player.GetComponent<Rigidbody>().useGravity = false;
+        Save.maingameFlag = Save.MainGameFlag.ENDANIMETION;
+        Save.maingameFlag = Save.MainGameFlag.ENDCAMERA;
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
 
-        Save.ThrowReSet();
+
+        //Save.ThrowReSet();
 
     }
 
     override public IEnumerator GoodEffect()
     {
-        StartCoroutine(PerfectEffect());
-        yield return null;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(
+            trans.DOMove(Player.position + new Vector3(0, 5, 0), 1).SetEase(Ease.Linear)
+        );
+        seq.Join(
+            trans.DORotate(new Vector3(90, 0, 0), 1).SetEase(Ease.Linear)
+        );
+
+        seq.Play();
+
+        yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
+        seq.Kill();
+        Player.GetComponent<Rigidbody>().useGravity = false;
+        Save.maingameFlag = Save.MainGameFlag.ENDANIMETION;
+        Save.maingameFlag = Save.MainGameFlag.ENDCAMERA;
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
+        yield return null; yield return null;
     }
 
     override public IEnumerator BadEffect()
     {
-        StartCoroutine(PerfectEffect());
-        yield return null;
+        Sequence seq = DOTween.Sequence();
+        seq.Append(
+            trans.DOMove(Player.position + new Vector3(0, 5, 0), 1).SetEase(Ease.Linear)
+        );
+        seq.Join(
+            trans.DORotate(new Vector3(90, 0, 0), 1).SetEase(Ease.Linear)
+        );
+
+        seq.Play();
+
+        yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
+        seq.Kill();
+        Player.GetComponent<Rigidbody>().useGravity = false;
+        Save.maingameFlag = Save.MainGameFlag.ENDANIMETION;
+        Save.maingameFlag = Save.MainGameFlag.ENDCAMERA;
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
+        yield return null; 
 
     }
 
     override public IEnumerator FailureNoUkemiEffect()
     {
-        StartCoroutine(PerfectEffect());
+        Sequence seq = DOTween.Sequence();
+        seq.Append(
+            trans.DOMove(Player.position + new Vector3(0, 5, 0), 1).SetEase(Ease.Linear)
+        );
+        seq.Join(
+            trans.DORotate(new Vector3(90, 0, 0), 1).SetEase(Ease.Linear)
+        );
+
+        seq.Play();
+
+        yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
+        seq.Kill();
+        Player.GetComponent<Rigidbody>().useGravity = false;
+        Save.maingameFlag = Save.MainGameFlag.ENDANIMETION;
+        Save.maingameFlag = Save.MainGameFlag.ENDCAMERA;
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
         yield return null;
 
     }

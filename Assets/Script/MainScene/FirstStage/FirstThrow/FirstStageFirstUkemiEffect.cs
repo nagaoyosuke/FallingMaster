@@ -62,10 +62,9 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
         var main = ps.main;
         main.customSimulationSpace = Player.transform;
         particle.transform.parent = Player.gameObject.transform;
-        StartCoroutine(PlayParticle(ps,particle));
+        StartCoroutine(PlayParticle(ps, particle));
         //particle.transform.rotation = new Quaternion(0,90,0,0);
         //ここまで
-
 
         //Save.ThrowReSet();
     }

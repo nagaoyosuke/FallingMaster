@@ -10,11 +10,16 @@ public class WaterHit : MonoBehaviour
     [SerializeField]
     private GameObject Bubble;
 
+    [SerializeField]
+    private UkemiEffect effect_;
+
+    private IUkemiEffect effect;
+
     private bool isHit;
     // Start is called before the first frame update
     void Start()
     {
-        
+        effect = effect_.GetComponent<IUkemiEffect>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -43,8 +48,15 @@ public class WaterHit : MonoBehaviour
         var bub = Instantiate(Bubble) as GameObject;
         bub.transform.position = pos;
         bub.transform.position += new Vector3(0, 2, 0);
-        obj.GetComponent<Rigidbody>().useGravity = false;
-        obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        obj.GetComponentInParent<Rigidbody>().useGravity = false;
+        obj.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+        Save.ukemiRank = Save.UkemiRank.BAD;
+        effect.BadEffect();
+
+        yield return new WaitForSeconds(1.0f);
+
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
+
 
     }
 }

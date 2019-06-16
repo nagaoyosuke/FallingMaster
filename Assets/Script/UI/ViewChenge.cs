@@ -16,7 +16,7 @@ public class ViewChenge : MonoBehaviour
     private bool isChenge;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(ViewFlag != Save.maingameFlag)
         {
