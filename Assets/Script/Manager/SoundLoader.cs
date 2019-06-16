@@ -20,6 +20,18 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("taiko02", "drum-japanese2");
         Sound.LoadSe("osu01", "mens-ou1");
 
+        Sound.LoadSe("ukemi01", "ukemi01");
+        Sound.LoadSe("waterdive", "splash-big");
+
+
+        Sound.LoadBgm("Play1", "Play1");
+        Sound.LoadBgm("Play2", "Play2");
+
+        Sound.LoadBgm("Result1", "Result1");
+        Sound.LoadBgm("Result2", "Result2(Slow)");
+        Sound.LoadBgm("Result3", "Result2(Fast)");
+        Sound.LoadBgm("Result4", "Result3");
+
 
 
 
@@ -76,21 +88,9 @@ public class SoundLoader : MonoBehaviour {
 		Sound.LoadSe ("WarriorLast", "WarriorLast");
 
 
-		//宝箱のアイテムに使用中
-		Sound.LoadSe("getitem","powerup10");
-		//http://taira-komori.jpn.org/game01.html パワーアップ10
 
-		Sound.LoadBgm ("Endless", "BGMGATI");
-		Sound.LoadBgm ("Title", "かなしみの城2初期画面BG(予定)");
-		Sound.LoadBgm ("Versus", "SKBGM");
-		//0811 フリー素材追加by豊田
-		//https://www.youtube.com/watch?v=FfxffuFWq6I
-		Sound.LoadBgm ("GameOver", "GameOver");
-		//エンディング、スタッフロール用BGM。
-		//https://wingless-seraph.net/material-music_8bit.html
-		//「プロローグ」のメロディを使用しているためセットでの使用をオススメします。
-		//なんかいいのあったら変えてくれby豊田
-		Sound.LoadBgm("CharacterSelect","BGMCHARA");
 
-	}
+
+
+    }
 }

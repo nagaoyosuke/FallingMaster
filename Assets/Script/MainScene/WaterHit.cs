@@ -21,7 +21,7 @@ public class WaterHit : MonoBehaviour
             if (other.tag == "Player")
             {
                 isHit = false;
-
+                Sound.PlaySe("waterdive");
                 var par = Instantiate(particle) as GameObject;
                 par.transform.position = other.transform.position;
                 par.transform.position += new Vector3(0, 2, 0);

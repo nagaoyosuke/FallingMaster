@@ -15,6 +15,7 @@ public class GetTap : MonoBehaviour
     void Start()
     {
         Sound.PlaySe("taiko02");
+        Sound.PlayBgm("Result1");
     }
 
     // Update is called once per frame
