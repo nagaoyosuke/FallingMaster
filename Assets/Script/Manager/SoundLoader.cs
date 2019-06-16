@@ -20,6 +20,8 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("taiko02", "drum-japanese2");
         Sound.LoadSe("osu01", "mens-ou1");
         Sound.LoadSe("dora01", "dora01");
+        Sound.LoadSe("syakin", "ukemi_effect_sound01");
+
 
         //http://notanomori.net/sound/search/江戸っ子/
         //20190616

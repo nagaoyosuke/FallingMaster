@@ -9,7 +9,7 @@ public class FirstStageFirsttWalk : WalkManager
     // Start is called before the first frame update
     void Start()
     {
-        //Sound.PlaySe("dora01");
+        Sound.PlaySe("dora01");
 
     }
 
