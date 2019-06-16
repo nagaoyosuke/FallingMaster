@@ -20,6 +20,7 @@ public class FirstStageFirstCamera : CameraManager {
 
     public void StartCameraMove1(Sequence seq)
     {
+
         seq.Join(
             trans.DOMove(CornerMovePoint1, 1).SetEase(Ease.Linear)
         );
@@ -30,6 +31,8 @@ public class FirstStageFirstCamera : CameraManager {
 
     public void StartCameraMove2(Sequence seq)
     {
+
+
         seq.Append(
             trans.DOMove(CornerMovePoint2, 2).SetEase(Ease.Linear)
         );
@@ -44,6 +47,11 @@ public class FirstStageFirstCamera : CameraManager {
         seq.Join(
             trans.DOMove(ThrowMovePoint, 2).SetEase(Ease.Linear)
         );
+
+
+
+        Sound.PlaySe("suzume");
+
     }
 
     public void AnglePointCameraMove(Sequence seq)

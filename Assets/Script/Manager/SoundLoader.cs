@@ -19,9 +19,23 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("taiko01", "drum-japanese1");
         Sound.LoadSe("taiko02", "drum-japanese2");
         Sound.LoadSe("osu01", "mens-ou1");
+        Sound.LoadSe("dora01", "dora01");
+
+        //http://notanomori.net/sound/search/江戸っ子/
+        //20190616
+        //credit : Nota no Mori 
+        Sound.LoadSe("wasshoi", "minoru_voice01");
+        Sound.LoadSe("soiya", "minoru_voice02");
+        Sound.LoadSe("seiya", "minoru_voice03");
+        Sound.LoadSe("yo", "minoru_voice04");
+        Sound.LoadSe("hoi", "minoru_voice05");
+        Sound.LoadSe("hun", "minoru_voice06");
+
+
 
         Sound.LoadSe("ukemi01", "ukemi01");
         Sound.LoadSe("waterdive", "splash-big");
+        Sound.LoadSe("suzume", "passer-montanus-cry1");
 
 
         Sound.LoadBgm("Play1", "Play1");
@@ -32,23 +46,6 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadBgm("Result3", "Result2(Fast)");
         Sound.LoadBgm("Result4", "Result3");
 
-
-
-
-        Sound.LoadSe("mageSound01", "mageSound01");
-		Sound.LoadSe("mageSound02", "mageSound02");
-
-		Sound.LoadSe ("castSpell", "castSpell");
-		Sound.LoadSe ("pickLance", "回収");
-		Sound.LoadSe ("throwLance", "throwLance");
-		Sound.LoadSe ("counter", "カウンター成功時");
-
-		Sound.LoadSe ("parry01", "parry01");
-		Sound.LoadSe ("parry02", "parry02");
-
-		Sound.LoadSe ("loseLife", "loseLife");
-		Sound.LoadSe ("death", "死亡");
-		Sound.LoadSe ("end","試合終了");
 
 		Sound.LoadSe ("doorclose","扉（閉）");
 

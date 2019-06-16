@@ -9,6 +9,7 @@ public class FirstStageFirsttWalk : WalkManager
     // Start is called before the first frame update
     void Start()
     {
+        //Sound.PlaySe("dora01");
 
     }
 
@@ -21,6 +22,7 @@ public class FirstStageFirsttWalk : WalkManager
 
  
         ani.SetBool("Walk", true);
+
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Walk", false)));
 
     }
