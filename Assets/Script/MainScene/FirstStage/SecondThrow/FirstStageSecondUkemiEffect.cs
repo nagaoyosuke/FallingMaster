@@ -10,7 +10,7 @@ public class FirstStageSecondUkemiEffect : UkemiEffect,IUkemiEffect
 {
     void Start()
     {
-        UkemiStartText.enabled = false;
+        UkemiStartText.SetActive(false);
     }
 
     void Update()
@@ -19,7 +19,7 @@ public class FirstStageSecondUkemiEffect : UkemiEffect,IUkemiEffect
         {
             if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
             {
-                UkemiStartText.enabled = true;
+                UkemiStartText.SetActive(true);
                 isEnd = true;
             }
         }
@@ -40,7 +40,7 @@ public class FirstStageSecondUkemiEffect : UkemiEffect,IUkemiEffect
     public void EndEffect()
     {
         Save.maingameFlag = Save.MainGameFlag.UKEMIEFFECT;
-        UkemiStartText.enabled = false;
+        UkemiStartText.SetActive(false);
 
         //Save.ThrowReSet();
     }

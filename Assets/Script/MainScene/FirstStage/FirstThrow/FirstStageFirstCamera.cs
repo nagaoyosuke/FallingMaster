@@ -132,10 +132,10 @@ public class FirstStageFirstCamera : CameraManager {
 
         seq = DOTween.Sequence();
         seq.Append(
-            trans.DOMove(Player.position + new Vector3(5, 1, -1), 2).SetEase(Ease.Linear)
+            trans.DOMove(Player.position + new Vector3(0, 1, -5), 2).SetEase(Ease.Linear)
         );
         seq.Join(
-            trans.DORotate(new Vector3(0, 270, 0), 2).SetEase(Ease.Linear)
+            trans.DORotate(new Vector3(0, 0, 0), 2).SetEase(Ease.Linear)
         );
 
         seq.Play();
@@ -162,6 +162,17 @@ public class FirstStageFirstCamera : CameraManager {
         );
 
         seq.Play();
+        yield return new WaitUntil(() => PlayerAniFlag.UkemiStandPoint);
+        seq.Kill();
+
+        seq = DOTween.Sequence();
+        seq.Append(
+            trans.DOMove(Player.position + new Vector3(-5, 1, 0), 2).SetEase(Ease.Linear)
+        );
+        seq.Join(
+            trans.DORotate(new Vector3(0, 90, 0), 2).SetEase(Ease.Linear)
+        );
+
 
         yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
         seq.Kill();

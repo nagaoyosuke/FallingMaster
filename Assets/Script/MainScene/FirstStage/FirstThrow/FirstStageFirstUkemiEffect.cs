@@ -13,7 +13,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     void Start()
     {
 
-        UkemiStartText.enabled = false;
+        UkemiStartText.SetActive(false);
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
         {
             if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
             {
-                UkemiStartText.enabled = true;
+                UkemiStartText.SetActive(true);
                 isEnd = true;
             }
         }
@@ -52,7 +52,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     public void EndEffect()
     {
         Save.maingameFlag = Save.MainGameFlag.UKEMIEFFECT;
-        UkemiStartText.enabled = false;
+        UkemiStartText.SetActive(false);
 
         //0615 仮のパーティクル(時々正しく表示されなくなるバグ有り)豊田
         GameObject particle = Instantiate(smokeParticle, Player.transform.position, Quaternion.identity) as GameObject;

@@ -29,7 +29,7 @@ public class UkemiEffect : MonoBehaviour
     /// 受け身入力が開始された時に表示されるテキスト
     /// </summary>
     [SerializeField]
-    protected Text UkemiStartText;
+    protected GameObject UkemiStartText;
 
     protected bool isEnd;
 

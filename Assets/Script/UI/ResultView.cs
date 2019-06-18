@@ -57,6 +57,9 @@ public class ResultView : MonoBehaviour
         yield return new WaitUntil(() => fader.isFadeOut == false);
 
         Save.ReSet();
-        MySceneManager.GoTitle();
+        Sound.StopBgm();
+        Sound.PlayBgm("Result1");
+
+        MySceneManager.GoMenu();
     }
 }
