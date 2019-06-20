@@ -582,6 +582,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -76.149376
       objectReference: {fileID: 0}
+    - target: {fileID: 4355971726104060452, guid: 58a6deb0349a645a2b1312748b6b6b2b,
+        type: 3}
+      propertyPath: CornerMovePoint1.y
+      value: 43.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355971726104060452, guid: 58a6deb0349a645a2b1312748b6b6b2b,
+        type: 3}
+      propertyPath: CornerMovePoint2.y
+      value: 43.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355971726104060452, guid: 58a6deb0349a645a2b1312748b6b6b2b,
+        type: 3}
+      propertyPath: ThrowMovePoint.y
+      value: 43.52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a6deb0349a645a2b1312748b6b6b2b, type: 3}
 --- !u!4 &51542172 stripped
