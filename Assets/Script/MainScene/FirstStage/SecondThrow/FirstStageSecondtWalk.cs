@@ -8,7 +8,7 @@ public class FirstStageSecondtWalk : WalkManager
     // Start is called before the first frame update
     void Start()
     {
-
+        Sound.PlaySe("dora01");
     }
 
     public void StartWalkAnimetion1(Sequence seq)

@@ -6,31 +6,12 @@ using UnityEngine.UI;
 /// <summary>
 /// 受け身関連の演出(04/04 長尾)
 /// </summary>
-public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
-{
+public class FirstStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
+{ 
     public GameObject smokeParticle;
 
-    void Start()
-    {
-
-        UkemiStartText.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (!isEnd)
-        {
-            if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
-            {
-                UkemiStartText.SetActive(true);
-                isEnd = true;
-            }
-        }
-    }
-
-
     /// <summary>
-    /// 共通の受け身開始時の演出
+    /// 共通の受け身開始時の演出(追加受け身は除く)
     /// </summary>
     public void StartEffect()
     {
@@ -47,7 +28,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     }
 
     /// <summary>
-    /// 共通の受け身終了時の演出
+    /// 共通の受け身終了時の演出(追加受け身は除く)
     /// </summary>
     public void EndEffect()
     {
@@ -83,7 +64,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     }
 
     /// <summary>
-    /// 完璧成功時の演出書く
+    /// 完璧成功時の演出書く(追加受け身は除く)
     /// </summary>
     public void PerfectEffect()
     {
@@ -101,7 +82,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     }
 
     /// <summary>
-    /// 成功時の演出書く
+    /// 成功時の演出書く(追加受け身は除く)
     /// </summary>
     public void GoodEffect()
     {
@@ -122,7 +103,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
 
 
     /// <summary>
-    /// 失敗時の演出書く
+    /// 失敗時の演出書く(追加受け身は除く)
     /// </summary>
     public void BadEffect()
     {
@@ -137,7 +118,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect,IUkemiEffect
     }
 
     /// <summary>
-    /// 受け身入力せず着地した時の演出書く
+    /// 受け身入力せず着地した時の演出書く(追加受け身は除く)
     /// </summary>
     public void FailureNoUkemiEffect()
     {

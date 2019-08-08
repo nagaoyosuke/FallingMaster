@@ -80,10 +80,6 @@ public static class Save{
         /// </summary>
         UKEMIANIMETION,
         /// <summary>
-        /// 派生受け身入力開始
-        /// </summary>
-        ADDUKEMI,
-        /// <summary>
         /// スローモーション終了
         /// </summary>
         SLOWEND,
@@ -91,6 +87,28 @@ public static class Save{
         /// 受け身アニメーション終わったあとの演出開始
         /// </summary>
         UKEMIEFFECT,
+
+        /// <summary>
+        /// 追加受け身のスローモーション開始
+        /// </summary>
+        ADDSLOWSTART,
+        /// <summary>
+        /// 追加受け身成功失敗時のアニメーション開始
+        /// </summary>
+        ADDUKEMIANIMETION,
+        /// <summary>
+        /// 追加受け身入力開始
+        /// </summary>
+        ADDUKEMI,
+        /// <summary>
+        /// 追加受け身スローモーション終了
+        /// </summary>
+        ADDSLOWEND,
+        /// <summary>
+        /// 追加受け身アニメーション終わったあとの演出開始
+        /// </summary>
+        ADDUKEMIEFFECT,
+
         /// <summary>
         /// ２回目以降のカメラ演出開始
         /// </summary>
@@ -132,18 +150,21 @@ public static class Save{
     /// </summary>
     public static bool isUkemi = false;
 
+    /// <summary>
+    /// 派生受け身入力をしたかどうか
+    /// </summary>
+    public static bool isAddUkemi = false;
+
     public enum AddUkemi{
         NONE,
-        CENTER,
-        RIGHT,
-        LEFT,
-        BACK
+        PERFECT,
+        NOUKEMI
     };
 
     /// <summary>
-    /// 派生受け身の方向
+    /// 追加受け身の評価
     /// </summary>
-    public static AddUkemi addUkemi = AddUkemi.NONE;
+    public static AddUkemi addUkemiRank = AddUkemi.NONE;
 
     /// <summary>
     /// 受け身入力した回数
@@ -166,7 +187,7 @@ public static class Save{
     public static void FlagReSet(){
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
-        addUkemi = AddUkemi.NONE;
+        addUkemiRank = AddUkemi.NONE;
         isUkemi = false;
         ukemiCounter = 1;
     }
@@ -179,7 +200,17 @@ public static class Save{
         ukemiCounter++;
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
-        addUkemi = AddUkemi.NONE;
+        addUkemiRank = AddUkemi.NONE;
         isUkemi = false;
+    }
+
+    /// <summary>
+    /// 追加受け身前にリセットするために使う
+    /// </summary>
+    public static void AddUkemiReSet()
+    {
+        ukemiCounter++;
+        addUkemiRank = AddUkemi.NONE;
+        isAddUkemi = false;
     }
 }

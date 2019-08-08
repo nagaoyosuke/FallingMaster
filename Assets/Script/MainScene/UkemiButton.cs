@@ -19,15 +19,15 @@ public class UkemiButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPush) {
-            if (Save.maingameFlag == Save.MainGameFlag.UKEMI) {
+       // if (!isPush) { 
+            if ((Save.maingameFlag == Save.MainGameFlag.UKEMI) || (Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)) {
                 if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
                 {
                     isPush = true;
                     Push();
                 }
             }
-        }
+       // }
     }
 
     /// <summary>
@@ -36,6 +36,9 @@ public class UkemiButton : MonoBehaviour
     /// </summary>
     void Push()
     {
-        Save.isUkemi = true;
+        if(Save.maingameFlag == Save.MainGameFlag.UKEMI)
+            Save.isUkemi = true;
+        if (Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)
+            Save.isAddUkemi = true;
     }
 }

@@ -21,10 +21,12 @@ public class ThrowManager : WalkManager
         ani = GetComponent<Animator>();
         aniFlag = GetComponent<AnimetionFlag>();
 
-        GameObject ukemi = GameObject.Find("UkemiMaster");
+        GameObject ukemi = GameObject.FindGameObjectWithTag("Player");
         UkemiAni = ukemi.GetComponent<Animator>();
         UkemiFlag = ukemi.GetComponent<AnimetionFlag>();
-        UnderBody = GameObject.Find("UkemiMaster/Bone/Bone_ALL/Under_Body");
+        //UnderBody = GameObject.Find("UkemiMaster/Bone/Bone_ALL/Under_Body");
+        UnderBody = ukemi.GetComponentInChildren<BoxCollider>().gameObject;
+
     }
 
     void OnEnable()

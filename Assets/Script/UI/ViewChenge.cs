@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// あるフラグの時だけ表示したいものを管理するクラス
+/// </summary>
 public class ViewChenge : MonoBehaviour
 {
     [SerializeField]
