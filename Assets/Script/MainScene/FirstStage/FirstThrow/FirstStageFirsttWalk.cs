@@ -71,6 +71,7 @@ public class FirstStageFirsttWalk : WalkManager
 
     private IEnumerator BowEnd()
     {
+    
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
         ani.SetBool("Idle", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
