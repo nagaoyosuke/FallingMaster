@@ -21,10 +21,11 @@ public class AddUkemiEffect : MonoBehaviour
     [SerializeField]
     protected Animator PlayerAni;
 
-    /// <summary>
-    /// 受け身入力が開始された時に表示されるテキスト
-    /// </summary>
-    protected GameObject UkemiStartText;
+	/// <summary>
+	/// 受け身入力が開始された時に表示されるテキスト
+	/// </summary>
+	[HideInInspector]
+	public GameObject UkemiStartText;
 
     protected bool isEnd;
 
@@ -62,7 +63,7 @@ public class AddUkemiEffect : MonoBehaviour
         {
             if (Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)
             {
-                UkemiStartText.SetActive(true);
+                //UkemiStartText.SetActive(true);
                 isEnd = true;
             }
         }

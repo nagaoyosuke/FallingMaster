@@ -105,7 +105,8 @@ public class FirstStageAddUkemi01 : AddUkemiEffect,IAddUkemiEffect
         //Player.transform.position += new Vector3(0, 0, 1);
 
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiBad", false)));
-        StartCoroutine(CameraMove.FailureNoUkemiEffect());
+        //StartCoroutine(CameraMove.FailureNoUkemiEffect());
+        Save.maingameFlag = Save.MainGameFlag.RESULT;
 
         AddEndEffect();
     }

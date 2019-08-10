@@ -48,48 +48,5 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadBgm("Result3", "Result2(Fast)");
         Sound.LoadBgm("Result4", "Result3");
 
-
-		Sound.LoadSe ("doorclose","扉（閉）");
-
-		Sound.LoadSe("damage01","damage01");
-		Sound.LoadSe("damage02","damage02");
-		Sound.LoadSe("damage03","damage03");
-		Sound.LoadSe("damage04","damage04");//ぽろん系ダメージ
-		Sound.LoadSe("damage05","何かにつかえるかも 2");//ぽろん系ダメージ
-
-		Sound.LoadSe ("spinningSlash01","回転斬り");
-		Sound.LoadSe ("spinningSlash02","回転斬り１");
-		Sound.LoadSe ("spinningSlash03","回転斬り２");
-		Sound.LoadSe ("spinningSlash04","回転斬り３");
-		Sound.LoadSe ("spinningSlash05","回転斬り４");
-
-		Sound.LoadSe ("chargeGauge01","gagemax1");
-		Sound.LoadSe ("chargeGauge02","gagemax2");
-		Sound.LoadSe ("chargeGauge03","gagemax3");
-		Sound.LoadSe ("chargeGauge04","gagemax4");
-
-		Sound.LoadSe("kabe","壁ぶち当たり");
-
-		Sound.LoadSe("choice","選択音");
-		Sound.LoadSe("kettei","決定音");
-
-		Sound.LoadSe("meteo","メテオ");
-		Sound.LoadSe("meteobakuha","メテオ爆破");
-		Sound.LoadSe ("hokou", "歩行音（一応）");
-
-		//コインゲットするときに使用0826
-		//http://taira-komori.jpn.org/game01.html
-		Sound.LoadSe ("coin01", "coin02");
-		Sound.LoadSe ("coin02", "coin04");
-		//https://on-jin.com/sound/sei.php?bunr=割れる&kate=食器
-		Sound.LoadSe ("ware", "ware");
-		//使ってないフリー素材
-		Sound.LoadSe ("WarriorLast", "WarriorLast");
-
-
-
-
-
-
     }
 }

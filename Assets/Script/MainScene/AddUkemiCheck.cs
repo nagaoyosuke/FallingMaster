@@ -57,6 +57,7 @@ public class AddUkemiCheck : MonoBehaviour
         Save.AddUkemiReSet();
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMI;
         isAction = true;
+        EffectObject.GetComponent<AddUkemiEffect>().UkemiStartText.SetActive(true);
         StartCoroutine(UkemiWait());
     }
 
