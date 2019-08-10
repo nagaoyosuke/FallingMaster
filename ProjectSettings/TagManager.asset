@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UkemiText
   - UI
+  - Fader
   layers:
   - Default
   - TransparentFX

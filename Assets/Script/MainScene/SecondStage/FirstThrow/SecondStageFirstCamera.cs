@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class SecondStageFirstCamera : CameraManager
+public class SecondStageFirstCamera : CameraManager,IMainCameraMove
 {
 
     // Use this for initialization
@@ -83,7 +83,7 @@ public class SecondStageFirstCamera : CameraManager
             Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
 
             Sound.PlaySe("osu01");
-
+            print("asd");
             StartCoroutine(throwAnglCameraMove());
             StartCoroutine(DelayClass.DelayCoroutin(60 * 6 - 20, () => Sound.PlayBgm("Play1")));
         }

@@ -173,6 +173,11 @@ public static class Save{
     public static int ukemiCounter = 1;
 
     /// <summary>
+    /// Z軸の風の強さ
+    /// </summary>
+    public static float windZ = 0;
+
+    /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>
     public static void ReSet(){
@@ -190,6 +195,7 @@ public static class Save{
         addUkemiRank = AddUkemi.NONE;
         isUkemi = false;
         ukemiCounter = 1;
+        windZ = 0;
     }
 
     /// <summary>

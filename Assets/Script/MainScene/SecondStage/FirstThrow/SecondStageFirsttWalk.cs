@@ -23,6 +23,30 @@ public class SecondStageFirsttWalk : WalkManager
 
     }
 
+    public void StartWalkAnimetion2(Sequence seq)
+    {
+        //seq.SetEase(Ease.InSine);
+        seq.Append(
+            transform.DOMove(ThrowMovePoint, 1).SetEase(Ease.Linear)
+        );
+
+        ani.SetBool("Walk", true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Walk", false)));
+
+    }
+
+    public void StartWalkAnimetion3(Sequence seq)
+    {
+        //seq.SetEase(Ease.InSine);
+        seq.Append(
+            transform.DOMove(ThrowMovePoint, 1).SetEase(Ease.Linear)
+        );
+
+        ani.SetBool("Walk", true);
+        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Walk", false)));
+
+    }
+
     public void StartBowAnimetion(Sequence seq)
     {
         seq.Append(

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
@@ -67,6 +67,9 @@ public class FirstStageFirstThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
+        rb.AddForce(new Vector3(0, 0, Save.windZ * 10));
+
+        //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
 
 
