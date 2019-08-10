@@ -106,9 +106,11 @@ public class AddUkemiCheck : MonoBehaviour
         {
             case Save.AddUkemi.NOUKEMI:
                 Effect.AddFailureNoUkemiEffect();
+                Save.AddUkemiPoint = 0;
                 break;
 
             case Save.AddUkemi.PERFECT:
+                Save.AddUkemiPoint++;
                 Effect.AddPerfectEffect();
                 break;
         }

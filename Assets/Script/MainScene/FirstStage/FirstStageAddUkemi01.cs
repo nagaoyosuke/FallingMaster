@@ -89,7 +89,7 @@ public class FirstStageAddUkemi01 : AddUkemiEffect,IAddUkemiEffect
         for(int i = 0; i < 60; i++)
         {
             yield return new WaitForFixedUpdate();
-            Player.transform.position += new Vector3(0, 0, -5.3f / 60.0f);
+            Player.transform.position += new Vector3(0, 0, -5.5f / 60.0f);
         }
     }
 

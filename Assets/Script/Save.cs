@@ -177,6 +177,8 @@ public static class Save{
     /// </summary>
     public static float windZ = 0;
 
+	public static int AddUkemiPoint = 0;
+
     /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>
@@ -196,6 +198,7 @@ public static class Save{
         isUkemi = false;
         ukemiCounter = 1;
         windZ = 0;
+		AddUkemiPoint = 0;
     }
 
     /// <summary>
