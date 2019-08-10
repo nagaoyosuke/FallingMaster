@@ -3548,11 +3548,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ani: {fileID: 4727272678867572867}
   aniFlag: {fileID: 4355971726104060454}
-  CornerMovePoint1: {x: -7.27, y: 43.62, z: 28.58}
+  CornerMovePoint1: {x: -7.27, y: 43.52, z: 28.58}
   CornerMoveRotate1: {x: 0, y: 90, z: 0}
-  CornerMovePoint2: {x: 5.3, y: 43.62, z: 28.58}
+  CornerMovePoint2: {x: 5.3, y: 43.52, z: 28.58}
   CornerMoveRotate2: {x: 0, y: 180, z: 0}
-  ThrowMovePoint: {x: 5.3, y: 44.22, z: 16.4}
+  ThrowMovePoint: {x: 5.3, y: 43.52, z: 16.4}
 --- !u!114 &4355971726104060454
 MonoBehaviour:
   m_ObjectHideFlags: 0

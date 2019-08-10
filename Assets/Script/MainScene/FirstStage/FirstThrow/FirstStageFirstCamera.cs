@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class FirstStageFirstCamera : CameraManager {
+public class FirstStageFirstCamera : CameraManager,IMainCameraMove
+{
 
 	// Use this for initialization
 	void Awake () {
@@ -80,7 +81,7 @@ public class FirstStageFirstCamera : CameraManager {
             Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
 
             Sound.PlaySe("osu01");
-
+            print("as");
             StartCoroutine(throwAnglCameraMove());
             StartCoroutine(DelayClass.DelayCoroutin(60*6 -20,() => Sound.PlayBgm("Play1")));
         }
