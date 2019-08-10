@@ -52,6 +52,8 @@ public class OrderManager : MonoBehaviour
 
         foreach (MonoBehaviour m in mono)
         {
+            if (m == null)
+                continue;
             m.enabled = value;
         }
     }

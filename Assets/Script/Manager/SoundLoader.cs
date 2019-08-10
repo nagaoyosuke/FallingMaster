@@ -34,7 +34,6 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("hun", "minoru_voice06");
 
 
-
         Sound.LoadSe("ukemi01", "ukemi01");
         Sound.LoadSe("waterdive", "splash-big");
         Sound.LoadSe("suzume", "passer-montanus-cry1");

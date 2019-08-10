@@ -22,7 +22,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField]
     protected float size;
 
-    [SerializeField]
     protected ScreenFader fader;
 
     protected Transform trans;
@@ -95,5 +94,7 @@ public class CameraManager : MonoBehaviour
     void OnEnable()
     {
         isThrow = false;
+
+        fader = GameObject.FindWithTag("Fader").GetComponent<ScreenFader>();
     }
 }

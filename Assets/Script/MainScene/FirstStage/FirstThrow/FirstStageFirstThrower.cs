@@ -60,6 +60,8 @@ public class FirstStageFirstThrower : ThrowManager
         Vector3 vec = new Vector3(0,Mathf.Cos(rad) ,Mathf.Sin(rad));
         rb.AddForce(vec * 700);   //手前に落ちるから力を与えて自然に
 
+        rb.AddForce(new Vector3(0, 0, Save.windZ * 10));
+
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
 
