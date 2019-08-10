@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3940868, g: 0.5637507, b: 0.7466825, a: 1}
+  m_IndirectSpecularColor: {r: 0.3940694, g: 0.5637407, b: 0.7466818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1265,8 +1265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.26200002, y: 0}
   m_AnchorMax: {x: 0.7407227, y: 0.09188022}
-  m_AnchoredPosition: {x: -0.000061035156, y: 199.5}
-  m_SizeDelta: {x: 663, y: 997}
+  m_AnchoredPosition: {x: -0.000022888, y: 107}
+  m_SizeDelta: {x: 469.3, y: 839.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482138717
 MonoBehaviour:
@@ -1724,8 +1724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31721696, y: 0.4301214}
   m_AnchorMax: {x: 0.6707831, y: 0.5436069}
-  m_AnchoredPosition: {x: 7.5, y: 1.5}
-  m_SizeDelta: {x: 293.28125, y: 94.041565}
+  m_AnchoredPosition: {x: -0.000015259, y: -0.0000038147}
+  m_SizeDelta: {x: 119.9, y: 44.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940138151
 MonoBehaviour:
@@ -1804,8 +1804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.93500006}
   m_AnchorMax: {x: 0.26200002, y: 1}
-  m_AnchoredPosition: {x: 15, y: -102.096}
-  m_SizeDelta: {x: -120.400024, y: 268.2}
+  m_AnchoredPosition: {x: -18.110962, y: -45}
+  m_SizeDelta: {x: -163.73, y: 211.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1009113269
 MonoBehaviour:
@@ -2638,8 +2638,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1902085, y: 0}
   m_AnchorMax: {x: 0.8015972, y: 1}
-  m_AnchoredPosition: {x: 1.5899963, y: -4.9100037}
-  m_SizeDelta: {x: 1020.6599, y: -40.70999}
+  m_AnchoredPosition: {x: 0.87493896, y: -3.600006}
+  m_SizeDelta: {x: 887.9, y: -68.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1651943424
 MonoBehaviour:
