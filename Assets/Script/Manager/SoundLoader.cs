@@ -21,6 +21,7 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("osu01", "mens-ou1");
         Sound.LoadSe("dora01", "dora01");
         Sound.LoadSe("syakin", "ukemi_effect_sound01");
+        Sound.LoadSe("bakuhatu", "bomb");
 
 
         //http://notanomori.net/sound/search/江戸っ子/
@@ -38,6 +39,13 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("ukemi01", "ukemi01");
         Sound.LoadSe("waterdive", "splash-big");
         Sound.LoadSe("suzume", "passer-montanus-cry1");
+
+        //20190810
+        //https://on-jin.com/kiyaku.php
+        Sound.LoadSe("asioto01", "footsteps01");
+        Sound.LoadSe("asioto02", "footsteps02");
+        Sound.LoadSe("asioto03", "footsteps03");
+
 
 
         Sound.LoadBgm("Play1", "Play1");

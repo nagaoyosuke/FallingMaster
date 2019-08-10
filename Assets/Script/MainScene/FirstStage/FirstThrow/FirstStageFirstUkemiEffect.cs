@@ -15,7 +15,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
     /// </summary>
     public void StartEffect()
     {
-        int random = Random.Range(0, 1);
+        int random = Random.Range(1, 2);
 
         Sound.PlaySe("syakin");
 

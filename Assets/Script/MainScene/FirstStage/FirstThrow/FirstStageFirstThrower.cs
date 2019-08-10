@@ -17,6 +17,7 @@ public class FirstStageFirstThrower : ThrowManager
 
     public void StartBowAnimetion(Sequence seq)
     {
+
         seq.AppendCallback(() =>
         {
             ani.SetBool("BowT", true);
@@ -28,6 +29,7 @@ public class FirstStageFirstThrower : ThrowManager
     IEnumerator BowEnd()
     {
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
+
         ani.SetBool("Idle", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
     }
@@ -40,6 +42,7 @@ public class FirstStageFirstThrower : ThrowManager
         ani.SetBool("Throw1", true);
         UkemiAni.SetBool("Throwing1", true);
         yield return new WaitForEndOfFrame();
+
         ani.SetBool("Throw1", false);
         UkemiAni.SetBool("Throwing1", false);
 
@@ -49,6 +52,8 @@ public class FirstStageFirstThrower : ThrowManager
         yield return new WaitUntil(() => UkemiFlag.ThrowSpeedPoint);
         ani.speed = 2;
         UkemiAni.speed = 2;
+
+        Sound.PlaySe("hoi");
 
 
         //アニメーションクリップのほうでフラグをオンにしてる
@@ -61,7 +66,9 @@ public class FirstStageFirstThrower : ThrowManager
         rb.AddForce(vec * 700);   //手前に落ちるから力を与えて自然に
 
         //アニメーションクリップのほうでフラグをオンにしてる
+        Sound.PlaySe("bakuhatu");
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
+
 
         UkemiAni.transform.position = UnderBody.transform.position;
         //UkemiAni.transform.position += new Vector3(0, 0, -1);   //長られるアニメーションから落ちるアニメーションに変更したときに座標がずれるから

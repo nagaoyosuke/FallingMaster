@@ -40,7 +40,7 @@ public class StageNameView : MonoBehaviour
                 () => text.color,
                 color => text.color = color,
                 255f / 255f,
-                1.5f
+                2f
             )
         );
 
@@ -49,7 +49,7 @@ public class StageNameView : MonoBehaviour
                 () => text.color,
                 color => text.color = color,
                 0f / 255f,
-                1.5f
+                2f
             )
         ).AppendCallback(() =>
         {
