@@ -53,6 +53,8 @@ public class ResultManager : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        //Save.AddUkemiPoint = 5;
+        //Save.UkemiPoint = 8;
         ani.enabled = false;
         //AlphaSet();
         ActiveSet();

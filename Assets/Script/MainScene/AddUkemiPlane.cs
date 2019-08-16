@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddUkemiPlane : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         GetComponent<BoxCollider>().enabled = true;
     }

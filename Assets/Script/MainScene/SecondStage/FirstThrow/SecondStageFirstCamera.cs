@@ -83,7 +83,7 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
             Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
 
             Sound.PlaySe("osu01");
-            print("as");
+//            print("as");
             StartCoroutine(throwAnglCameraMove());
             StartCoroutine(DelayClass.DelayCoroutin(60 * 6 - 20, () => Sound.PlayBgm("Play1")));
         }
