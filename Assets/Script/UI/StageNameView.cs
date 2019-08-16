@@ -9,12 +9,37 @@ public class StageNameView : MonoBehaviour
     [SerializeField]
     private Text text;
 
+    [SerializeField]
+    [TextArea]
+    private string Stage1;
+
+    [SerializeField]
+    [TextArea]
+    private string Stage2;
+
+    [SerializeField]
+    [TextArea]
+    private string Stage3;
+
     private bool isView;
 
     // Start is called before the first frame update
     void Start()
     {
         text.enabled = false;
+
+        switch (Save.stageState)
+        {
+            case Save.StageState.STAGE1:
+                text.text = Stage1;
+                break;
+            case Save.StageState.STAGE2:
+                text.text = Stage2;
+                break;
+            case Save.StageState.STAGE3:
+                text.text = Stage3;
+                break;
+        }
     }
 
     // Update is called once per frame

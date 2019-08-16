@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class WindManager : MonoBehaviour
 {
+    [SerializeField]
+    private float windZ1 = 0;
+    [SerializeField]
+    private float windZ2 = 5;
+    [SerializeField]
+    private float windZ3 = -5;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +24,13 @@ public class WindManager : MonoBehaviour
         switch (ran)
         {
             case 0:
-                windZ = 0;
+                windZ = windZ1;
                 break;
             case 1:
-                windZ = 5;
+                windZ = windZ2;
                 break;
             case 2:
-                windZ = -5;
+                windZ = windZ3;
                 break;
         }
 

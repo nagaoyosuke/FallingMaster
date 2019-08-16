@@ -9,37 +9,46 @@ public class SecondStageFirsttWalk : WalkManager
     void Start()
     {
         Sound.PlaySe("dora01");
+
     }
 
     public void StartWalkAnimetion1(Sequence seq)
     {
-        //seq.SetEase(Ease.InSine);
+
         seq.Append(
-            transform.DOMove(ThrowMovePoint, 1).SetEase(Ease.Linear)
+            transform.DOLocalMove(CornerMovePoint1, 1).SetEase(Ease.Linear)
         );
 
+
         ani.SetBool("Walk", true);
+
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Walk", false)));
 
     }
 
     public void StartWalkAnimetion2(Sequence seq)
     {
-        //seq.SetEase(Ease.InSine);
-        seq.Append(
-            transform.DOMove(ThrowMovePoint, 1).SetEase(Ease.Linear)
+
+        seq.Join(
+            transform.DOLocalRotate(CornerMoveRotate1, 0.2f).SetEase(Ease.Linear)
         );
 
-        ani.SetBool("Walk", true);
-        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Walk", false)));
+        seq.Join(
+            transform.DOLocalMove(CornerMovePoint2, 2).SetEase(Ease.Linear)
+        );
+
 
     }
 
     public void StartWalkAnimetion3(Sequence seq)
     {
+
+        seq.Join(
+            transform.DOLocalRotate(CornerMoveRotate2, 0.2f).SetEase(Ease.Linear)
+        );
         //seq.SetEase(Ease.InSine);
-        seq.Append(
-            transform.DOMove(ThrowMovePoint, 1).SetEase(Ease.Linear)
+        seq.Join(
+            transform.DOLocalMove(ThrowMovePoint, 2).SetEase(Ease.Linear)
         );
 
         ani.SetBool("Walk", true);
@@ -50,7 +59,7 @@ public class SecondStageFirsttWalk : WalkManager
     public void StartBowAnimetion(Sequence seq)
     {
         seq.Append(
-            transform.DOMove(ThrowMovePoint, 0).SetEase(Ease.Linear)
+            transform.DOLocalMove(ThrowMovePoint, 0).SetEase(Ease.Linear)
         ).AppendCallback(() =>
         {
             ani.SetBool("BowBT", true);
@@ -61,8 +70,10 @@ public class SecondStageFirsttWalk : WalkManager
 
     private IEnumerator BowEnd()
     {
+
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
         ani.SetBool("Idle", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
     }
 }

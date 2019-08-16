@@ -179,6 +179,9 @@ public static class Save{
 
 	public static int AddUkemiPoint = 0;
 
+    public static int UkemiPoint = 0;
+    public static int AddUkemiPoint_ = 0;
+
     /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>
@@ -192,6 +195,20 @@ public static class Save{
     /// メインゲームの初期化,ステージ変わった時とかに使う
     /// </summary>
     public static void FlagReSet(){
+        AddUkemiPoint_ += AddUkemiPoint;
+        switch (Save.ukemiRank)
+        {
+            case Save.UkemiRank.PERFECT:
+                UkemiPoint += 2;
+                break;
+            case Save.UkemiRank.GOOD:
+                UkemiPoint += 1;
+                break;
+            case Save.UkemiRank.NOUKEMI:
+                UkemiPoint += 0;
+                break;
+        }
+
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemiRank = AddUkemi.NONE;
@@ -199,6 +216,8 @@ public static class Save{
         ukemiCounter = 1;
         windZ = 0;
 		AddUkemiPoint = 0;
+
+
     }
 
     /// <summary>
@@ -221,5 +240,11 @@ public static class Save{
         ukemiCounter++;
         addUkemiRank = AddUkemi.NONE;
         isAddUkemi = false;
+    }
+
+    public static void PointReset()
+    {
+        UkemiPoint = 0;
+        AddUkemiPoint_ = 0;
     }
 }

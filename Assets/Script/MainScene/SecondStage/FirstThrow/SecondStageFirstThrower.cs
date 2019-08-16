@@ -17,6 +17,7 @@ public class SecondStageFirstThrower : ThrowManager
 
     public void StartBowAnimetion(Sequence seq)
     {
+
         seq.AppendCallback(() =>
         {
             ani.SetBool("BowT", true);
@@ -28,6 +29,7 @@ public class SecondStageFirstThrower : ThrowManager
     IEnumerator BowEnd()
     {
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
+
         ani.SetBool("Idle", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
     }
@@ -40,6 +42,7 @@ public class SecondStageFirstThrower : ThrowManager
         ani.SetBool("Throw1", true);
         UkemiAni.SetBool("Throwing1", true);
         yield return new WaitForEndOfFrame();
+
         ani.SetBool("Throw1", false);
         UkemiAni.SetBool("Throwing1", false);
 
@@ -50,6 +53,8 @@ public class SecondStageFirstThrower : ThrowManager
         ani.speed = 2;
         UkemiAni.speed = 2;
 
+        Sound.PlaySe("hoi");
+
 
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowRBPoint);
@@ -57,11 +62,16 @@ public class SecondStageFirstThrower : ThrowManager
         rb.useGravity = true;   //重力オン
 
         float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
-        Vector3 vec = new Vector3(0, Mathf.Cos(rad), Mathf.Sin(rad));
-        rb.AddForce(vec * 700);   //手前に落ちるから力を与えて自然に
+        Vector3 vec = new Vector3(0,Mathf.Cos(rad), -Mathf.Sin(rad));
+        rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
+
+        //アニメーションクリップのほうでフラグをオンにしてる
+        Sound.PlaySe("bakuhatu");
+        rb.AddForce(new Vector3(0,Save.windZ * 10,0));
 
         //アニメーションクリップのほうでフラグをオンにしてる
         yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
+
 
         UkemiAni.transform.position = UnderBody.transform.position;
         //UkemiAni.transform.position += new Vector3(0, 0, -1);   //長られるアニメーションから落ちるアニメーションに変更したときに座標がずれるから

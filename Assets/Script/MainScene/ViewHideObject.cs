@@ -8,6 +8,12 @@ public class ViewHideObject : MonoBehaviour
     [SerializeField]
     private GameObject[] objects;
 
+    [SerializeField]
+    private Save.MainGameFlag ViewFlag = Save.MainGameFlag.THROW;
+
+    [SerializeField]
+    private Save.MainGameFlag HideFlag = Save.MainGameFlag.STARTWAIT;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,7 @@ public class ViewHideObject : MonoBehaviour
     {
         if (!isHide)
         {
-            if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
+            if (Save.maingameFlag == HideFlag)
             {
                 isHide = true;
                 Chenge(false);
@@ -27,7 +33,7 @@ public class ViewHideObject : MonoBehaviour
         }
         if (isHide)
         {
-            if(Save.maingameFlag == Save.MainGameFlag.THROW)
+            if(Save.maingameFlag == ViewFlag)
             {
                 isHide = false;
                 Chenge(true);

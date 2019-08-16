@@ -10,11 +10,17 @@ class DebugManager : MonoBehaviour
     private float WindZ;
     [SerializeField]
     private Save.MainGameFlag MainGameFlag;
+    [SerializeField]
+    private Save.UkemiRank ukemiRank;
+    [SerializeField]
+    private int addUkemiPoint;
 
-    public void Change()
+	public void Change()
     {
         Save.windZ = WindZ;
         Save.maingameFlag = MainGameFlag;
+        Save.ukemiRank = ukemiRank;
+        Save.AddUkemiPoint = addUkemiPoint;
         Debug.Log("Change！！");
     }
 
@@ -22,6 +28,8 @@ class DebugManager : MonoBehaviour
     {
         WindZ = Save.windZ;
         MainGameFlag = Save.maingameFlag;
+        ukemiRank = Save.ukemiRank;
+        addUkemiPoint = Save.AddUkemiPoint;
         Debug.Log("Set!!");
     }
 }

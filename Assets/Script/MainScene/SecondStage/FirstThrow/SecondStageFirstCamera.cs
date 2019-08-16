@@ -25,10 +25,10 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
 
         seq.Join(
-            trans.DOMove(CornerMovePoint1, 1).SetEase(Ease.Linear)
+            trans.DOLocalMove(CornerMovePoint1, 1).SetEase(Ease.Linear)
         );
         seq.Join(
-            transform.DORotate(CornerMoveRotate1, 0.2f).SetEase(Ease.Linear)
+            transform.DOLocalRotate(CornerMoveRotate1, 0.2f).SetEase(Ease.Linear)
         );
     }
 
@@ -37,18 +37,18 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
 
 
         seq.Append(
-            trans.DOMove(CornerMovePoint2, 2).SetEase(Ease.Linear)
+            trans.DOLocalMove(CornerMovePoint2, 2).SetEase(Ease.Linear)
         );
 
     }
 
     public void StartCameraMove3(Sequence seq)
     {
-        seq.Append(
-            transform.DORotate(CornerMoveRotate2, 1f).SetEase(Ease.Linear)
+        seq.Join(
+            transform.DOLocalRotate(CornerMoveRotate2, 1f).SetEase(Ease.Linear)
         );
         seq.Join(
-            trans.DOMove(ThrowMovePoint, 2).SetEase(Ease.Linear)
+            trans.DOLocalMove(ThrowMovePoint, 2).SetEase(Ease.Linear)
         );
 
 
@@ -67,8 +67,8 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
         yield return new WaitForSeconds(2.0f);
         fader.isFadeOut = true;
         yield return new WaitUntil(() => fader.isFadeOut == false);
-        trans.position = AngleMovePoint;
-        trans.DORotate(AngleMoveRotate, 0);
+        trans.localPosition = AngleMovePoint;
+        trans.DOLocalRotate(AngleMoveRotate, 0);
         camera.orthographic = true;
         camera.orthographicSize = size;
         fader.isFadeIn = true;
@@ -83,7 +83,7 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
             Save.maingameFlag = Save.MainGameFlag.THROWMOVE;
 
             Sound.PlaySe("osu01");
-            print("asd");
+            print("as");
             StartCoroutine(throwAnglCameraMove());
             StartCoroutine(DelayClass.DelayCoroutin(60 * 6 - 20, () => Sound.PlayBgm("Play1")));
         }
@@ -93,8 +93,8 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
         fader.isFadeOut = true;
         yield return new WaitUntil(() => fader.isFadeOut == false);
-        trans.position = ThrowMovePoint;
-        trans.DORotate(CornerMoveRotate2, 0);
+        trans.localPosition = ThrowMovePoint;
+        trans.DOLocalRotate(CornerMoveRotate2, 0);
         camera.orthographic = false;
         camera.fieldOfView = field_of_view;
         fader.isFadeIn = true;
@@ -109,11 +109,11 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
         //投げられてる時のカメラワークをここに実装
 
-        trans.position = Player.position + new Vector3(1f, 3f, 1f);
+        trans.localPosition = Player.localPosition + new Vector3(-2.4f, 5f, -0.5f);
 
         if (!isThrow)
         {
-            trans.Rotate(new Vector3(60, -20, 0));
+            trans.DOLocalRotate(new Vector3(60, 90, 0), 0);
             isThrow = true;
         }
 

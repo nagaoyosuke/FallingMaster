@@ -55,7 +55,7 @@ public class GuideCursor : SwipeManager
         directionY = AngleOverCheckY(directionY);
 
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
-            tweener = transform.DORotate(transform.localEulerAngles + new Vector3(0, 0, directionY / 10), 0);
+            tweener = transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 0, directionY / 10), 0);
         
     }
 
@@ -64,7 +64,7 @@ public class GuideCursor : SwipeManager
         directionY = AngleOverCheckY(directionY);
 
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
-            tweener = transform.DORotate(transform.localEulerAngles + new Vector3(0, 0, directionY / 10), 0);
+            tweener = transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 0, directionY / 10), 0);
         
 
     }
@@ -74,7 +74,7 @@ public class GuideCursor : SwipeManager
         directionX = AngleOverCheckX(directionX);
 
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
-                tweener = transform.DORotate(transform.localEulerAngles + new Vector3(0, 0, -directionX / 10), 0);
+                tweener = transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 0, -directionX / 10), 0);
         
     }
 
@@ -83,7 +83,7 @@ public class GuideCursor : SwipeManager
         directionX = AngleOverCheckX(directionX);
 
         if (Save.maingameFlag == Save.MainGameFlag.STARTWAIT)
-                tweener = transform.DORotate(transform.localEulerAngles + new Vector3(0, 0, -directionX / 10), 0);
+                tweener = transform.DOLocalRotate(transform.localEulerAngles + new Vector3(0, 0, -directionX / 10), 0);
         
     }
 
@@ -97,7 +97,7 @@ public class GuideCursor : SwipeManager
             if (transform.localEulerAngles.z <= MinAngle)
                 transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, MinAngle);
 
-            tweener = transform.DORotate(transform.localEulerAngles, 0);
+            tweener = transform.DOLocalRotate(transform.localEulerAngles, 0);
         }
     }
 

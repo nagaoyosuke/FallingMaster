@@ -26,7 +26,7 @@ public class ResultView : MonoBehaviour
         {
             case Save.UkemiRank.PERFECT:
             case Save.UkemiRank.GOOD:
-                s = "合格";
+                s = "次へ";
                 break;
 
             case Save.UkemiRank.NOUKEMI:
@@ -58,8 +58,26 @@ public class ResultView : MonoBehaviour
 
         Save.ReSet();
         Sound.StopBgm();
-        Sound.PlayBgm("Result1");
+        //Sound.PlayBgm("Result1");
 
-        MySceneManager.GoMenu();
+        if(s == "不合格")
+        {
+            Sound.PlayBgm("Result1");
+            MySceneManager.GoResult();
+        }
+
+        if (Save.stageState == Save.StageState.STAGE1)
+            Save.stageState = Save.StageState.STAGE2;
+        else if (Save.stageState == Save.StageState.STAGE2)
+            Save.stageState = Save.StageState.STAGE3;
+        else
+        {
+            Sound.PlayBgm("Result1");
+            MySceneManager.GoResult();
+        }
+
+
+        MySceneManager.GoTitle();
+
     }
 }
