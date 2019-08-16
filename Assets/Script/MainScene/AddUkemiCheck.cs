@@ -23,6 +23,9 @@ public class AddUkemiCheck : MonoBehaviour
     void OnEnable()
     {
         isAction = false;
+        if (EffectObject == null){
+            EffectObject = this.gameObject;
+        }
     }
 
     // Start is called before the first frame update
