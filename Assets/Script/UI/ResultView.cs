@@ -26,13 +26,13 @@ public class ResultView : MonoBehaviour
         {
             case Save.UkemiRank.PERFECT:
             case Save.UkemiRank.GOOD:
-                s = "次へ";
+                s = "成功 次へ";
                 break;
 
             case Save.UkemiRank.NOUKEMI:
             case Save.UkemiRank.NONE:
             case Save.UkemiRank.BAD:
-                s = "不合格";
+                s = "失敗 次へ";
                 break;
         }
 
@@ -56,28 +56,29 @@ public class ResultView : MonoBehaviour
 
         yield return new WaitUntil(() => fader.isFadeOut == false);
 
-        Save.ReSet();
+        Save.FlagReSet();
         Sound.StopBgm();
         //Sound.PlayBgm("Result1");
 
-        if(s == "不合格")
+        switch (Save.stageState)
         {
-            Sound.PlayBgm("Result1");
-            MySceneManager.GoResult();
+            case Save.StageState.STAGE1:
+                Save.stageState = Save.StageState.STAGE2;
+                break;
+            case Save.StageState.STAGE2:
+                Save.stageState = Save.StageState.STAGE3;
+                break;
+            case Save.StageState.STAGE3:
+                Sound.PlayBgm("Result1");
+                MySceneManager.GoResult();
+                yield break;
+                break;
         }
 
-        if (Save.stageState == Save.StageState.STAGE1)
-            Save.stageState = Save.StageState.STAGE2;
-        else if (Save.stageState == Save.StageState.STAGE2)
-            Save.stageState = Save.StageState.STAGE3;
-        else
-        {
-            Sound.PlayBgm("Result1");
-            MySceneManager.GoResult();
-        }
 
+        MySceneManager.GoMain();
 
-        MySceneManager.GoTitle();
+        //MySceneManager.GoTitle();
 
     }
 }

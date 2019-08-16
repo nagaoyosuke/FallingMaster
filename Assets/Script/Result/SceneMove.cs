@@ -48,6 +48,6 @@ public class SceneMove : MonoBehaviour
     IEnumerator _GoMenu()
     {
         yield return new WaitForSeconds(1.5f);
-        MySceneManager.GoMenu();
+        MySceneManager.GoTitle();
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 [ExecuteInEditMode] // SendMessageでエラーが出ないように
 class DebugManager : MonoBehaviour
 {
-
+    [SerializeField]
+    private Save.StageState Stage;
     [SerializeField]
     private float WindZ;
     [SerializeField]
@@ -30,6 +31,13 @@ class DebugManager : MonoBehaviour
         MainGameFlag = Save.maingameFlag;
         ukemiRank = Save.ukemiRank;
         addUkemiPoint = Save.AddUkemiPoint;
+        Stage = Save.stageState;
         Debug.Log("Set!!");
     }
+
+    //private void Update()
+    //{
+    //    print(Save.stageState);
+        
+    //}
 }
