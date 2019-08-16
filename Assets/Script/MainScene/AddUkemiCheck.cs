@@ -41,7 +41,7 @@ public class AddUkemiCheck : MonoBehaviour
     {
         if (!isAction && other.gameObject.CompareTag("Player"))
         {
-            //if (Save.maingameFlag == Save.MainGameFlag.ADDSLOWSTART)
+            if (Save.maingameFlag == Save.MainGameFlag.FALLING)
                 UkemiStart();
 
             /// わかりやすくするために動きを止めてるだけの仮実装

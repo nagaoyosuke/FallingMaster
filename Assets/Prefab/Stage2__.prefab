@@ -3875,6 +3875,9 @@ MonoBehaviour:
   windZ1: 5
   windZ2: 10
   windZ3: 15
+  StrongSp: {fileID: 21300000, guid: e761978bae1244297a11aa658f29d5a9, type: 3}
+  EasySp: {fileID: 21300000, guid: 74784c7cd7c71452190703f695ed0787, type: 3}
+  NoneSp: {fileID: 21300000, guid: fd06ee7287a6441539b65d9caa17676f, type: 3}
 --- !u!1 &2407369847693282751
 GameObject:
   m_ObjectHideFlags: 0

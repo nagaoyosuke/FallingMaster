@@ -3171,6 +3171,9 @@ MonoBehaviour:
   windZ1: 0
   windZ2: 5
   windZ3: -5
+  StrongSp: {fileID: 21300000, guid: e761978bae1244297a11aa658f29d5a9, type: 3}
+  EasySp: {fileID: 21300000, guid: 74784c7cd7c71452190703f695ed0787, type: 3}
+  NoneSp: {fileID: 21300000, guid: fd06ee7287a6441539b65d9caa17676f, type: 3}
 --- !u!65 &579108324
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -134,6 +134,7 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
         yield return new WaitUntil(() => PlayerAniFlag.UkemiStandPoint);
         seq.Kill();
 
+
         seq = DOTween.Sequence();
         seq.Append(
             trans.DOMove(Player.position + new Vector3(0, 1, -5), 2).SetEase(Ease.Linear)
