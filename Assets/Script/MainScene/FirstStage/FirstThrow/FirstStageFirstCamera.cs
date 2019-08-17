@@ -69,6 +69,7 @@ public class FirstStageFirstCamera : CameraManager,IMainCameraMove
         trans.DORotate(AngleMoveRotate, 0);
         camera.orthographic = true;
         camera.orthographicSize = size;
+        camera.nearClipPlane = -10;
         fader.isFadeIn = true;
         Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
         yield return new WaitUntil(() => fader.isFadeIn == false);
@@ -95,6 +96,8 @@ public class FirstStageFirstCamera : CameraManager,IMainCameraMove
         trans.DORotate(CornerMoveRotate2, 0);
         camera.orthographic = false;
         camera.fieldOfView = field_of_view;
+        camera.nearClipPlane = 0.02f;
+
         fader.isFadeIn = true;
         yield return new WaitForSeconds(0.1f);
         Save.maingameFlag = Save.MainGameFlag.THROW;

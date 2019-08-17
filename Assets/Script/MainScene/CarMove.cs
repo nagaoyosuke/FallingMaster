@@ -27,7 +27,6 @@ public class CarMove : MonoBehaviour
 
     void Move()
     {
-        print("a");
         transform.DOLocalMove(GoolPosition, time)
          .SetEase(Ease.Linear)
          .OnComplete(() =>

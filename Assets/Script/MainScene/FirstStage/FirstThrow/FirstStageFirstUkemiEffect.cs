@@ -15,7 +15,7 @@ public class FirstStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
     /// </summary>
     public void StartEffect()
     {
-        int random = Random.Range(1, 2);
+        int random = Random.Range(1, 3);
 
         Sound.PlaySe("syakin");
 
@@ -42,7 +42,9 @@ public class FirstStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
 
         var main = ps.main;
         main.customSimulationSpace = Player.transform;
-        particle.transform.parent = Player.gameObject.transform;
+        //particle.transform.parent = Player.gameObject.transform;
+        particle.transform.position = Player.gameObject.transform.position;
+
         StartCoroutine(PlayParticle(ps, particle));
         //particle.transform.rotation = new Quaternion(0,90,0,0);
         //ここまで

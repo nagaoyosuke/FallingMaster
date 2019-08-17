@@ -45,7 +45,8 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 
         var main = ps.main;
         main.customSimulationSpace = Player.transform;
-        particle.transform.parent = Player.gameObject.transform;
+        //particle.transform.parent = Player.gameObject.transform;
+        particle.transform.position = Player.gameObject.transform.position;
         StartCoroutine(PlayParticle(ps, particle));
         //particle.transform.rotation = new Quaternion(0,90,0,0);
         //ここまで
@@ -55,8 +56,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 
     private IEnumerator PlayParticle(ParticleSystem ps, GameObject particle)
     {
-        yield return new WaitForSeconds(1f);
-        Sound.PlaySe("ukemi01");
+        yield return new WaitForSeconds(0f);
 
         var shape = ps.shape;
         shape.rotation = new Vector3(90, 0, 0);
@@ -85,6 +85,8 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         //StartCoroutine(DelayClass.DelayCoroutin(661, () => PlayerAni.SetBool("UkemiPerfect", false)));
         //StartCoroutine(CameraMove.PerfectEffect());
         Save.maingameFlag = Save.MainGameFlag.FALLING;
+        Sound.PlaySe("ukemi01");
+
         AddEndEffect();
     }
 

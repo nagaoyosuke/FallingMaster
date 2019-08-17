@@ -36,6 +36,9 @@ public class ResultView : MonoBehaviour
                 break;
         }
 
+        if (Save.stageState == Save.StageState.STAGE3)
+            s = "結果発表へ";
+
         text.text = s;
 
         bool isEnd = false;
