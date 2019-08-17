@@ -63,6 +63,8 @@ public class ResultManager : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        Sound.PlayBgm("Result1");
+
         Save.AddUkemiPoint = 10;
         Save.UkemiPoint = 9;
         ani.enabled = false;
@@ -150,12 +152,13 @@ public class ResultManager : MonoBehaviour
     IEnumerator Attack()
     {
         int aniint = MaxPoint / 2;
-
+        Save.rank = (Save.Rank)aniint;
         ani.SetInteger("Attack", aniint);
         ani.enabled = true;
 
         for(int i = 1; i <= aniint; i++)
         {
+            //flag.is~はCanvasのアニメーションで管理してる
             yield return new WaitUntil(() => flag.isAttackStart == true);
             AfterTextChange(i);
             yield return new WaitUntil(() => flag.isAttackEnd == true);
@@ -221,7 +224,6 @@ public class ResultManager : MonoBehaviour
 
     void BeforTextChange(int point)
     {
-        print(point);
         switch ((Save.Rank)point)
         {
             case Save.Rank.FIRST:
@@ -296,7 +298,6 @@ public class ResultManager : MonoBehaviour
 
     void AfterTextChange(int point)
     {
-        print(point);
         switch ((Save.Rank)point)
         {
             case Save.Rank.FIRST:

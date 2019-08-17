@@ -69,7 +69,6 @@ public class ResultView : MonoBehaviour
                 Save.stageState = Save.StageState.STAGE3;
                 break;
             case Save.StageState.STAGE3:
-                Sound.PlayBgm("Result1");
                 MySceneManager.GoResult();
                 yield break;
                 break;
