@@ -24,9 +24,14 @@ public class ResultManager : MonoBehaviour
     [SerializeField]
     private Image BeforRank;
     [SerializeField]
-    private GameObject AfterRank;
-    [SerializeField]
     private Text BeforRankText;
+    [SerializeField]
+    private Text AfterRankText;
+    [SerializeField]
+    private Text LeftRankText;
+    [SerializeField]
+    private Text RightRankText;
+
     [SerializeField]
     private ScreenFader fader;
 
@@ -41,6 +46,9 @@ public class ResultManager : MonoBehaviour
     [SerializeField]
     private Sprite Kiwami;
 
+    [SerializeField]
+    private ResultttFlag flag;
+
     private enum Rank
     {
         BAD,
@@ -50,13 +58,17 @@ public class ResultManager : MonoBehaviour
 
     private Rank rank;
 
+    private int MaxPoint;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        //Save.AddUkemiPoint = 5;
-        //Save.UkemiPoint = 8;
+        Save.AddUkemiPoint = 10;
+        Save.UkemiPoint = 9;
         ani.enabled = false;
         //AlphaSet();
+        MaxPoint = Save.UkemiPoint + Save.AddUkemiPoint;
+
         ActiveSet();
         fader.gameObject.SetActive(true);
         fader.isFadeIn = true;
@@ -132,33 +144,35 @@ public class ResultManager : MonoBehaviour
             BeforRank.color = new Color(1, 1, 1, 60 * 3 / 255.0f * i * 2 / 255.0f);
         }
 
-        switch (rank)
+        StartCoroutine(Attack());
+    }
+
+    IEnumerator Attack()
+    {
+        int aniint = MaxPoint / 2;
+
+        ani.SetInteger("Attack", aniint);
+        ani.enabled = true;
+
+        for(int i = 1; i <= aniint; i++)
         {
-            case Rank.PARFECT:
-            case Rank.GOOD:
-                StartCoroutine(Crash());
-                break;
-            case Rank.BAD:
-                StartCoroutine(Bad());
-                break;
+            yield return new WaitUntil(() => flag.isAttackStart == true);
+            AfterTextChange(i);
+            yield return new WaitUntil(() => flag.isAttackEnd == true);
+            if (i >= 10)
+            {
+                ani.SetBool("Stop", true);
+                BeforTextChange(i);
+                yield break;
+            }
+            else
+            {
+                ani.SetInteger("Attack", aniint - i);
+                BeforTextChange(i);
+
+            }
         }
-    }
-
-    IEnumerator Crash()
-    {
-        ani.enabled = true;
-        ani.SetBool("Result",true);
-        yield return new WaitForEndOfFrame();
-        ani.SetBool("Result", false);
-
-    }
-
-    IEnumerator Bad()
-    {
-        ani.enabled = true;
-        ani.SetBool("Result2", true);
-        yield return new WaitForEndOfFrame();
-        ani.SetBool("Result2", false);
+        ani.SetInteger("Attack", 0);
 
     }
 
@@ -183,12 +197,13 @@ public class ResultManager : MonoBehaviour
         MainUkemiTextPoint.text = Save.UkemiPoint.ToString();
         AddUkemiTextPoint.text = Save.AddUkemiPoint.ToString();
 
-        if (Save.UkemiPoint + Save.AddUkemiPoint > 3 && !isOut)
+
+        if (MaxPoint > 6 && !isOut)
         {
             rank = Rank.PARFECT;
             Hanko.sprite = Kiwami;
         }
-        else if (Save.UkemiPoint + Save.AddUkemiPoint > 0 && !isOut)
+        else if (MaxPoint > 0 && !isOut)
             rank = Rank.GOOD;
         else
         {
@@ -201,8 +216,160 @@ public class ResultManager : MonoBehaviour
             Hanko.sprite = Huka;
         }
 
-
+        ani.SetInteger("Attack", MaxPoint / 2);
     }
+
+    void BeforTextChange(int point)
+    {
+        print(point);
+        switch ((Save.Rank)point)
+        {
+            case Save.Rank.FIRST:
+                BeforRankText.text = "初段";
+                //AfterRankText.text = "弐段";
+                //LeftRankText.text = "初 ";
+                //RightRankText.text = " 段";
+                break;
+            case Save.Rank.SECOND:
+                BeforRankText.text = "弐段";
+                //AfterRankText.text = "参段";
+                //LeftRankText.text = "弐　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.THIRD:
+                BeforRankText.text = "参段";
+                //AfterRankText.text = "四段";
+                //LeftRankText.text = "参　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.FOURTH:
+                BeforRankText.text = "四段";
+                //AfterRankText.text = "伍段";
+                //LeftRankText.text = "四　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.FIFTH:
+                BeforRankText.text = "伍段";
+                //AfterRankText.text = "六段";
+                //LeftRankText.text = "伍　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.SIXTH:
+                BeforRankText.text = "六段";
+                //AfterRankText.text = "七段";
+                //LeftRankText.text = "六　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.SEVENTH:
+                BeforRankText.text = "七段";
+                //AfterRankText.text = "八段";
+                //LeftRankText.text = "七　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.EIGHTH:
+                BeforRankText.text = "八段";
+                //AfterRankText.text = "九段";
+                //LeftRankText.text = "八　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.NINTH:
+                BeforRankText.text = "九段";
+                //AfterRankText.text = "十段";
+                //LeftRankText.text = "九　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.TENTH:
+                BeforRankText.text = "十段";
+                //AfterRankText.text = "皆伝";
+                //LeftRankText.text = "十　";
+                //RightRankText.text = "　段";
+                break;
+            case Save.Rank.MASTER:
+                BeforRankText.text = "皆伝";
+                //AfterRankText.text = "皆伝";
+                //LeftRankText.text = "十　";
+                //RightRankText.text = "　段";
+                break;
+
+        }
+    }
+
+    void AfterTextChange(int point)
+    {
+        print(point);
+        switch ((Save.Rank)point)
+        {
+            case Save.Rank.FIRST:
+                //BeforRankText.text = "初段";
+                AfterRankText.text = "弐段";
+                LeftRankText.text = "初 ";
+                RightRankText.text = " 段";
+                break;
+            case Save.Rank.SECOND:
+                //BeforRankText.text = "弐段";
+                AfterRankText.text = "弐段";
+                LeftRankText.text = "初 ";
+                RightRankText.text = " 段";
+                break;
+            case Save.Rank.THIRD:
+                //BeforRankText.text = "参段";
+                AfterRankText.text = "参段";
+                LeftRankText.text = "弐　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.FOURTH:
+                //BeforRankText.text = "四段";
+                AfterRankText.text = "四段";
+                LeftRankText.text = "参　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.FIFTH:
+                //BeforRankText.text = "伍段";
+                AfterRankText.text = "伍段";
+                LeftRankText.text = "四　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.SIXTH:
+                //BeforRankText.text = "六段";
+                AfterRankText.text = "六段";
+                LeftRankText.text = "伍　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.SEVENTH:
+                //BeforRankText.text = "七段";
+                AfterRankText.text = "七段";
+                LeftRankText.text = "六　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.EIGHTH:
+                //BeforRankText.text = "八段";
+                AfterRankText.text = "八段";
+                LeftRankText.text = "七　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.NINTH:
+                //BeforRankText.text = "九段";
+                AfterRankText.text = "九段";
+                LeftRankText.text = "八　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.TENTH:
+                //BeforRankText.text = "十段";
+                AfterRankText.text = "十段";
+                LeftRankText.text = "九　";
+                RightRankText.text = "　段";
+                break;
+            case Save.Rank.MASTER:
+                //BeforRankText.text = "皆伝";
+                AfterRankText.text = "皆伝";
+                LeftRankText.text = "十　";
+                RightRankText.text = "　段";
+                break;
+
+        }
+    }
+
+
 }
 
 

@@ -19,17 +19,17 @@ public static class Save{
     public static StageState stageState = StageState.STAGE1;
 
     public enum Rank{
-        FIRST,
-        SECOND,
-        THIRD,
-        FOURTH,
-        FIFTH,
-        SIXTH,
-        SEVENTH,
-        EIGHTH,
-        NINTH,
-        TENTH,
-        MASTER
+        FIRST = 0,
+        SECOND = 1,
+        THIRD = 2,
+        FOURTH = 3,
+        FIFTH = 4,
+        SIXTH = 5,
+        SEVENTH = 6,
+        EIGHTH = 7,
+        NINTH = 8,
+        TENTH = 9,
+        MASTER = 10
     };
 
     /// <summary>
