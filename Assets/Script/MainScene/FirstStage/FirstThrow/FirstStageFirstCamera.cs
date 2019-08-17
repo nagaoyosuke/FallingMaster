@@ -145,6 +145,7 @@ public class FirstStageFirstCamera : CameraManager,IMainCameraMove
         seq.Play();
         yield return new WaitUntil(() => PlayerAniFlag.GutEndPoint);
         seq.Kill();
+        Sound.PlaySe("wasshoi");
         Player.GetComponent<Rigidbody>().useGravity = false;
         Save.maingameFlag = Save.MainGameFlag.ENDANIMETION;
         Save.maingameFlag = Save.MainGameFlag.ENDCAMERA;

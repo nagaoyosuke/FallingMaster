@@ -20,8 +20,25 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("taiko02", "drum-japanese2");
         Sound.LoadSe("osu01", "mens-ou1");
         Sound.LoadSe("dora01", "dora01");
+        Sound.LoadSe("dora02", "solemnity1");
         Sound.LoadSe("syakin", "ukemi_effect_sound01");
         Sound.LoadSe("bakuhatu", "bomb");
+        Sound.LoadSe("keikoku01", "hyoushigi2");
+        Sound.LoadSe("keikoku02", "tsukkomi-1");
+
+        Sound.LoadSe("text-impact01", "text-impact1");
+        Sound.LoadSe("tori01", "milvus-migrans-cry1");
+
+        Sound.LoadSe("computer01", "recollection1");
+        Sound.LoadSe("computer02", "data-analysis2");
+        Sound.LoadSe("computer03", "data-analysis1");
+        Sound.LoadSe("alien01", "alien1");
+
+        Sound.LoadSe("hero01", "hero1");
+        Sound.LoadSe("beshi", "feed1");
+        Sound.LoadSe("ufo", "madness1");
+
+        Sound.LoadSe("sceneswitch02", "sceneswitch2");
 
 
         //http://notanomori.net/sound/search/江戸っ子/

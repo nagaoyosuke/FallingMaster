@@ -60,6 +60,7 @@ public class AddUkemiCheck : MonoBehaviour
         Save.AddUkemiReSet();
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMI;
         isAction = true;
+        Sound.PlaySe("keikoku01");
         EffectObject.GetComponent<AddUkemiEffect>().UkemiStartText.SetActive(true);
         StartCoroutine(UkemiWait());
     }

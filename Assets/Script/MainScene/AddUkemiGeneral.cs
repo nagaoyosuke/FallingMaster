@@ -5,7 +5,15 @@ using DG.Tweening;
 
 public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 {
+    /// <summary>
+    ///動物とかに受け身したときになかせるため
+    /// </summary>
+    [SerializeField]
+    private string UkemiSoundName;
+
+
     public GameObject smokeParticle;
+    public GameObject FlashParticle;
 
     [SerializeField]
     private Vector3 MoveVector;
@@ -15,18 +23,18 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddStartEffect()
     {
-        int random = Random.Range(0, 1);
+        int random = Random.Range(0, 2);
 
-        Sound.PlaySe("syakin");
+        //Sound.PlaySe("syakin");
 
         if (random == 1)
         {
-            StartCoroutine(DelayClass.DelayCoroutin(20, () => Sound.PlaySe("seiya")));
+            StartCoroutine(DelayClass.DelayCoroutin(20, () => Sound.PlaySe("yo")));
 
         }
         else
         {
-            StartCoroutine(DelayClass.DelayCoroutin(20, () => Sound.PlaySe("soiya")));
+            StartCoroutine(DelayClass.DelayCoroutin(20, () => Sound.PlaySe("hun")));
         }
     }
 
@@ -84,8 +92,13 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         //StartCoroutine(DelayClass.DelayCoroutin(60 * 12, () => PlayerAni.SetBool("UkemiPerfect", false)));
         //StartCoroutine(DelayClass.DelayCoroutin(661, () => PlayerAni.SetBool("UkemiPerfect", false)));
         //StartCoroutine(CameraMove.PerfectEffect());
+
+        GameObject flash = Instantiate(FlashParticle, Player.transform.position, Quaternion.identity) as GameObject;
+        flash.transform.parent = Player.gameObject.transform;
+        flash.transform.localPosition = new Vector3(0, 0, 0);
+
         Save.maingameFlag = Save.MainGameFlag.FALLING;
-        Sound.PlaySe("ukemi01");
+        Sound.PlaySe(UkemiSoundName);
 
         AddEndEffect();
     }

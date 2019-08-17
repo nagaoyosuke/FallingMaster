@@ -5,6 +5,7 @@ using UnityEngine;
 public class SecondStageAddUkemi01 : AddUkemiEffect, IAddUkemiEffect
 {
     public GameObject smokeParticle;
+    public GameObject FlashParticle;
 
     /// <summary>
     /// 共通の追加受け身開始時の演出
@@ -13,7 +14,7 @@ public class SecondStageAddUkemi01 : AddUkemiEffect, IAddUkemiEffect
     {
         int random = Random.Range(0, 1);
 
-        Sound.PlaySe("syakin");
+        //Sound.PlaySe("syakin");
 
         if (random == 1)
         {
@@ -80,6 +81,11 @@ public class SecondStageAddUkemi01 : AddUkemiEffect, IAddUkemiEffect
         //StartCoroutine(DelayClass.DelayCoroutin(60 * 12, () => PlayerAni.SetBool("UkemiPerfect", false)));
         //StartCoroutine(DelayClass.DelayCoroutin(661, () => PlayerAni.SetBool("UkemiPerfect", false)));
         //StartCoroutine(CameraMove.PerfectEffect());
+
+        GameObject flash = Instantiate(FlashParticle, Player.transform.position, Quaternion.identity) as GameObject;
+        flash.transform.parent = Player.gameObject.transform;
+        flash.transform.localPosition = new Vector3(0, 0, 0);
+
         Save.maingameFlag = Save.MainGameFlag.FALLING;
         Sound.PlaySe("ukemi01");
 

@@ -56,7 +56,7 @@ public class ResultView : MonoBehaviour
         yield return new WaitUntil(() => isEnd == true);
 
         fader.isFadeOut = true;
-
+        Sound.PlaySe("sceneswitch02");
         yield return new WaitUntil(() => fader.isFadeOut == false);
 
         Save.FlagReSet();

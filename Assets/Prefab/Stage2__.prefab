@@ -3101,6 +3101,8 @@ MonoBehaviour:
   UkemiStartText: {fileID: 0}
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
     type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
+    type: 3}
 --- !u!1 &180058304508578715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,7 +3821,10 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
+  UkemiSoundName: tori01
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
   MoveVector: {x: -9, y: -4, z: 0}
 --- !u!1 &2253751977926696300
@@ -4367,7 +4372,10 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
+  UkemiSoundName: tori01
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
   MoveVector: {x: -9, y: 0, z: 0}
 --- !u!95 &3985470284493415116
@@ -4514,7 +4522,10 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
+  UkemiSoundName: tori01
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
   MoveVector: {x: -15, y: -4, z: 0}
 --- !u!95 &4099920666712199794
@@ -6131,6 +6142,8 @@ MonoBehaviour:
   UkemiStartText: {fileID: 0}
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
     type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
+    type: 3}
 --- !u!95 &7039045005623986793
 Animator:
   serializedVersion: 3
@@ -6242,7 +6255,10 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
+  UkemiSoundName: tori01
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
   MoveVector: {x: -9, y: 0, z: 0}
 --- !u!95 &2803883582427959361
@@ -6758,6 +6774,8 @@ MonoBehaviour:
   UkemiStartText: {fileID: 0}
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
     type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
+    type: 3}
 --- !u!95 &1949907516340954350
 Animator:
   serializedVersion: 3
@@ -7068,6 +7086,8 @@ MonoBehaviour:
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
 --- !u!1 &6975209110184828796
 GameObject:
@@ -7832,6 +7852,8 @@ MonoBehaviour:
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
+    type: 3}
+  FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
 --- !u!1 &8572874617826636809
 GameObject:
@@ -17125,7 +17147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 400.73505
+      value: 381
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.z
