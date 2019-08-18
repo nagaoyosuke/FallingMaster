@@ -9,18 +9,6 @@ public class SceneMove : MonoBehaviour
 
     private bool isPush;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void GoMenu()
     {
         if (isPush)
@@ -43,12 +31,15 @@ public class SceneMove : MonoBehaviour
 
     IEnumerator _GoMain()
     {
+        Sound.PlaySe("taiko01");
         yield return new WaitForSeconds(1.5f);
         MySceneManager.GoMain();
     }
 
     IEnumerator _GoMenu()
     {
+        Sound.PlaySe("taiko01");
+
         yield return new WaitForSeconds(1.5f);
         MySceneManager.GoTitle();
     }

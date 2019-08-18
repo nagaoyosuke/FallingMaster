@@ -14,6 +14,7 @@ public class SoundLoader : MonoBehaviour {
 	void Awake () {
         //20190228豊田
         //se3種類追加
+        //20190818豊田　追加
         //https://soundeffect-lab.info/sound/anime/
 
         Sound.LoadSe("taiko01", "drum-japanese1");
@@ -39,6 +40,12 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("ufo", "madness1");
 
         Sound.LoadSe("sceneswitch02", "sceneswitch2");
+
+        Sound.LoadSe("yeah01","mens-yeah1");
+        Sound.LoadSe("itawari01", "kick-middle1");
+        Sound.LoadSe("cheer01", "cheer01");
+
+
 
 
         //http://notanomori.net/sound/search/江戸っ子/

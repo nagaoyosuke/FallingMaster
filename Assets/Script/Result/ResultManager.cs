@@ -77,6 +77,7 @@ public class ResultManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         UkemiPointCheck();
         StartCoroutine(View());
+
     }
 
     // Update is called once per frame
@@ -115,19 +116,30 @@ public class ResultManager : MonoBehaviour
     IEnumerator View()
     {
         ResultText.enabled = true;
-        yield return new WaitForSeconds(1);
+        Sound.PlaySe("taiko02");
+        yield return new WaitForSeconds(3);
 
         AddUkemiText.enabled = true;
+        Sound.PlaySe("taiko01");
         yield return new WaitForSeconds(1);
 
         AddUkemiTextPoint.enabled = true;
+        Sound.PlaySe("taiko01");
+
         yield return new WaitForSeconds(1);
 
         MainUkemiText.enabled = true;
+        Sound.PlaySe("taiko01");
+
         yield return new WaitForSeconds(1);
 
         MainUkemiTextPoint.enabled = true;
-        yield return new WaitForSeconds(1);
+        Sound.PlaySe("taiko01");
+
+        yield return new WaitForSeconds(1.25f);
+
+        Sound.PlaySe("taiko01");
+
 
         foreach (Text t in ResultWaitText)
         {
@@ -175,7 +187,17 @@ public class ResultManager : MonoBehaviour
 
             }
         }
+
+
+
         ani.SetInteger("Attack", 0);
+
+        yield return new WaitForSeconds(1.1f);
+
+        //perfect時のみby豊田
+        Sound.PlaySe("cheer01");
+        Sound.PlaySe("yeah01");
+
 
     }
 
@@ -205,6 +227,7 @@ public class ResultManager : MonoBehaviour
         {
             rank = Rank.PARFECT;
             Hanko.sprite = Kiwami;
+
         }
         else if (MaxPoint > 0 && !isOut)
             rank = Rank.GOOD;
@@ -294,10 +317,14 @@ public class ResultManager : MonoBehaviour
                 break;
 
         }
+
     }
 
     void AfterTextChange(int point)
     {
+
+        Sound.PlaySe("itawari01");
+
         switch ((Save.Rank)point)
         {
             case Save.Rank.FIRST:
