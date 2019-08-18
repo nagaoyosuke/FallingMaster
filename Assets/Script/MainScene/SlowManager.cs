@@ -17,11 +17,15 @@ public class SlowManager : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        if(other.gameObject.CompareTag("Player") && !isHit){
-            if (enabled)
+        if (Save.maingameFlag == Save.MainGameFlag.FALLING) {
+
+            if (other.gameObject.CompareTag("Player") && !isHit)
             {
-                Rigidbody rb = other.GetComponentInParent<Rigidbody>();
-                StartCoroutine(Slow(rb));
+                if (enabled)
+                {
+                    Rigidbody rb = other.GetComponentInParent<Rigidbody>();
+                    StartCoroutine(Slow(rb));
+                }
             }
         }
     }

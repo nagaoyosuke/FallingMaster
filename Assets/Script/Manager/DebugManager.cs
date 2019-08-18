@@ -35,9 +35,15 @@ class DebugManager : MonoBehaviour
         Debug.Log("Set!!");
     }
 
+    private IEnumerator Start()
+    {
+        yield return new WaitForFixedUpdate();
+        Save.windZ = 10;
+    }
+
     //private void Update()
     //{
     //    print(Save.stageState);
-        
+
     //}
 }

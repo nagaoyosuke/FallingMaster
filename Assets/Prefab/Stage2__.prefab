@@ -3081,6 +3081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 151671620473038206}
+  isDanger: 0
 --- !u!114 &4464916656326487238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3803,6 +3804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 2026068505603713397}
+  isDanger: 0
 --- !u!114 &8979476034672975484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4354,6 +4356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 3043427295655561569}
+  isDanger: 0
 --- !u!114 &5653566793669913613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4504,6 +4507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 3227333720026029958}
+  isDanger: 0
 --- !u!114 &7675932071362316761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6122,6 +6126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 5599215712074029569}
+  isDanger: 0
 --- !u!114 &4953494040634698185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6237,6 +6242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 5704417122361341072}
+  isDanger: 0
 --- !u!114 &1433321303348922687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6754,6 +6760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 6281686434287493365}
+  isDanger: 0
 --- !u!114 &1399225670198839934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7067,6 +7074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 6735582989861583982}
+  isDanger: 0
 --- !u!114 &6973545209703948069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7833,6 +7841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 8461689109945712593}
+  isDanger: 0
 --- !u!114 &4209585036074973970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17448,7 +17457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1000062
+      value: -89.69995
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17456,7 +17465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 342.50006
+      value: 342.60004
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34793,7 +34802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.20002
+      value: -145
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34801,7 +34810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 292.90005
+      value: 293
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0ed4f9366902849a5ae739ffd5389442, type: 3}
       propertyPath: m_LocalRotation.x
