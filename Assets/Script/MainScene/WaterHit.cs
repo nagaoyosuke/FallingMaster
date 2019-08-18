@@ -44,7 +44,7 @@ public class WaterHit : MonoBehaviour
         Sound.PlaySe("waterdive");
 
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.8f);
         var bub = Instantiate(Bubble) as GameObject;
         bub.transform.position = pos;
         bub.transform.position += new Vector3(0, 2, 0);

@@ -20,6 +20,12 @@ public class AddUkemiCheck : MonoBehaviour
 
     private bool isAction;
 
+    /// <summary>
+    /// Trueにすると受け身入力ができないから危険地底にできる
+    /// </summary>
+    [SerializeField]
+    private bool isDanger;
+
     void OnEnable()
     {
         isAction = false;
@@ -60,8 +66,11 @@ public class AddUkemiCheck : MonoBehaviour
         Save.AddUkemiReSet();
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMI;
         isAction = true;
-        Sound.PlaySe("keikoku01");
-        EffectObject.GetComponent<AddUkemiEffect>().UkemiStartText.SetActive(true);
+        if (!isDanger)
+        {
+            Sound.PlaySe("keikoku01");
+            EffectObject.GetComponent<AddUkemiEffect>().UkemiStartText.SetActive(true);
+        }
         StartCoroutine(UkemiWait());
     }
 
@@ -92,6 +101,9 @@ public class AddUkemiCheck : MonoBehaviour
             yield return new WaitForFixedUpdate();
             flame++;
         }
+        if (isDanger)
+            Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
+
         print(Save.addUkemiRank);
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMIANIMETION;
 

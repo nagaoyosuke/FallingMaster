@@ -49,7 +49,9 @@ public class FirstStageFirstThrower : ThrowManager
         var rb = UkemiAni.gameObject.GetComponent<Rigidbody>();
 
         //投げるアニメーションの再生速度を早くする
-        yield return new WaitUntil(() => UkemiFlag.ThrowSpeedPoint);
+        //yield return new WaitUntil(() => UkemiFlag.ThrowSpeedPoint);
+        yield return new WaitForSeconds(174.0f / (30.0f * ani.speed));
+
         ani.speed = 2;
         UkemiAni.speed = 2;
 
@@ -57,7 +59,9 @@ public class FirstStageFirstThrower : ThrowManager
 
 
         //アニメーションクリップのほうでフラグをオンにしてる
-        yield return new WaitUntil(() => UkemiFlag.ThrowRBPoint);
+        //yield return new WaitUntil(() => UkemiFlag.ThrowRBPoint);
+        yield return new WaitForSeconds(34.0f / (30.0f * ani.speed));
+
         //rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
         rb.useGravity = true;   //重力オン
 
@@ -70,7 +74,8 @@ public class FirstStageFirstThrower : ThrowManager
         rb.AddForce(new Vector3(0, 0, Save.windZ * 10));
 
         //アニメーションクリップのほうでフラグをオンにしてる
-        yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
+        //yield return new WaitUntil(() => UkemiFlag.ThrowEnd);
+        yield return new WaitForSeconds(19.0f / (30.0f * ani.speed));
 
 
         UkemiAni.transform.position = UnderBody.transform.position;
