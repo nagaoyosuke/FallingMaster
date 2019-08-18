@@ -178,6 +178,8 @@ public class ResultManager : MonoBehaviour
             {
                 ani.SetBool("Stop", true);
                 BeforTextChange(i);
+                Sound.PlaySe("cheer01");
+                Sound.PlaySe("yeah01");
                 yield break;
             }
             else
@@ -191,13 +193,26 @@ public class ResultManager : MonoBehaviour
 
 
         ani.SetInteger("Attack", 0);
+        yield return new WaitForSeconds(0.5f);
 
-        yield return new WaitForSeconds(1.1f);
+        Sound.PlaySe("beshi");
+        yield return new WaitForSeconds(0.6f);
 
-        //perfect時のみby豊田
-        Sound.PlaySe("cheer01");
-        Sound.PlaySe("yeah01");
 
+        switch (rank)
+        {
+            case Rank.PARFECT:
+                //perfect時のみby豊田
+                Sound.PlaySe("cheer01");
+                Sound.PlaySe("yeah01");
+               break;
+            case Rank.GOOD:
+                Sound.PlaySe("yeah01");
+                break;
+            case Rank.BAD:
+
+                break;
+        }
 
     }
 
