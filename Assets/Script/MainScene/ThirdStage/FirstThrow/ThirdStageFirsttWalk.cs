@@ -8,7 +8,7 @@ public class ThirdStageFirsttWalk : WalkManager
     // Start is called before the first frame update
     void Start()
     {
-        Sound.PlaySe("dora02");
+        Sound.PlaySe("alien01");
 
     }
 

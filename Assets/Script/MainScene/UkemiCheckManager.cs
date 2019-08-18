@@ -60,6 +60,8 @@ public class UkemiCheckManager : MonoBehaviour
     {
         Save.maingameFlag = Save.MainGameFlag.UKEMI;
         isAction = true;
+        Sound.PlaySe("keikoku01");
+
         StartCoroutine(UkemiWait());
     }
 

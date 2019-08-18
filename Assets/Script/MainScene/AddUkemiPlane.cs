@@ -21,6 +21,7 @@ public class AddUkemiPlane : MonoBehaviour
                 //other.gameObject.GetComponentInParent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
                 //other.transform.rotation = new Quaternion(0, 0, 0, 0);
                 Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
+                print("NoAddUkemi");
             }
 
             //other.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
