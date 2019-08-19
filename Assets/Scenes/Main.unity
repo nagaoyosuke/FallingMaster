@@ -5817,6 +5817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f797c3785b648ccaa60a209649ffb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHit: 0
+  Power: {x: 0, y: 0, z: 0}
 --- !u!65 &1045358476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6319,7 +6321,7 @@ MonoBehaviour:
   text: {fileID: 1373479732}
   Stage1: "\u6607\u6BB5\u8A66\u9A13\u7B2C\u58F1\u4F1A\u5834\n\u9AD8\u5C64\u30D3\u30EB"
   Stage2: "\u6607\u6BB5\u8A66\u9A13\u7B2C\u5F10\u4F1A\u5834\n\u30B9\u30AB\u30A4\u30BF\u30EF\u30FC"
-  Stage3: "\u6607\u6BB5\u8A66\u9A13\u7B2C\u53C2\u4F1A\u5834\nUFO\uFF1F"
+  Stage3: "\u6607\u6BB5\u8A66\u9A13\u7B2C\u53C2\u4F1A\u5834\nUFO"
 --- !u!1 &1396071125
 GameObject:
   m_ObjectHideFlags: 0

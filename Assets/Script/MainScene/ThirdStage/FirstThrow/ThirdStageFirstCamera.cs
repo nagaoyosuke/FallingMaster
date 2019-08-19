@@ -85,7 +85,7 @@ public class ThirdStageFirstCamera : CameraManager, IMainCameraMove
             Sound.PlaySe("osu01");
             //            print("as");
             StartCoroutine(throwAnglCameraMove());
-            StartCoroutine(DelayClass.DelayCoroutin(60 * 6 - 20, () => Sound.PlayBgm("Play1")));
+            //StartCoroutine(DelayClass.DelayCoroutin(60 * 6 - 20, () => Sound.PlayBgm("Result3")));
         }
     }
 
@@ -137,10 +137,10 @@ public class ThirdStageFirstCamera : CameraManager, IMainCameraMove
 
         seq = DOTween.Sequence();
         seq.Append(
-            trans.DOMove(Player.position + new Vector3(0, 1, -5), 2).SetEase(Ease.Linear)
+            trans.DOMove(Player.position + new Vector3(0, 1, 5), 2).SetEase(Ease.Linear)
         );
         seq.Join(
-            trans.DORotate(new Vector3(0, 0, 0), 2).SetEase(Ease.Linear)
+            trans.DORotate(new Vector3(0, 180, 0), 2).SetEase(Ease.Linear)
         );
 
         seq.Play();

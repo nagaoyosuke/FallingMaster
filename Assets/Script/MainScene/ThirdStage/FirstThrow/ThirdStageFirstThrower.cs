@@ -71,7 +71,8 @@ public class ThirdStageFirstThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
-        rb.AddForce(new Vector3(0, Save.windZ * 10, 0));
+		Sound.PlayBgm("Result3");
+		rb.AddForce(new Vector3(0, Save.windZ * 10, 0));
         print("ThrowRBPoint");
 
         //アニメーションクリップのほうでフラグをオンにしてる

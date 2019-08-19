@@ -9,6 +9,7 @@ public class ThirdStageFirsttWalk : WalkManager
     void Start()
     {
         Sound.PlaySe("alien01");
+        Sound.PlaySe("computer01");
 
     }
 

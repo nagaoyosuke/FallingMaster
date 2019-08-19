@@ -84,7 +84,7 @@ public class FirstStageFirstCamera : CameraManager,IMainCameraMove
             Sound.PlaySe("osu01");
             print("as");
             StartCoroutine(throwAnglCameraMove());
-            StartCoroutine(DelayClass.DelayCoroutin(60*6 -20,() => Sound.PlayBgm("Play1")));
+            //StartCoroutine(DelayClass.DelayCoroutin(60*6 -20,() => Sound.PlayBgm("Play1")));
         }
     }
 

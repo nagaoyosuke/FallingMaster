@@ -44,11 +44,12 @@ public class WaterHit : MonoBehaviour
         Sound.PlaySe("waterdive");
         Save.ukemiRank = Save.UkemiRank.BAD;
         effect.BadEffect();
-
-        yield return new WaitForSeconds(0.8f);
         var bub = Instantiate(Bubble) as GameObject;
         bub.transform.position = pos;
         bub.transform.position += new Vector3(0, 2, 0);
+
+        yield return new WaitForSeconds(0.8f);
+
         obj.GetComponentInParent<Rigidbody>().useGravity = false;
         obj.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
         //Save.ukemiRank = Save.UkemiRank.BAD;

@@ -70,7 +70,8 @@ public class SecondStageAddUkemi01 : AddUkemiEffect, IAddUkemiEffect
     public void AddPerfectEffect()
     {
         PlayerRb.velocity = Vector3.zero;
-        var pos = Player.transform.position + new Vector3(0, 0, -5);
+
+		var pos = Player.transform.position + new Vector3(0, 0, -5);
         //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
         StartCoroutine(Move());

@@ -26,6 +26,11 @@ public class AddUkemiCheck : MonoBehaviour
     [SerializeField]
     private bool isDanger;
 
+    private AddUkemiPlane Plane;
+
+    private Rigidbody rb;
+    private Vector3 vel;
+
     void OnEnable()
     {
         isAction = false;
@@ -37,6 +42,10 @@ public class AddUkemiCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(Plane == null)
+        {
+            Plane = transform.parent.GetComponentInChildren<AddUkemiPlane>();
+        }
         if (parfectFlame == 0)
             parfectFlame = 20;
 
@@ -48,8 +57,12 @@ public class AddUkemiCheck : MonoBehaviour
         if (!isAction && other.gameObject.CompareTag("Player"))
         {
             if (Save.maingameFlag == Save.MainGameFlag.FALLING)
+            {
+                rb = other.gameObject.GetComponentInParent<Rigidbody>();
+                vel = rb.velocity;
+                print(vel);
                 UkemiStart();
-
+            }
             /// わかりやすくするために動きを止めてるだけの仮実装
             //other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             //other.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -106,9 +119,30 @@ public class AddUkemiCheck : MonoBehaviour
 
         print(Save.addUkemiRank);
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMIANIMETION;
+        Effect.AddStartEffect();
+
+        int time = 0;
+        while (true)
+        {
+            if (Save.addUkemiRank == Save.AddUkemi.NOUKEMI)
+                break;
+     
+            if (Plane.isHit)
+                break;
+
+            if (time > 45)
+            {
+                print("timeout");
+                break;
+            }
+
+            yield return new WaitForFixedUpdate();
+            time++;
+
+        }
+
 
         yield return null;
-        Effect.AddStartEffect();
         ChoiceEffect();
 
     }

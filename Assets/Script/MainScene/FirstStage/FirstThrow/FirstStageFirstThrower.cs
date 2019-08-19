@@ -71,6 +71,7 @@ public class FirstStageFirstThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
+        Sound.PlayBgm("Play1");
         rb.AddForce(new Vector3(0, 0, Save.windZ * 10));
 
         //アニメーションクリップのほうでフラグをオンにしてる

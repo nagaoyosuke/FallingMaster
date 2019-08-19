@@ -75,7 +75,7 @@ public class FirstStageAddUkemi01 : AddUkemiEffect,IAddUkemiEffect
         var pos = Player.transform.position + new Vector3(0,0,-5);
         //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
-        StartCoroutine(Move());
+        //StartCoroutine(Move());
         PlayerBox.material = null;
         PlayerAni.SetBool("UkemiMae", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiMae", false)));

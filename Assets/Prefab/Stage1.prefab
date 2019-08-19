@@ -3527,6 +3527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f797c3785b648ccaa60a209649ffb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHit: 0
+  Power: {x: 0, y: 0, z: -10}
 --- !u!1 &5240709804304427069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3762,7 +3764,7 @@ GameObject:
   - component: {fileID: 6913643995922115309}
   - component: {fileID: 3397228510820262733}
   - component: {fileID: 2228583943890853944}
-  - component: {fileID: 1399225670198839934}
+  - component: {fileID: 5126617448230964056}
   m_Layer: 0
   m_Name: AddUkemiCheck
   m_TagString: Untagged
@@ -3778,7 +3780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6281686434287493365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.45, z: -1.85}
+  m_LocalPosition: {x: 0, y: 13.4, z: -3.16}
   m_LocalScale: {x: 10.000041, y: 2.46, z: 4.58}
   m_Children: []
   m_Father: {fileID: 2088619350}
@@ -3812,7 +3814,7 @@ MonoBehaviour:
   parfectFlame: 30
   EffectObject: {fileID: 6281686434287493365}
   isDanger: 0
---- !u!114 &1399225670198839934
+--- !u!114 &5126617448230964056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3821,7 +3823,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6281686434287493365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9658479a7cb3e4e0b9aabaaf0c1eda3b, type: 3}
+  m_Script: {fileID: 11500000, guid: e7a103ea747f64a4d8b0975c5a0750f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CameraMove: {fileID: 1027464455}
@@ -3830,10 +3832,12 @@ MonoBehaviour:
   PlayerBox: {fileID: 579108324}
   PlayerAni: {fileID: 4727272678867572867}
   UkemiStartText: {fileID: 0}
+  UkemiSoundName: 
   smokeParticle: {fileID: 8445985244681926284, guid: d5a8130c0feed4baf81230f2408f0724,
     type: 3}
   FlashParticle: {fileID: 8297511723145388125, guid: 58a39c566ccc845478ca8a2e570f22ba,
     type: 3}
+  MoveVector: {x: 0, y: 0, z: 0}
 --- !u!1 &6394568174403977532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,7 +4040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7573299540064662159}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.000019073485, y: -91.14, z: -80.40012}
+  m_LocalPosition: {x: 0, y: -91.14, z: -97.51}
   m_LocalScale: {x: 0.5000011, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 383489469}

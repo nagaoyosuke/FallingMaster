@@ -20,13 +20,19 @@ public class StageMakeManager : MonoBehaviour
         Make();
     }
 
-    void Make()
+	private IEnumerator Start()
+	{
+		yield return new WaitForFixedUpdate();
+		Save.windZ = 10;
+	}
+
+	void Make()
     {
         GameObject Stage = null;
         switch (Save.stageState)
         {
             case Save.StageState.STAGE1:
-                Stage = Instantiate(Stage3);
+                Stage = Instantiate(Stage1);
                 break;
             case Save.StageState.STAGE2:
                 Stage = Instantiate(Stage2);

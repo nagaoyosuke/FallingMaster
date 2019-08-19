@@ -84,7 +84,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         var pos = Player.transform.position + MoveVector;
         //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
-        StartCoroutine(Move());
+        //StartCoroutine(Move());
         PlayerBox.material = null;
         PlayerAni.SetBool("UkemiMae", true);
         StartCoroutine(DelayClass.DelayCoroutin(1, () => PlayerAni.SetBool("UkemiMae", false)));
@@ -98,6 +98,10 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         flash.transform.localPosition = new Vector3(0, 0, 0);
 
         Save.maingameFlag = Save.MainGameFlag.FALLING;
+
+        if (UkemiSoundName == "")
+            UkemiSoundName = "ukemi01";
+
         Sound.PlaySe(UkemiSoundName);
 
         AddEndEffect();

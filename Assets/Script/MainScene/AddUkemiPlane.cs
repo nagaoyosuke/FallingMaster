@@ -5,18 +5,30 @@ using UnityEngine;
 public class AddUkemiPlane : MonoBehaviour
 {
     private float count;
+    private Rigidbody rb;
 
+    public bool isHit;
+
+    [SerializeField]
+    private Vector3 Power;
 
     // Start is called before the first frame update
     void OnEnable()
     {
         GetComponent<BoxCollider>().enabled = true;
+        if(Power.x == 0 && Power.y == 0 && Power.z == 0)
+        {
+            Power = new Vector3(0, 0, 20f);
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player") && enabled)
         {
+            if (rb == null)
+                rb = other.gameObject.GetComponentInParent<Rigidbody>();
+
             if (!Save.isAddUkemi && Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)
             {
                 //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
@@ -27,17 +39,26 @@ public class AddUkemiPlane : MonoBehaviour
                 print("NoAddUkemi");
             }
 
+            if (Save.isAddUkemi && Save.maingameFlag == Save.MainGameFlag.ADDUKEMIANIMETION)
+            {
+                isHit = true;
+            }
+
+
             if (Save.maingameFlag == Save.MainGameFlag.FALLING)
             {
-
-                var vec = other.gameObject.GetComponentInParent<Rigidbody>().velocity;
+                var vec = rb.velocity;
 
                 DelayClass.DelayCoroutin(30,() => 
                 {
                     if(Save.maingameFlag == Save.MainGameFlag.FALLING)
                     {
-                        other.gameObject.GetComponentInParent<Rigidbody>().velocity = vec;
-                        print("WallHitVelocity");
+                        if (rb.velocity.z > 10)
+                        {
+                            rb.velocity = vec;
+                            print("WallHitVelocity");
+                        }
+                        
                     }
                 });
             }
@@ -57,6 +78,14 @@ public class AddUkemiPlane : MonoBehaviour
     {
         if (Save.maingameFlag == Save.MainGameFlag.FALLING)
         {
+            if (rb == null)
+                rb = collision.gameObject.GetComponentInParent<Rigidbody>();
+
+            //rb.velocity += new Vector3(0, 0,10f);
+            //rb.transform.position += new Vector3(0, 0, 0.25f);
+            rb.velocity = Power;
+
+            print("Power");
             count += Time.deltaTime;
             if(count > 3)
             {

@@ -65,11 +65,11 @@ public class ResultManager : MonoBehaviour
     {
         Sound.PlayBgm("Result1");
 
-        Save.AddUkemiPoint = 10;
-        Save.UkemiPoint = 9;
+        //Save.AddUkemiPoint_ = 1;
+        //Save.UkemiPoint = 1;
         ani.enabled = false;
         //AlphaSet();
-        MaxPoint = Save.UkemiPoint + Save.AddUkemiPoint;
+        MaxPoint = Save.UkemiPoint + Save.AddUkemiPoint_;
 
         ActiveSet();
         fader.gameObject.SetActive(true);
@@ -164,6 +164,7 @@ public class ResultManager : MonoBehaviour
     IEnumerator Attack()
     {
         int aniint = MaxPoint / 2;
+		print(aniint);
         Save.rank = (Save.Rank)aniint;
         ani.SetInteger("Attack", aniint);
         ani.enabled = true;
@@ -189,10 +190,14 @@ public class ResultManager : MonoBehaviour
 
             }
         }
+		//yield return new WaitUntil(() => flag.isAttackStart == true);
+		//yield return new WaitUntil(() => flag.isAttackStart == true);
+		yield return new WaitUntil(() => flag.isAttackEnd == true);
+		yield return new WaitForSeconds(0.1f);
 
-
-
-        ani.SetInteger("Attack", 0);
+		AfterTextChange(aniint + 1);
+		//yield return new WaitUntil(() => flag.isAttackEnd == true);
+		ani.SetInteger("Attack", 0);
         yield return new WaitForSeconds(0.5f);
 
         Sound.PlaySe("beshi");
@@ -207,8 +212,8 @@ public class ResultManager : MonoBehaviour
                 Sound.PlaySe("yeah01");
                break;
             case Rank.GOOD:
-                Sound.PlaySe("yeah01");
-                break;
+				Sound.PlaySe("cheer01");
+				break;
             case Rank.BAD:
 
                 break;
@@ -235,10 +240,10 @@ public class ResultManager : MonoBehaviour
         //}
 
         MainUkemiTextPoint.text = Save.UkemiPoint.ToString();
-        AddUkemiTextPoint.text = Save.AddUkemiPoint.ToString();
+        AddUkemiTextPoint.text = Save.AddUkemiPoint_.ToString();
 
 
-        if (MaxPoint > 6 && !isOut)
+        if (MaxPoint > 12 && !isOut)
         {
             rank = Rank.PARFECT;
             Hanko.sprite = Kiwami;
@@ -262,7 +267,18 @@ public class ResultManager : MonoBehaviour
 
     void BeforTextChange(int point)
     {
-        switch ((Save.Rank)point)
+		Save.Rank point_ = Save.Rank.FIRST;
+
+		try
+		{
+			point_ = (Save.Rank)point;
+		}
+		catch
+		{
+			point_ = Save.Rank.MASTER;
+		}
+
+        switch (point_)
         {
             case Save.Rank.FIRST:
                 BeforRankText.text = "初段";
@@ -340,8 +356,19 @@ public class ResultManager : MonoBehaviour
 
         Sound.PlaySe("itawari01");
 
-        switch ((Save.Rank)point)
-        {
+		Save.Rank point_ = Save.Rank.FIRST;
+
+		try
+		{
+			point_ = (Save.Rank)point;
+		}
+		catch
+		{
+			point_ = Save.Rank.MASTER;
+		}
+
+		switch (point_)
+		{
             case Save.Rank.FIRST:
                 //BeforRankText.text = "初段";
                 AfterRankText.text = "弐段";
