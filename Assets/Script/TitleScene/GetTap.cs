@@ -10,7 +10,8 @@ public class GetTap : MonoBehaviour
 {
     private bool isTapped = false;
 
-
+    [SerializeField]
+    private GameObject TapObj;
     // Use this for initialization
     void Start()
     {
@@ -25,6 +26,7 @@ public class GetTap : MonoBehaviour
         {
             Sound.PlaySe("osu01");
             isTapped = true;
+            //TapObj.SetActive(false);
             StartCoroutine(WaitingFadeOut());
 
         }
