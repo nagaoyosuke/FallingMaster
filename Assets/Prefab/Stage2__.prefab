@@ -3021,6 +3021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2725941612156399352}
+  time: 0
+  isSelf: 0
 --- !u!1 &151671620473038206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,6 +3243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2677842963129248800}
+  time: 0
+  isSelf: 0
 --- !u!95 &2930502337448751276
 Animator:
   serializedVersion: 3
@@ -3274,6 +3278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2930502337448751276}
+  time: 0
+  isSelf: 0
 --- !u!65 &250484656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3464,6 +3470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2819851701506563322}
+  time: 0
+  isSelf: 0
 --- !u!95 &8949886379412164930
 Animator:
   serializedVersion: 3
@@ -3497,6 +3505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 8949886379412164930}
+  time: 0
+  isSelf: 0
 --- !u!95 &2251733963891918870
 Animator:
   serializedVersion: 3
@@ -3563,6 +3573,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 4867433873866014862}
+  time: 0
+  isSelf: 0
 --- !u!1 &1688953377209757486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,8 +3783,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026068505603713397}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.1999952, y: 88.61, z: 13.450009}
-  m_LocalScale: {x: 10.00015, y: 5, z: 4.580048}
+  m_LocalPosition: {x: -1.1999952, y: 89, z: 13.450009}
+  m_LocalScale: {x: 10.00015, y: 5.5, z: 4.580048}
   m_Children: []
   m_Father: {fileID: 7518619231998925464}
   m_RootOrder: 1
@@ -3970,6 +3982,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 6917731272247274442}
+  time: 0
+  isSelf: 0
 --- !u!95 &4343070611824075377
 Animator:
   serializedVersion: 3
@@ -4003,6 +4017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 4343070611824075377}
+  time: 0
+  isSelf: 0
 --- !u!65 &579108324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4418,6 +4434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 3985470284493415116}
+  time: 0
+  isSelf: 0
 --- !u!95 &3650176928573396975
 Animator:
   serializedVersion: 3
@@ -4478,8 +4496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3227333720026029958}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.3299885, y: 8.479996, z: 28.490028}
-  m_LocalScale: {x: 10.00015, y: 5, z: 4.580048}
+  m_LocalPosition: {x: -0.3299885, y: 8.88, z: 28.490028}
+  m_LocalScale: {x: 10.00015, y: 6, z: 4.580048}
   m_Children: []
   m_Father: {fileID: 8366782848309400673}
   m_RootOrder: 1
@@ -4569,6 +4587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 4099920666712199794}
+  time: 0
+  isSelf: 0
 --- !u!1 &3343810069875924308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,6 +4681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 676838640452466271}
+  time: 0
+  isSelf: 0
 --- !u!1 &3484676968096570512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +4820,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 6.9, y: 394.39, z: 14}
   ani: {fileID: 0}
+  time: 0
+  isSelf: 0
 --- !u!95 &7931619618809866574
 Animator:
   serializedVersion: 3
@@ -4831,6 +4855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 7931619618809866574}
+  time: 0
+  isSelf: 0
 --- !u!95 &7078912967132810703
 Animator:
   serializedVersion: 3
@@ -4864,6 +4890,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 7078912967132810703}
+  time: 0
+  isSelf: 0
 --- !u!1 &3829939618929013413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,6 +5028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 5739424016702570502}
+  time: 0
+  isSelf: 0
 --- !u!95 &4582144237564121788
 Animator:
   serializedVersion: 3
@@ -5033,6 +5063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 4582144237564121788}
+  time: 0
+  isSelf: 0
 --- !u!1 &4284301338442339938
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,6 +5242,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 7621435681084840475}
+  time: 0
+  isSelf: 0
 --- !u!95 &2853630153138538345
 Animator:
   serializedVersion: 3
@@ -5243,6 +5277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2853630153138538345}
+  time: 0
+  isSelf: 0
 --- !u!95 &6048005206136928377
 Animator:
   serializedVersion: 3
@@ -5276,6 +5312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 6048005206136928377}
+  time: 0
+  isSelf: 0
 --- !u!1 &4621320690061167922
 GameObject:
   m_ObjectHideFlags: 0
@@ -5715,6 +5753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2654774689354566767}
+  time: 0
+  isSelf: 0
 --- !u!1 &5240709804304427069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,6 +5846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 7079726116109802619}
+  time: 0
+  isSelf: 0
 --- !u!95 &2204665224027694081
 Animator:
   serializedVersion: 3
@@ -6258,6 +6300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 7039045005623986793}
+  time: 0
+  isSelf: 0
 --- !u!1 &5704417122361341072
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,6 +6420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 2803883582427959361}
+  time: 0
+  isSelf: 0
 --- !u!1 &5815301695535664091
 GameObject:
   m_ObjectHideFlags: 0
@@ -7029,6 +7075,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 9222287776018754544}
+  time: 0
+  isSelf: 0
 --- !u!1 &6499041934660608030
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,6 +7140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 3369536875265778798}
+  time: 0
+  isSelf: 0
 --- !u!1 &6735582989861583982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7420,6 +7470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 957944053601746912}
+  time: 0
+  isSelf: 0
 --- !u!95 &4006636477624661965
 Animator:
   serializedVersion: 3
@@ -7453,6 +7505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 4006636477624661965}
+  time: 0
+  isSelf: 0
 --- !u!1 &7388889681074844015
 GameObject:
   m_ObjectHideFlags: 0
@@ -7828,6 +7882,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartMovePosition: {x: 0, y: 0, z: 0}
   ani: {fileID: 6121916240676962725}
+  time: 0
+  isSelf: 0
 --- !u!1 &8347319161408822877
 GameObject:
   m_ObjectHideFlags: 0
