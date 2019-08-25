@@ -17,6 +17,8 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
         if (Save.maingameFlag == Save.MainGameFlag.FALLING)
             ThrowCameraMove();
+        //if (Save.maingameFlag == Save.MainGameFlag.SLOWSTART)
+        //    SlowCameraMove();
         //if (Save.ukemiRank == Save.UkemiRank.NOUKEMI)
         //NoUkemiCamereMove();
     }
@@ -118,6 +120,16 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
         }
 
         //trans.position = new Vector3(Player.position.x + 0.5f, Player.position.y + 4.09f, Player.position.z + 2.73f);
+    }
+
+    void SlowCameraMove()
+    {
+
+        if (!isThrow2)
+        {
+            trans.DOLocalRotate(new Vector3(80, 90, 0), 0.5f);
+            isThrow2 = true;
+        }
     }
 
     override public IEnumerator PerfectEffect()

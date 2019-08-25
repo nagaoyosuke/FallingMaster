@@ -75,6 +75,8 @@ public class CameraManager : MonoBehaviour
     protected Vector3 AngleMoveRotate;
 
     protected bool isThrow;
+    protected bool isThrow2;
+
 
     virtual public IEnumerator PerfectEffect() { yield return null; }
 
@@ -93,6 +95,7 @@ public class CameraManager : MonoBehaviour
 
     void OnEnable()
     {
+        isThrow = false;
         isThrow = false;
 
         fader = GameObject.FindWithTag("Fader").GetComponent<ScreenFader>();

@@ -767,6 +767,69 @@ Transform:
   m_Father: {fileID: 2727542431504893650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4044001016953451034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9037626003716894745}
+  - component: {fileID: 5572430756925865837}
+  - component: {fileID: 5165892081148440493}
+  m_Layer: 10
+  m_Name: Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9037626003716894745
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044001016953451034}
+  m_LocalRotation: {x: 0.40542734, y: -0.58381504, z: 0.55801135, w: 0.4282662}
+  m_LocalPosition: {x: -0.00084524247, y: 0.0025, z: -0.00056362496}
+  m_LocalScale: {x: 0.020450857, y: 0.02045087, z: 0.020450857}
+  m_Children: []
+  m_Father: {fileID: 5670180370997119976}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
+--- !u!119 &5572430756925865837
+Projector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044001016953451034}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.01
+  m_FarClipPlane: 13
+  m_FieldOfView: 30
+  m_AspectRatio: 1
+  m_Orthographic: 1
+  m_OrthographicSize: 1.14
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &5165892081148440493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044001016953451034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530d767a061a64b21831970a77e23461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4352826600499814730
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1037,7 @@ Transform:
   - {fileID: 169182556454561611}
   - {fileID: 9052459743028989768}
   - {fileID: 66913382874289886}
+  - {fileID: 9037626003716894745}
   m_Father: {fileID: 8499625182565416832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
