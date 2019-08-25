@@ -1,2 +1,4 @@
 # FallingMaster
-TGS2019に出展する大学のコンペに応募予定の製作中ゲーム
+TGS2019に出展予定の製作中ゲーム
+
+Standard Assetsを AssetsStoreからダウンロードしてください。
