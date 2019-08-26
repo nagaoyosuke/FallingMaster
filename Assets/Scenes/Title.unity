@@ -642,6 +642,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 199abce97d68041298fed2b4aef827df, type: 2}
+    - target: {fileID: 2105737149465330288, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497758306790689476, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072371364469739354, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2369405216850236580, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682469679846163931, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 766118090335710451, guid: 065b60d83f84f471c917c38d15b8a3b4,
+        type: 3}
+      propertyPath: Power.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8908994816780230995, guid: 065b60d83f84f471c917c38d15b8a3b4, type: 3}
     - {fileID: 3746335907229853349, guid: 065b60d83f84f471c917c38d15b8a3b4, type: 3}

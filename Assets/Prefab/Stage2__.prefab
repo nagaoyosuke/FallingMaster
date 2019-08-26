@@ -26431,6 +26431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2stagemap
       objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -26475,6 +26479,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0fb19f361354409abb7e90c54a1528d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
 --- !u!4 &4863782790823921776 stripped
