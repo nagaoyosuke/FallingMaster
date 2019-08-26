@@ -1032,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 47092722}
+  UkemiStartText: {fileID: 0}
 --- !u!1 &950265054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1964,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440064810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3089,6 +3090,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 46641801573202833}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8246434444793314180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3502,6 +3504,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 527298260183190638}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5676567919438195891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3738,6 +3741,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 644124527884184680}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &7925604816567907618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,6 +3919,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 729831279765666166}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &68532009209168252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,6 +4005,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 735256042171385707}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5937491297108242660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4144,6 +4150,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 807910661350191963}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5943702482040243448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4500,6 +4507,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1110398279604470973}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2928634183504510510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4585,6 +4593,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1196825473209510543}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1047278838669270497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4814,6 +4823,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1292926851388627309}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &7941429631048301887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4958,6 +4968,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1323227850715622584}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1638867205579436504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5458,6 +5469,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1803521812945433818}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1747997632407750339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5635,6 +5647,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 1829671669726156388}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1896685226044242295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5871,6 +5884,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 2026068505603713397}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8979476034672975484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6123,6 +6137,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 2351745259512150964}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8363828252796912845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6267,6 +6282,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 2661992108082796394}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2463704131825895298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6424,6 +6440,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 2675284993118269204}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &6285021754401637383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6524,6 +6541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 20
   EffectObject: {fileID: 47092722}
+  UkemiStartText: {fileID: 0}
 --- !u!114 &327298480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7234,6 +7252,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 3098574306367144650}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &3537434834776252701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7411,6 +7430,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 3227333720026029958}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &7675932071362316761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7496,6 +7516,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 3405188332730415042}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8062955873736295614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7787,6 +7808,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 3560828390015372509}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1309652166937617636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8006,6 +8028,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 3725590604780692299}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4893628346452858332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8409,6 +8432,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4224517302360196225}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1974663369346653218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8606,6 +8630,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4416569602331520339}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2540113772850289833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8691,6 +8716,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4592657717672807913}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5588510343882872885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9300,6 +9326,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4770862776541165983}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &7116249096895398318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9444,6 +9471,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4786090408105137880}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5952304517146027179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9529,6 +9557,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 4800548845925000149}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4450467398906053907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10033,6 +10062,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 5144134443709730906}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2872558074488962744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10692,6 +10722,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 5599215712074029569}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4953494040634698185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10893,6 +10924,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 5941021762969188817}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &839338698949004547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11324,6 +11356,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 6195735805960263498}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2526727364308422711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11640,6 +11673,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 6426182471601400507}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1598903293253355528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11834,6 +11868,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 6549755203915564850}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &331912253091944729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11978,6 +12013,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 6718209846191628113}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4562132613647434748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12122,6 +12158,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 6826250803934209581}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &6412782808087483041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12284,6 +12321,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 7022643713458414388}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8622050463162671863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12492,6 +12530,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 7304094510482205857}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2549194264350699272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12998,6 +13037,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 7699123777147343531}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &3769342253783281627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13699,6 +13739,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 8603682126269692211}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &3598314488093368329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13828,6 +13869,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 8692341502343418846}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &470472266221177875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13976,6 +14018,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 8877505930383261380}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1861187034884883213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14061,6 +14104,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 9005704892707735078}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &2402944480981515667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14269,6 +14313,7 @@ MonoBehaviour:
   parfectFlame: 120
   EffectObject: {fileID: 9132009806350039304}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4350298113322847188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39482,6 +39527,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0fb19f361354409abb7e90c54a1528d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdd8c45ee4baf427db41d9f9ca732f14, type: 3}
 --- !u!4 &4863782790823921776 stripped
@@ -53674,6 +53727,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3870202450469361478}
     m_Modifications:
+    - target: {fileID: 8344264297800652379, guid: 9cb1954aecf16489fb89f6ea8cc12581,
+        type: 3}
+      propertyPath: m_Name
+      value: ukeminoru_mage (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5922365683159840006, guid: 9cb1954aecf16489fb89f6ea8cc12581,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53738,11 +53796,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5000023
-      objectReference: {fileID: 0}
-    - target: {fileID: 8344264297800652379, guid: 9cb1954aecf16489fb89f6ea8cc12581,
-        type: 3}
-      propertyPath: m_Name
-      value: ukeminoru_mage (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8107184091196549274, guid: 9cb1954aecf16489fb89f6ea8cc12581,
         type: 3}
