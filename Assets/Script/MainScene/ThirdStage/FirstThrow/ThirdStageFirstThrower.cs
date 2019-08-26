@@ -67,7 +67,7 @@ public class ThirdStageFirstThrower : ThrowManager
 
         float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
         Vector3 vec = new Vector3(0, Mathf.Cos(rad), -Mathf.Sin(rad));
-        rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
+        rb.AddForce(vec * 2000);   //手前に落ちるから力を与えて自然に
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");

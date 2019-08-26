@@ -18,7 +18,7 @@ public class AddUkemiPlane : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
         if(Power.x == 0 && Power.y == 0 && Power.z == 0)
         {
-            Power = new Vector3(0, 0, 20f);
+            Power = new Vector3(0, 0, 10f);
         }
     }
 
