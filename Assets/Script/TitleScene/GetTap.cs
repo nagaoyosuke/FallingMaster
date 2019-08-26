@@ -12,11 +12,15 @@ public class GetTap : MonoBehaviour
 
     [SerializeField]
     private GameObject TapObj;
+    [SerializeField]
+    private Animator ani;
+
     // Use this for initialization
     void Start()
     {
         Sound.PlaySe("taiko02");
         Sound.PlayBgm("Result1");
+        ani.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class GetTap : MonoBehaviour
 
     private IEnumerator WaitingFadeOut (){
 
+        ani.enabled = true;
         yield return new WaitForSeconds(0.75f);
         GameObject.Find("Panel").GetComponent<ScreenFader>().isFadeOut = true;
         yield return new WaitForSeconds(1.5f);
