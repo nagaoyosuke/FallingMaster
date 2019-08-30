@@ -980,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868151833}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -57.1, y: -33.7, z: 35.3}
+  m_LocalPosition: {x: -57.1, y: -32.9, z: 35.3}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 1023365970}
@@ -1027,8 +1027,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1184ab17f3fe4158a35dbdd644a6222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parfectFlame: 17
+  parfectFlame: 30
+  parfectingFlame: 4
   EffectObject: {fileID: 47092722}
+  UkemiStartText: {fileID: 0}
 --- !u!1 &950265054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,6 +3086,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 151671620473038206}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4464916656326487238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3861,6 +3864,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 2026068505603713397}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &8979476034672975484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,6 +4425,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 3043427295655561569}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &5653566793669913613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4574,6 +4579,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 3227333720026029958}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &7675932071362316761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6289,6 +6295,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 5599215712074029569}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4953494040634698185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6407,6 +6414,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 5704417122361341072}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1433321303348922687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6929,6 +6937,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 6281686434287493365}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &1399225670198839934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7247,6 +7256,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 6735582989861583982}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &6973545209703948069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8020,6 +8030,7 @@ MonoBehaviour:
   parfectFlame: 20
   EffectObject: {fileID: 8461689109945712593}
   isDanger: 0
+  UkemiStartText: {fileID: 0}
 --- !u!114 &4209585036074973970
 MonoBehaviour:
   m_ObjectHideFlags: 0

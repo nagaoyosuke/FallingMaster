@@ -17,8 +17,8 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
         if (Save.maingameFlag == Save.MainGameFlag.FALLING)
             ThrowCameraMove();
-        //if (Save.maingameFlag == Save.MainGameFlag.SLOWSTART)
-        //    SlowCameraMove();
+        if (Save.maingameFlag == Save.MainGameFlag.SLOWSTART)
+            SlowCameraMove();
         //if (Save.ukemiRank == Save.UkemiRank.NOUKEMI)
         //NoUkemiCamereMove();
     }
@@ -127,7 +127,7 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
 
         if (!isThrow2)
         {
-            trans.DOLocalRotate(new Vector3(80, 90, 0), 0.5f);
+            trans.DOLocalRotate(new Vector3(70, 90, 0), 0.4f);
             isThrow2 = true;
         }
     }

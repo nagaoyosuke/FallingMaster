@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 受け身入力の判定を管理する(04/04 長尾)
@@ -13,6 +14,12 @@ public class UkemiCheckManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private int parfectFlame;
+
+    /// <summary>
+    /// PERFECT判定の前後のフレーム
+    /// </summary>
+    [SerializeField]
+    private int parfectingFlame;
 
     [SerializeField]
     private GameObject EffectObject;
@@ -47,7 +54,10 @@ public class UkemiCheckManager : MonoBehaviour
     void Start()
     {
         if (parfectFlame == 0)
-            parfectFlame = 20;
+            parfectFlame = 50;
+
+        if (parfectingFlame == 0)
+            parfectingFlame = 5;
 
         Effect = EffectObject.GetComponent<IUkemiEffect>();
     }
@@ -77,7 +87,6 @@ public class UkemiCheckManager : MonoBehaviour
         Sound.PlaySe("keikoku01");
         UkemiStartText.SetActive(true);
 
-
         StartCoroutine(UkemiWait());
     }
 
@@ -87,17 +96,28 @@ public class UkemiCheckManager : MonoBehaviour
     /// <returns>The wait.</returns>
     IEnumerator UkemiWait()
     {
+        var circle = GameObject.FindWithTag("UkemiCircle").GetComponent<RectTransform>();
+
         int flame = 0;
+        //float num = 1.0f / 60.0f;
+        float num = 1.0f / parfectFlame;
+
         while (true)
         {
+            circle.localScale -= new Vector3(num, num, 0);
+            print(flame);
             /// 受け身入力成功
             if (Save.isUkemi)
             {
-                if (flame < parfectFlame)
-                    Save.ukemiRank = Save.UkemiRank.PERFECT;
-                else
-                    Save.ukemiRank = Save.UkemiRank.GOOD;
+                var underflame = parfectFlame - parfectingFlame;
+                var topflame = parfectFlame + parfectingFlame;
 
+                if (underflame <= flame && flame < topflame)
+                    Save.ukemiRank = Save.UkemiRank.PERFECT;
+                else if ((underflame - 10 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 10))
+                    Save.ukemiRank = Save.UkemiRank.GOOD;
+                else
+                    Save.ukemiRank = Save.UkemiRank.NOUKEMI;
                 break;
             }
 
@@ -105,7 +125,7 @@ public class UkemiCheckManager : MonoBehaviour
             if (Save.ukemiRank == Save.UkemiRank.NOUKEMI)
                 break;
 
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds((1.0f/(60.0f/Time.timeScale)));
             flame++;
         }
 
