@@ -27,6 +27,8 @@ public class Menu : MonoBehaviour
         if (isBarTap)
             return;
 
+        Sound.PlaySe("taiko02");
+
         if (!isMenu)
         {
             isMenu = true;
@@ -57,6 +59,7 @@ public class Menu : MonoBehaviour
         if (isBarTap)
             return;
         isBarTap = true;
+        Sound.PlaySe("taiko01");
         StartCoroutine(Title());
     }
 
@@ -73,6 +76,7 @@ public class Menu : MonoBehaviour
         if (isBarTap)
             return;
         isBarTap = true;
+        Sound.PlaySe("taiko01");
         StartCoroutine(Result());
 
     }
@@ -92,6 +96,7 @@ public class Menu : MonoBehaviour
 
         isMenu = false;
         MenuChange(false);
+        Sound.PlaySe("taiko01");
         Time.timeScale = timeScale;
     }
 
