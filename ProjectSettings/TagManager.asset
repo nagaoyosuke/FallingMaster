@@ -9,6 +9,7 @@ TagManager:
   - Fader
   - StartCamera
   - Wind
+  - UkemiCircle
   layers:
   - Default
   - TransparentFX

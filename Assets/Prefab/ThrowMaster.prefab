@@ -1173,6 +1173,69 @@ Transform:
   m_Father: {fileID: 9047975596844365779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5404931825515285805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5068362631414193658}
+  - component: {fileID: 7237313310449909786}
+  - component: {fileID: 1204367126913956644}
+  m_Layer: 10
+  m_Name: Projector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5068362631414193658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404931825515285805}
+  m_LocalRotation: {x: 0.40542737, y: -0.5838149, z: 0.5580115, w: 0.4282662}
+  m_LocalPosition: {x: 0, y: 0.00754338, z: 0}
+  m_LocalScale: {x: 0.02045085, y: 0.02045087, z: 0.020450862}
+  m_Children: []
+  m_Father: {fileID: 274866387157547346}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: 0}
+--- !u!119 &7237313310449909786
+Projector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404931825515285805}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: 0.01
+  m_FarClipPlane: 13
+  m_FieldOfView: 30
+  m_AspectRatio: 1
+  m_Orthographic: 1
+  m_OrthographicSize: 1.14
+  m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &1204367126913956644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404931825515285805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530d767a061a64b21831970a77e23461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5464740321667156759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1893,7 @@ Transform:
   - {fileID: 3812358092969884250}
   - {fileID: 3620619911532393153}
   - {fileID: 8365666057997432436}
+  - {fileID: 5068362631414193658}
   m_Father: {fileID: 6636563434747963501}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

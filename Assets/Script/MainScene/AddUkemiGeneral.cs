@@ -15,6 +15,9 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     public GameObject smokeParticle;
     public GameObject FlashParticle;
 
+    //public GameObject OtherParticle;
+
+
     [SerializeField]
     private Vector3 MoveVector;
 
@@ -44,7 +47,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     public void AddEndEffect()
     {
         //Save.maingameFlag = Save.MainGameFlag.ADDUKEMIEFFECT;
-        UkemiStartText.SetActive(false);
+        //UkemiStartText.SetActive(false);
 
         //0615 仮のパーティクル(時々正しく表示されなくなるバグ有り)豊田
         GameObject particle = Instantiate(smokeParticle, Player.transform.position, Quaternion.identity) as GameObject;
@@ -66,9 +69,9 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     {
         yield return new WaitForSeconds(0f);
 
-        var shape = ps.shape;
-        shape.rotation = new Vector3(90, 0, 0);
-        shape.position = new Vector3(0, 0, 0.6f);
+        //var shape = ps.shape;
+        //shape.rotation = new Vector3(90, 0, 0);
+        //shape.position = new Vector3(0, 0, 0.6f);
         ps.Play();
         Destroy(particle, 5f);
 

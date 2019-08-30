@@ -24,9 +24,23 @@ public class UkemiCheckManager : MonoBehaviour
 
     private bool isAction;
 
+    /// <summary>
+    /// 受け身入力が開始された時に表示されるテキスト
+    /// </summary>
+    [HideInInspector]
+    public GameObject UkemiStartText;
+
     void OnEnable()
     {
         isAction = false;
+    }
+
+    void Awake()
+    {
+        if (UkemiStartText == null)
+        {
+            UkemiStartText = GameObject.FindWithTag("UkemiText");
+        }
     }
 
     // Start is called before the first frame update
@@ -61,6 +75,8 @@ public class UkemiCheckManager : MonoBehaviour
         Save.maingameFlag = Save.MainGameFlag.UKEMI;
         isAction = true;
         Sound.PlaySe("keikoku01");
+        UkemiStartText.SetActive(true);
+
 
         StartCoroutine(UkemiWait());
     }
@@ -96,6 +112,8 @@ public class UkemiCheckManager : MonoBehaviour
         Save.maingameFlag = Save.MainGameFlag.UKEMIANIMETION;
 
         yield return null;
+        UkemiStartText.SetActive(false);
+
         Effect.StartEffect();
         ChoiceEffect();
 

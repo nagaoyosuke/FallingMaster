@@ -40,7 +40,7 @@ public class FirstStageSecondUkemiEffect : UkemiEffect,IUkemiEffect
     public void EndEffect()
     {
         Save.maingameFlag = Save.MainGameFlag.UKEMIEFFECT;
-        UkemiStartText.SetActive(false);
+        //UkemiStartText.SetActive(false);
 
         //Save.ThrowReSet();
     }

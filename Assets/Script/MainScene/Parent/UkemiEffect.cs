@@ -67,7 +67,7 @@ public class UkemiEffect : MonoBehaviour
         {
             if (Save.maingameFlag == Save.MainGameFlag.UKEMI)
             {
-                UkemiStartText.SetActive(true);
+                //UkemiStartText.SetActive(true);
                 isEnd = true;
             }
         }

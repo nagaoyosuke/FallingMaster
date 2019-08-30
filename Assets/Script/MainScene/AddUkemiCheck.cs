@@ -31,11 +31,25 @@ public class AddUkemiCheck : MonoBehaviour
     private Rigidbody rb;
     private Vector3 vel;
 
+    /// <summary>
+    /// 受け身入力が開始された時に表示されるテキスト
+    /// </summary>
+    [HideInInspector]
+    public GameObject UkemiStartText;
+
     void OnEnable()
     {
         isAction = false;
         if (EffectObject == null){
             EffectObject = this.gameObject;
+        }
+    }
+
+    void Awake()
+    {
+        if (UkemiStartText == null)
+        {
+            UkemiStartText = GameObject.FindWithTag("UkemiText");
         }
     }
 
@@ -82,7 +96,7 @@ public class AddUkemiCheck : MonoBehaviour
         if (!isDanger)
         {
             Sound.PlaySe("keikoku01");
-            EffectObject.GetComponent<AddUkemiEffect>().UkemiStartText.SetActive(true);
+            UkemiStartText.SetActive(true);
         }
         StartCoroutine(UkemiWait());
     }
@@ -143,6 +157,8 @@ public class AddUkemiCheck : MonoBehaviour
 
 
         yield return null;
+        UkemiStartText.SetActive(false);
+
         ChoiceEffect();
 
     }
@@ -156,7 +172,7 @@ public class AddUkemiCheck : MonoBehaviour
         {
             case Save.AddUkemi.NOUKEMI:
                 Effect.AddFailureNoUkemiEffect();
-                Save.AddUkemiPoint = 0;
+                //Save.AddUkemiPoint = 0;
                 break;
 
             case Save.AddUkemi.PERFECT:
