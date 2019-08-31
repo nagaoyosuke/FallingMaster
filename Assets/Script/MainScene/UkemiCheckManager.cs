@@ -37,6 +37,8 @@ public class UkemiCheckManager : MonoBehaviour
     [HideInInspector]
     public GameObject UkemiStartText;
 
+    private StampChange stampChange;
+
     void OnEnable()
     {
         isAction = false;
@@ -96,7 +98,10 @@ public class UkemiCheckManager : MonoBehaviour
     /// <returns>The wait.</returns>
     IEnumerator UkemiWait()
     {
+
         var circle = GameObject.FindWithTag("UkemiCircle").GetComponent<RectTransform>();
+        stampChange = GameObject.FindWithTag("UkemiStamp").GetComponent<StampChange>();
+        stampChange.isChanging = false;
 
         int flame = 0;
         //float num = 1.0f / 60.0f;
@@ -145,22 +150,27 @@ public class UkemiCheckManager : MonoBehaviour
     /// </summary>
     void ChoiceEffect()
     {
+
         switch (Save.ukemiRank)
         {
             case Save.UkemiRank.NOUKEMI:
                 Effect.FailureNoUkemiEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
                 break;
 
             case Save.UkemiRank.BAD:
                 Effect.BadEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
                 break;
 
             case Save.UkemiRank.GOOD:
                 Effect.GoodEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.GOOD));
                 break;
 
             case Save.UkemiRank.PERFECT:
                 Effect.PerfectEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.PARFECT));
                 break;
         }
     }
