@@ -10,10 +10,14 @@ public class AddUkemiCheck : MonoBehaviour
     [SerializeField]
     private int parfectFlame;
 
+    /// <summary>
     /// PERFECT判定の前後のフレーム
     /// </summary>
     [SerializeField]
     private int parfectingFlame;
+
+    [SerializeField]
+    private float timeScale;
 
     [SerializeField]
     private GameObject EffectObject;
@@ -74,7 +78,8 @@ public class AddUkemiCheck : MonoBehaviour
             parfectFlame = 20;
         if (parfectingFlame == 0)
             parfectingFlame = 5;
-
+        if (timeScale == 0)
+            timeScale = 0.4f;
 
         Effect = EffectObject.GetComponent<IAddUkemiEffect>();
     }
@@ -130,10 +135,13 @@ public class AddUkemiCheck : MonoBehaviour
         //float num = 1.0f / 60.0f;
         float num = 1.0f / parfectFlame;
 
-        Time.timeScale = 0.4f;
 
         if (isSlow)
         {
+            Time.timeScale = timeScale;
+
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
+
             float f = 40.0f;
             Vector3 v = rb.velocity;
             Vector3 vel_ = v / f;
@@ -152,7 +160,7 @@ public class AddUkemiCheck : MonoBehaviour
 
                 if (underflame <= flame && flame < topflame)
                     Save.addUkemiRank = Save.AddUkemi.PERFECT;
-                else if ((underflame - 10 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 10))
+                else if ((underflame - 2 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 2))
                     Save.addUkemiRank = Save.AddUkemi.PERFECT;
                 else
                     Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
@@ -170,11 +178,13 @@ public class AddUkemiCheck : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForSeconds((1.0f / (60.0f / Time.timeScale)));
+            yield return new WaitForSeconds((1.0f / (60.0f /timeScale)));
             flame++;
         }
         if (isSlow)
         {
+            rb.interpolation = RigidbodyInterpolation.None;
+
             Time.timeScale = 1.0f;
             rb.velocity = vel;
         }
