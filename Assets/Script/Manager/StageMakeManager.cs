@@ -32,7 +32,7 @@ public class StageMakeManager : MonoBehaviour
         switch (Save.stageState)
         {
             case Save.StageState.STAGE1:
-                Stage = Instantiate(Stage3);
+                Stage = Instantiate(Stage1);
                 break;
             case Save.StageState.STAGE2:
                 Stage = Instantiate(Stage2);

@@ -68,6 +68,7 @@ public class Menu : MonoBehaviour
         yield return StartCoroutine(FadeOut());
         Time.timeScale = 1.0f;
         Save.ReSet();
+        Save.PointReset();
         MySceneManager.GoTitle();
     }
 

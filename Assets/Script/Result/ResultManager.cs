@@ -60,13 +60,18 @@ public class ResultManager : MonoBehaviour
 
     private int MaxPoint;
 
+    private float time;
+    private int tapCount;
+    private bool isSkip;
+
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
         Sound.PlayBgm("Result1");
-
-        //Save.AddUkemiPoint_ = 1;
-        //Save.UkemiPoint = 1;
+        time = 0;
+        //Save.AddUkemiPoint_ = 2;
+        //Save.UkemiPoint = 8;
         ani.enabled = false;
         //AlphaSet();
         MaxPoint = Save.UkemiPoint + Save.AddUkemiPoint_;
@@ -76,14 +81,27 @@ public class ResultManager : MonoBehaviour
         fader.isFadeIn = true;
         yield return new WaitForEndOfFrame();
         UkemiPointCheck();
-        StartCoroutine(View());
+        StartCoroutine(TextView());
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isSkip)
+        {
+            time += Time.deltaTime;
+            if (Input.GetMouseButtonDown(0) && time > 1.0f)
+            {
+                tapCount++;
+                time = 0;
+                if (tapCount == 1)
+                {
+                    Skip1();
+                    StartCoroutine(RankView());
+                }
+            }
+        }
     }
 
     void AlphaSet()
@@ -113,29 +131,38 @@ public class ResultManager : MonoBehaviour
         //AfterRank.SetActive(false);
     }
 
-    IEnumerator View()
+    IEnumerator TextView()
     {
         ResultText.enabled = true;
         Sound.PlaySe("taiko02");
         yield return new WaitForSeconds(3);
 
+        if (tapCount > 0)
+            yield break;
+
         AddUkemiText.enabled = true;
         Sound.PlaySe("taiko01");
         yield return new WaitForSeconds(1);
 
+        if (tapCount > 0)
+            yield break;
+
         AddUkemiTextPoint.enabled = true;
         Sound.PlaySe("taiko01");
-
         yield return new WaitForSeconds(1);
+
+        if (tapCount > 0)
+            yield break;
 
         MainUkemiText.enabled = true;
         Sound.PlaySe("taiko01");
-
         yield return new WaitForSeconds(1);
+
+        if (tapCount > 0)
+            yield break;
 
         MainUkemiTextPoint.enabled = true;
         Sound.PlaySe("taiko01");
-
         yield return new WaitForSeconds(1.25f);
 
         Sound.PlaySe("taiko01");
@@ -143,19 +170,33 @@ public class ResultManager : MonoBehaviour
 
         foreach (Text t in ResultWaitText)
         {
+            if (tapCount > 0)
+                yield break;
+
             t.enabled = true;
             yield return new WaitForSeconds(1);
         }
 
+        if (tapCount > 0)
+            yield break;
+
+        StartCoroutine(RankView());
+    }
+
+    IEnumerator RankView()
+    {
         BeforRank.gameObject.SetActive(true);
         BeforRank.color = new Color(1, 1, 1, 0);
         BeforRankText.color = new Color(1, 1, 1, 0);
 
-        for (int i = 0; i < 60 * 3; i++)
+        for (int i = 0; i < 60 * 2f; i++)
         {
             yield return null;
-            BeforRankText.color = new Color(1, 1, 1, 60 * 3 / 255.0f * i * 2 / 255.0f);
-            BeforRank.color = new Color(1, 1, 1, 60 * 3 / 255.0f * i * 2 / 255.0f);
+            //BeforRankText.color = new Color(1, 1, 1, 60.0f * 1.5f / 255.0f * i * 2 / 255.0f);
+            //BeforRank.color = new Color(1, 1, 1, 60.0f * 1.5f / 255.0f * i * 2 / 255.0f);
+
+            BeforRankText.color += new Color(0, 0, 0, 255.0f / 60.0f * 2f / 255.0f);
+            BeforRank.color += new Color(0, 0, 0, 255.0f / 60.0f * 2f / 255.0f);
         }
 
         StartCoroutine(Attack());
@@ -169,8 +210,17 @@ public class ResultManager : MonoBehaviour
         ani.SetInteger("Attack", aniint);
         ani.enabled = true;
 
-        for(int i = 1; i <= aniint; i++)
+        for (int i = 1; i <= aniint; i++)
         {
+            if (tapCount >= 2 && i < 10)
+            {
+                i = aniint;
+                if (i >= 10)
+                {
+                    i = 10;
+                }
+            }
+
             //flag.is~はCanvasのアニメーションで管理してる
             yield return new WaitUntil(() => flag.isAttackStart == true);
             AfterTextChange(i);
@@ -189,7 +239,12 @@ public class ResultManager : MonoBehaviour
                 BeforTextChange(i);
 
             }
+
+
         }
+
+        isSkip = true;
+
 		//yield return new WaitUntil(() => flag.isAttackStart == true);
 		//yield return new WaitUntil(() => flag.isAttackStart == true);
 		yield return new WaitUntil(() => flag.isAttackEnd == true);
@@ -220,6 +275,22 @@ public class ResultManager : MonoBehaviour
         }
 
     }
+
+    void Skip1()
+    {
+        ResultText.enabled = true;
+        AddUkemiText.enabled = true;
+        AddUkemiTextPoint.enabled = true;
+        MainUkemiText.enabled = true;
+        MainUkemiTextPoint.enabled = true;
+        foreach (Text t in ResultWaitText)
+        {
+            t.enabled = true;
+        }
+        Sound.PlaySe("taiko01");
+
+    }
+
 
     void UkemiPointCheck()
     {
