@@ -10,6 +10,11 @@ public class AddUkemiCheck : MonoBehaviour
     [SerializeField]
     private int parfectFlame;
 
+    /// PERFECT判定の前後のフレーム
+    /// </summary>
+    [SerializeField]
+    private int parfectingFlame;
+
     [SerializeField]
     private GameObject EffectObject;
 
@@ -37,6 +42,11 @@ public class AddUkemiCheck : MonoBehaviour
     [HideInInspector]
     public GameObject UkemiStartText;
 
+    private StampChange stampChange;
+
+    [SerializeField]
+    private bool isSlow = true;
+
     void OnEnable()
     {
         isAction = false;
@@ -62,6 +72,9 @@ public class AddUkemiCheck : MonoBehaviour
         }
         if (parfectFlame == 0)
             parfectFlame = 20;
+        if (parfectingFlame == 0)
+            parfectingFlame = 5;
+
 
         Effect = EffectObject.GetComponent<IAddUkemiEffect>();
     }
@@ -107,27 +120,66 @@ public class AddUkemiCheck : MonoBehaviour
     /// <returns>The wait.</returns>
     IEnumerator UkemiWait()
     {
+        var circle = GameObject.FindWithTag("UkemiCircle").GetComponent<RectTransform>();
+        circle.localScale = new Vector3(2, 2, 0);
+
+        stampChange = GameObject.FindWithTag("UkemiStamp").GetComponent<StampChange>();
+        stampChange.isChanging = false;
+
         int flame = 0;
+        //float num = 1.0f / 60.0f;
+        float num = 1.0f / parfectFlame;
+
+        Time.timeScale = 0.4f;
+
+        if (isSlow)
+        {
+            float f = 40.0f;
+            Vector3 v = rb.velocity;
+            Vector3 vel_ = v / f;
+            rb.velocity = vel_;
+        }
+
         while (true)
         {
+            circle.localScale -= new Vector3(num, num, 0);
+            print(flame);
             /// 受け身入力成功
             if (Save.isAddUkemi)
             {
-                if (flame < parfectFlame)
+                var underflame = parfectFlame - parfectingFlame;
+                var topflame = parfectFlame + parfectingFlame;
+
+                if (underflame <= flame && flame < topflame)
+                    Save.addUkemiRank = Save.AddUkemi.PERFECT;
+                else if ((underflame - 10 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 10))
                     Save.addUkemiRank = Save.AddUkemi.PERFECT;
                 else
                     Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
-
                 break;
             }
 
-            /// 床に当たったら(AddUkemiPlane.cs参照)
+            /// 床に当たったら(PlaneHit.cs参照)
             if (Save.addUkemiRank == Save.AddUkemi.NOUKEMI)
                 break;
 
-            yield return new WaitForFixedUpdate();
+            if (flame > parfectFlame + parfectingFlame + 30)
+            {
+                print("timeout");
+                Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
+                break;
+            }
+
+            yield return new WaitForSeconds((1.0f / (60.0f / Time.timeScale)));
             flame++;
         }
+        if (isSlow)
+        {
+            Time.timeScale = 1.0f;
+            rb.velocity = vel;
+        }
+
+
         if (isDanger)
             Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
 
@@ -140,7 +192,7 @@ public class AddUkemiCheck : MonoBehaviour
         {
             if (Save.addUkemiRank == Save.AddUkemi.NOUKEMI)
                 break;
-     
+
             if (Plane.isHit)
                 break;
 
@@ -172,12 +224,13 @@ public class AddUkemiCheck : MonoBehaviour
         {
             case Save.AddUkemi.NOUKEMI:
                 Effect.AddFailureNoUkemiEffect();
-                //Save.AddUkemiPoint = 0;
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
                 break;
 
             case Save.AddUkemi.PERFECT:
                 Save.AddUkemiPoint++;
                 Effect.AddPerfectEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.PARFECT));
                 break;
         }
     }

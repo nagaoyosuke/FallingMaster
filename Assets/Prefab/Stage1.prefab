@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 50
-  parfectingFlame: 5
+  parfectingFlame: 7
   EffectObject: {fileID: 47092722}
   UkemiStartText: {fileID: 0}
 --- !u!1 &950265054
@@ -3833,8 +3833,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6281686434287493365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.4, z: -3.16}
-  m_LocalScale: {x: 10.000041, y: 2.46, z: 4.58}
+  m_LocalPosition: {x: 0, y: 12.02, z: -3.16}
+  m_LocalScale: {x: 10.000041, y: 1.57, z: 4.58}
   m_Children: []
   m_Father: {fileID: 2088619350}
   m_RootOrder: 6
@@ -3864,10 +3864,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66c54f96124648cf830938423186109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parfectFlame: 30
+  parfectFlame: 50
+  parfectingFlame: 5
   EffectObject: {fileID: 6281686434287493365}
   isDanger: 0
   UkemiStartText: {fileID: 0}
+  isSlow: 1
 --- !u!114 &5126617448230964056
 MonoBehaviour:
   m_ObjectHideFlags: 0

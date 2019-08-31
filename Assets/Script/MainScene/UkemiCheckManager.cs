@@ -100,6 +100,8 @@ public class UkemiCheckManager : MonoBehaviour
     {
 
         var circle = GameObject.FindWithTag("UkemiCircle").GetComponent<RectTransform>();
+        circle.localScale = new Vector3(2, 2, 0);
+
         stampChange = GameObject.FindWithTag("UkemiStamp").GetComponent<StampChange>();
         stampChange.isChanging = false;
 
