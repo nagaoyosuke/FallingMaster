@@ -209,6 +209,13 @@ public static class Save{
                 break;
         }
 
+        if (UkemiPoint == 6)
+        {
+            UkemiPoint += 2;
+            AddUkemiPoint_ += 3;
+        }
+
+
         maingameFlag = MainGameFlag.STARTCAMERA;
         ukemiRank = UkemiRank.NONE;
         addUkemiRank = AddUkemi.NONE;
