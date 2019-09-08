@@ -28,6 +28,8 @@ public class WaterHit : MonoBehaviour
         {
             if (other.tag == "Player")
             {
+                if (Save.ukemiRank != Save.UkemiRank.NONE)
+                    return;
                 isHit = false;
                 StartCoroutine(Effect(other.gameObject));
             }

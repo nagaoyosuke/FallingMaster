@@ -10,8 +10,16 @@ public class BoundForce : MonoBehaviour
         {
             if(other.gameObject.tag == "Player")
             {
-                other.gameObject.GetComponentInParent<Rigidbody>().AddForce(new Vector3(0, 0, 100));
+                other.gameObject.GetComponentInParent<Rigidbody>().AddForce(new Vector3(0, 200, 250));
+                //other.transform.position += new Vector3(0, 2, 0);
+                print("Bound");
             }
         }
+
+        if (!Save.isUkemi && Save.maingameFlag == Save.MainGameFlag.UKEMI)
+        {
+            Save.ukemiRank = Save.UkemiRank.NOUKEMI;
+        }
+
     }
 }
