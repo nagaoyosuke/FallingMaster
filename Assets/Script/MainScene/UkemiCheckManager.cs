@@ -121,7 +121,7 @@ public class UkemiCheckManager : MonoBehaviour
 
                 if (underflame <= flame && flame < topflame)
                     Save.ukemiRank = Save.UkemiRank.PERFECT;
-                else if ((underflame - 6 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 6))
+                else if ((underflame - 5 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 5))
                     Save.ukemiRank = Save.UkemiRank.GOOD;
                 else
                     Save.ukemiRank = Save.UkemiRank.NOUKEMI;

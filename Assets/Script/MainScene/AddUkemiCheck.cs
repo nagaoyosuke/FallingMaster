@@ -161,7 +161,7 @@ public class AddUkemiCheck : MonoBehaviour
                 if (underflame <= flame && flame < topflame)
                     Save.addUkemiRank = Save.AddUkemi.PERFECT;
                 else if ((underflame - 2 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 2))
-                    Save.addUkemiRank = Save.AddUkemi.PERFECT;
+                    Save.addUkemiRank = Save.AddUkemi.GOOD;
                 else
                     Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
                 break;
@@ -206,7 +206,7 @@ public class AddUkemiCheck : MonoBehaviour
             if (Plane.isHit)
                 break;
 
-            if (time > 45)
+            if (time > 25)
             {
                 print("timeout");
                 break;
@@ -235,6 +235,12 @@ public class AddUkemiCheck : MonoBehaviour
             case Save.AddUkemi.NOUKEMI:
                 Effect.AddFailureNoUkemiEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
+                break;
+
+            case Save.AddUkemi.GOOD:
+                Save.AddUkemiPoint++;
+                Effect.AddPerfectEffect();
+                StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.GOOD));
                 break;
 
             case Save.AddUkemi.PERFECT:

@@ -157,6 +157,7 @@ public static class Save{
 
     public enum AddUkemi{
         NONE,
+        GOOD,
         PERFECT,
         NOUKEMI
     };

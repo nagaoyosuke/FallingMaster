@@ -135,7 +135,7 @@ public class ResultManager : MonoBehaviour
     {
         ResultText.enabled = true;
         Sound.PlaySe("taiko02");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         if (tapCount > 0)
             yield break;

@@ -111,7 +111,7 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
     {
         //投げられてる時のカメラワークをここに実装
 
-        trans.localPosition = Player.localPosition + new Vector3(-2.4f, 5f, -0.5f);
+        trans.localPosition = Player.localPosition + new Vector3(-2.4f, 5f, 0f);
 
         if (!isThrow)
         {
