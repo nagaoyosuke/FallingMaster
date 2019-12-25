@@ -17,7 +17,7 @@ public class AddUkemiPlane : MonoBehaviour
 
     /// <summary>
     /// ベクトルを反転するかどうか(主にエンドレスを想定)
-    /// AddYkemiCheckで入れられる
+    /// AddUkemiCheckで入れられる
     /// </summary>
     [HideInInspector]
     public bool isInversion;

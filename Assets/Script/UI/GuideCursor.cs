@@ -27,6 +27,9 @@ public class GuideCursor : SwipeManager
         arrow.enabled = false;
         foreach (GameObject o in objs)
         {
+            if (o == null)
+                continue;
+
             o.SetActive(false);
         }
     }
@@ -39,6 +42,9 @@ public class GuideCursor : SwipeManager
             arrow.enabled = true;
             foreach (GameObject o in objs)
             {
+                if (o == null)
+                    continue;
+
                 o.SetActive(true);
             }
         }
