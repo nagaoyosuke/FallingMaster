@@ -19,7 +19,18 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 
 
     [SerializeField]
-    private Vector3 MoveVector;
+    private Vector3 MovePower;
+
+    /// <summary>
+    /// ベクトルを反転するかどうか
+    /// AddYkemiCheckで入れられる
+    /// </summary>
+    [HideInInspector]
+    public bool isInversion
+    {
+        get;
+        set;
+    }
 
     /// <summary>
     /// 共通の追加受け身開始時の演出
@@ -83,8 +94,17 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddPerfectEffect()
     {
+        //跳ねないように一時的にyベクトルを0に
         PlayerRb.velocity = new Vector3(PlayerRb.velocity.x, 0, PlayerRb.velocity.z);
-        var pos = Player.transform.position + MoveVector;
+        //受身成功時にかかる力、持続的にかかるやつはAddUkemiPlaneにある
+        PlayerRb.AddForce(MovePower);
+
+        if (isInversion)
+        {
+            PlayerRb.velocity = new Vector3(PlayerRb.velocity.x * -1, 0, PlayerRb.velocity.z * -1);
+        }
+
+        //var pos = Player.transform.position + MoveVector;
         //Player.transform.rotation = new Quaternion(0, 0, 0, 0);
         //Player.transform.position += new Vector3(0, -3, 0);
         //StartCoroutine(Move());
@@ -108,15 +128,6 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         Sound.PlaySe(UkemiSoundName);
 
         AddEndEffect();
-    }
-
-    public IEnumerator Move()
-    {
-        for (int i = 0; i < 60; i++)
-        {
-            yield return new WaitForFixedUpdate();
-            Player.transform.localPosition += new Vector3(MoveVector.x/ 60.0f, MoveVector.z / 60.0f, MoveVector.z / 60.0f);
-        }
     }
 
     /// <summary>

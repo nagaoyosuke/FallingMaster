@@ -7,6 +7,12 @@ public class SecondStageAddUkemi01 : AddUkemiEffect, IAddUkemiEffect
     public GameObject smokeParticle;
     public GameObject FlashParticle;
 
+    public bool isInversion
+    {
+        get;
+        set;
+    }
+
     /// <summary>
     /// 共通の追加受け身開始時の演出
     /// </summary>

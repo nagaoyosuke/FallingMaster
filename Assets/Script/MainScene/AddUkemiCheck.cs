@@ -51,6 +51,14 @@ public class AddUkemiCheck : MonoBehaviour
     [SerializeField]
     private bool isSlow = true;
 
+    /// <summary>
+    /// ベクトルと受身するモデルを反転するかどうか
+    /// AddUkemiGeneralとAddUkemiPlaneのisInversionにも渡す
+    /// </summary>
+    [SerializeField]
+    private bool isInversion;
+
+
     void OnEnable()
     {
         isAction = false;
@@ -78,7 +86,7 @@ public class AddUkemiCheck : MonoBehaviour
             parfectFlame = 20;
         if (parfectingFlame == 0)
             parfectingFlame = 5;
-        if (timeScale == 0)
+        if (timeScale <= 0)
             timeScale = 0.4f;
 
         Effect = EffectObject.GetComponent<IAddUkemiEffect>();
@@ -168,12 +176,14 @@ public class AddUkemiCheck : MonoBehaviour
             }
 
             /// 床に当たったら(PlaneHit.cs参照)
+            /// 追加受身できる場所の床は判定ないから関係ない
             if (Save.addUkemiRank == Save.AddUkemi.NOUKEMI)
                 break;
 
-            if (flame > parfectFlame + parfectingFlame + 30)
+            //長い気がするから30 -> 10　に変更した(12/24)
+            if (flame > parfectFlame + parfectingFlame + 10)
             {
-                print("timeout");
+                print("ukemi timeout");
                 Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
                 break;
             }
@@ -197,6 +207,8 @@ public class AddUkemiCheck : MonoBehaviour
         Save.maingameFlag = Save.MainGameFlag.ADDUKEMIANIMETION;
         Effect.AddStartEffect();
 
+
+        //地面に着くまで受身を待ってる
         int time = 0;
         while (true)
         {
@@ -208,7 +220,7 @@ public class AddUkemiCheck : MonoBehaviour
 
             if (time > 25)
             {
-                print("timeout");
+                print("plane timeout");
                 break;
             }
 
@@ -221,8 +233,29 @@ public class AddUkemiCheck : MonoBehaviour
         yield return null;
         UkemiStartText.SetActive(false);
 
+        //反転処理
+        InversionChange();
+
         ChoiceEffect();
 
+    }
+
+    /// <summary>
+    /// 反転処理
+    /// </summary>
+    void InversionChange()
+    {
+        if (isInversion)
+        {
+
+            //モデル反転
+            var ang = rb.transform.localEulerAngles;
+            rb.transform.localEulerAngles = new Vector3(ang.x, ang.y * -1, ang.z);
+
+            //それぞれでベクトル反転
+            Plane.isInversion = isInversion;
+            Effect.isInversion = isInversion;
+        }
     }
 
     /// <summary>

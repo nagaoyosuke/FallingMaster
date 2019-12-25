@@ -3,6 +3,8 @@
 /// </summary>
 public interface IAddUkemiEffect
 {
+    bool isInversion { get; set;}
+
     void AddStartEffect();
     void AddEndEffect();
     void AddPerfectEffect();

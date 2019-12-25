@@ -7,10 +7,20 @@ public class AddUkemiPlane : MonoBehaviour
     private float count;
     private Rigidbody rb;
 
+    /// <summary>
+    /// addukemicheck.csでみてる
+    /// </summary>
     public bool isHit;
 
     [SerializeField]
     private Vector3 Power;
+
+    /// <summary>
+    /// ベクトルを反転するかどうか(主にエンドレスを想定)
+    /// AddYkemiCheckで入れられる
+    /// </summary>
+    [HideInInspector]
+    public bool isInversion;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -29,15 +39,16 @@ public class AddUkemiPlane : MonoBehaviour
             if (rb == null)
                 rb = other.gameObject.GetComponentInParent<Rigidbody>();
 
-            if (!Save.isAddUkemi && Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)
-            {
-                //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
-                //other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
-                //other.gameObject.GetComponentInParent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                //other.transform.rotation = new Quaternion(0, 0, 0, 0);
-                //Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
-                print("NoAddUkemi");
-            }
+            //追加受身のタイミングはAddUkemiCheck.csでフレーム管理してるから地面判定はいらない
+            //if (!Save.isAddUkemi && Save.maingameFlag == Save.MainGameFlag.ADDUKEMI)
+            //{
+            //    //other.gameObject.GetComponentInParent<Rigidbody>().velocity = Vector3.zero;
+            //    //other.gameObject.GetComponentInParent<Rigidbody>().useGravity = false;
+            //    //other.gameObject.GetComponentInParent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            //    //other.transform.rotation = new Quaternion(0, 0, 0, 0);
+            //    //Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
+            //    print("NoAddUkemi");
+            //}
 
             if (Save.isAddUkemi && Save.maingameFlag == Save.MainGameFlag.ADDUKEMIANIMETION)
             {
@@ -48,6 +59,13 @@ public class AddUkemiPlane : MonoBehaviour
             if (Save.maingameFlag == Save.MainGameFlag.FALLING)
             {
                 var vec = rb.velocity;
+
+                if (isInversion)
+                {
+
+                    Power = new Vector3(Power.x * -1, Power.y, Power.z * - 1);
+
+                }
 
                 DelayClass.DelayCoroutin(30,() => 
                 {
@@ -72,24 +90,29 @@ public class AddUkemiPlane : MonoBehaviour
 
     /// <summary>
     /// 積み防止用 08/19
+    /// 実際は受身した時に前に進むのも兼ねているから消すと動かなくなる
     /// </summary>
     /// <param name="collision"></param>
     void OnCollisionStay(Collision collision)
     {
-        if (Save.maingameFlag == Save.MainGameFlag.FALLING)
+        if (collision.gameObject.CompareTag("Player") && enabled)
         {
-            if (rb == null)
-                rb = collision.gameObject.GetComponentInParent<Rigidbody>();
 
-            //rb.velocity += new Vector3(0, 0,10f);
-            //rb.transform.position += new Vector3(0, 0, 0.25f);
-            rb.velocity = Power;
-
-            print("Power");
-            count += Time.deltaTime;
-            if(count > 3)
+            if (Save.maingameFlag == Save.MainGameFlag.FALLING)
             {
-                Save.maingameFlag = Save.MainGameFlag.RESULT;
+                if (rb == null)
+                    rb = collision.gameObject.GetComponentInParent<Rigidbody>();
+
+                //rb.velocity += new Vector3(0, 0,10f);
+                //rb.transform.position += new Vector3(0, 0, 0.25f);
+                rb.velocity = Power;
+
+                print("Power");
+                count += Time.deltaTime;
+                if (count > 3)
+                {
+                    Save.maingameFlag = Save.MainGameFlag.RESULT;
+                }
             }
         }
 
