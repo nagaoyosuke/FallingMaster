@@ -30,13 +30,6 @@ public class EndlessThrower : ThrowManager
     {
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
 
-        ani.SetBool("Idle", true);
-        yield return new WaitForFixedUpdate();
-
-        ani.SetBool("Idle", false);
-
-        yield return new WaitForFixedUpdate();
-
         StartCoroutine(anime());
 
     }
@@ -72,14 +65,14 @@ public class EndlessThrower : ThrowManager
         //rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
         rb.useGravity = true;   //重力オン
 
-        float rad = 60.0f * Mathf.Deg2Rad;
-        Vector3 vec = new Vector3(0, Mathf.Cos(rad), -Mathf.Sin(rad));
+        float rad = 320.0f * Mathf.Deg2Rad;
+        Vector3 vec = new Vector3(-Mathf.Cos(rad), Mathf.Sin(rad), 0);
         rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
         Sound.PlayBgm("Result3");
-        rb.AddForce(new Vector3(0, Save.windZ * 10, 0));
+        //rb.AddForce(new Vector3(0, Save.windZ * 10, 0));
         print("ThrowRBPoint");
 
         //アニメーションクリップのほうでフラグをオンにしてる
