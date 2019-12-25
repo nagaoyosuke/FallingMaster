@@ -38,25 +38,12 @@ public class FirstStageAddUkemi01 : AddUkemiEffect,IAddUkemiEffect
     /// </summary>
     public void AddEndEffect()
     {
-        //Save.maingameFlag = Save.MainGameFlag.ADDUKEMIEFFECT;
-        //UkemiStartText.SetActive(false);
-
-        //0615 仮のパーティクル(時々正しく表示されなくなるバグ有り)豊田
-        GameObject particle = Instantiate(smokeParticle, Player.transform.position, Quaternion.identity) as GameObject;
+        GameObject particle = Instantiate(smokeParticle) as GameObject;
+        particle.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1, Player.transform.position.z);
         var ps = particle.GetComponent<ParticleSystem>();
         ps.Stop();
 
-        var main = ps.main;
-        main.customSimulationSpace = Player.transform;
-        //particle.transform.parent = Player.gameObject.transform;
-        particle.transform.position = Player.gameObject.transform.position;
         StartCoroutine(PlayParticle(ps, particle));
-
-
-        //particle.transform.rotation = new Quaternion(0,90,0,0);
-        //ここまで
-
-        //Save.ThrowReSet();
     }
 
     private IEnumerator PlayParticle(ParticleSystem ps, GameObject particle)
