@@ -10,6 +10,9 @@ public class StageNameView : MonoBehaviour
     private Text text;
 
     [SerializeField]
+    private float time = 2.0f;
+
+    [SerializeField]
     [TextArea]
     private string Stage1;
 
@@ -20,6 +23,10 @@ public class StageNameView : MonoBehaviour
     [SerializeField]
     [TextArea]
     private string Stage3;
+
+    [SerializeField]
+    [TextArea]
+    private string Endless;
 
     private bool isView;
 
@@ -38,6 +45,9 @@ public class StageNameView : MonoBehaviour
                 break;
             case Save.StageState.STAGE3:
                 text.text = Stage3;
+                break;
+            case Save.StageState.ENDLESS:
+                text.text = Endless;
                 break;
         }
     }
@@ -65,7 +75,7 @@ public class StageNameView : MonoBehaviour
                 () => text.color,
                 color => text.color = color,
                 255f / 255f,
-                2f
+                time
             )
         );
 
@@ -74,7 +84,7 @@ public class StageNameView : MonoBehaviour
                 () => text.color,
                 color => text.color = color,
                 0f / 255f,
-                2f
+                time
             )
         ).AppendCallback(() =>
         {

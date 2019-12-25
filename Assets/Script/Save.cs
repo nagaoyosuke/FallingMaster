@@ -10,7 +10,8 @@ public static class Save{
     public enum StageState{
         STAGE1,
         STAGE2,
-        STAGE3
+        STAGE3,
+        ENDLESS
     };
 
     /// <summary>
