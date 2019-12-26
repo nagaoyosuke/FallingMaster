@@ -15,6 +15,8 @@ public class AddUkemiPlane : MonoBehaviour
     [SerializeField]
     private Vector3 Power;
 
+    private Vector3 Power_;
+
     /// <summary>
     /// ベクトルを反転するかどうか(主にエンドレスを想定)
     /// AddUkemiCheckで入れられる
@@ -30,6 +32,9 @@ public class AddUkemiPlane : MonoBehaviour
         {
             Power = new Vector3(0, 0, 10f);
         }
+
+        Power_ = Power;
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -63,7 +68,7 @@ public class AddUkemiPlane : MonoBehaviour
                 if (isInversion)
                 {
 
-                    Power = new Vector3(Power.x * -1, Power.y, Power.z * - 1);
+                    Power_ = new Vector3(Power.x * -1, Power.y, Power.z * -1);
 
                 }
 
@@ -105,7 +110,7 @@ public class AddUkemiPlane : MonoBehaviour
 
                 //rb.velocity += new Vector3(0, 0,10f);
                 //rb.transform.position += new Vector3(0, 0, 0.25f);
-                rb.velocity = Power;
+                rb.velocity = Power_;
 
                 print("Power");
                 count += Time.deltaTime;
