@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,16 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
     public static void GoMain()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public static void GoEndless()
+    {
+        SceneManager.LoadScene("Endless");
+    }
+
+    public static void GoSimple()
+    {
+        SceneManager.LoadScene("Simple");
     }
 
     public static void GoMenu()
@@ -29,14 +40,6 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 
 	public static void GoModeSelect(){
 		SceneManager.LoadScene("ModeSelect");
-	}
-
-	public static void GoCredit(){
-		SceneManager.LoadScene("Credit");
-	}
-
-	public static void GoExplanatoryText(){
-		SceneManager.LoadScene("ExplanatoryText");
 	}
 
 }
