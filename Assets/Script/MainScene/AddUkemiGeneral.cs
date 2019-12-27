@@ -90,7 +90,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 
         if (isInversion)
         {
-            PlayerRb.velocity = new Vector3(PlayerRb.velocity.x * -1, 0, PlayerRb.velocity.z * -1);
+            //PlayerRb.velocity = new Vector3(PlayerRb.velocity.x * -1, 0, PlayerRb.velocity.z * -1);
         }
 
         //var pos = Player.transform.position + MoveVector;

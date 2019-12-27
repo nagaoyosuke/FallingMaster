@@ -12,8 +12,7 @@ public class AddUkemiPlane : MonoBehaviour
     /// </summary>
     public bool isHit;
 
-    [SerializeField]
-    private Vector3 Power;
+    public Vector3 Power;
 
     private Vector3 Power_;
 
@@ -25,7 +24,7 @@ public class AddUkemiPlane : MonoBehaviour
     public bool isInversion;
 
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
         GetComponent<BoxCollider>().enabled = true;
         if(Power.x == 0 && Power.y == 0 && Power.z == 0)

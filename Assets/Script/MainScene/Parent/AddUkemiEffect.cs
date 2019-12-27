@@ -68,4 +68,21 @@ public class AddUkemiEffect : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Endlessとかで受身オブジェを動的に作成する時用
+    /// </summary>
+    /// <param name="c"></param>
+    /// <param name="g"></param>
+    /// <param name="r"></param>
+    /// <param name="b"></param>
+    /// <param name="a"></param>
+    public void ParameterReSet(CameraManager c, GameObject g, Rigidbody r, BoxCollider b, Animator a)
+    {
+        CameraMove = c;
+        Player = g;
+        PlayerRb = r;
+        PlayerBox = b;
+        PlayerAni = a;
+    }
 }

@@ -56,7 +56,7 @@ public class AddUkemiCheck : MonoBehaviour
     /// AddUkemiGeneralとAddUkemiPlaneのisInversionにも渡す
     /// </summary>
     [SerializeField]
-    private bool isInversion;
+    public bool isInversion;
 
 
     void OnEnable()
@@ -278,6 +278,9 @@ public class AddUkemiCheck : MonoBehaviour
 
             case Save.AddUkemi.PERFECT:
                 Save.AddUkemiPoint++;
+                if (Save.stageState == Save.StageState.ENDLESS)
+                    Save.AddUkemiPoint++;
+
                 Effect.AddPerfectEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.PARFECT));
                 break;
