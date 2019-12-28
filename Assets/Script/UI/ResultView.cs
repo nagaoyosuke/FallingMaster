@@ -75,6 +75,10 @@ public class ResultView : MonoBehaviour
                 MySceneManager.GoResult();
                 yield break;
                 break;
+            case Save.StageState.ENDLESS:
+                MySceneManager.GoResult();
+                yield break;
+                break;
         }
 
 
