@@ -11,6 +11,8 @@ TagManager:
   - Wind
   - UkemiCircle
   - UkemiStamp
+  - Bone
+  - Person
   layers:
   - Default
   - TransparentFX

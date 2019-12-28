@@ -56,34 +56,34 @@ public class EndlessUkemiObjMaker : MonoBehaviour
         var count = Save.ukemiCounter - 1;
         if (count > 0)
         {
-            if (count % 5 == 0 && !isMaking)
+            if (count % 6 == 0 && !isMaking)
             {
                 isMaking = true;
-                UkemiObjeMake(count);
+                UkemiObjMake(count);
             }
 
-            if (count % 5 == 1 && isMaking)
+            if (count % 6 == 1 && isMaking)
             {
                 isMaking = false;
             }
         }
     }
 
-    void UkemiObjeMake(int count)
+    void UkemiObjMake(int count)
     {
-        var baseobj = UFO;
+        var baseobj = Bard;
         var pos = Vector3.zero;
 
-        var _moveY = (count + 1) * moveY - 10;
+        var _moveY = (count % 24 + 1) * moveY - 10;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
             var obj = Instantiate(baseobj);
 
             pos.y = _moveY + moveY * i;
             pos.x = leftX;
 
-            if (i % 2 == 0)
+            if (i % 2 == 1)
             {
                 pos.x = rightX;
 
