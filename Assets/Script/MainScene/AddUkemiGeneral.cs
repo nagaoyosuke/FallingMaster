@@ -83,6 +83,8 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddPerfectEffect()
     {
+        Save.addUkemiCounter++;
+
         //跳ねないように一時的にyベクトルを0に
         PlayerRb.velocity = new Vector3(PlayerRb.velocity.x, 0, PlayerRb.velocity.z);
         //受身成功時にかかる力、持続的にかかるやつはAddUkemiPlaneにある

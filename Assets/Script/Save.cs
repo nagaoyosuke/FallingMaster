@@ -185,6 +185,11 @@ public static class Save{
     public static int AddUkemiPoint_ = 0;
 
     /// <summary>
+    /// エンドレスよう
+    /// </summary>
+    public static int addUkemiCounter = 0;
+
+    /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>
     public static void ReSet(){
@@ -226,6 +231,7 @@ public static class Save{
         windZ = 0;
 		AddUkemiPoint = 0;
 
+        addUkemiCounter = 0;
 
     }
 

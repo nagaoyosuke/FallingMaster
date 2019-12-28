@@ -5,6 +5,9 @@ using UnityEngine;
 public class EndlessUkemiObjMaker : MonoBehaviour
 {
     [SerializeField]
+    private EndlessMove em;
+
+    [SerializeField]
     private CameraManager CameraMove;
     /// <summary>
     /// 受け身するオブシェクト
@@ -20,6 +23,9 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
     [SerializeField]
     private Animator PlayerAni;
+
+    [SerializeField]
+    private GameObject UkemiStartText;
 
     [SerializeField]
     private ButtonEnableManager ButtonMg;
@@ -53,7 +59,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var count = Save.ukemiCounter - 1;
+        var count = Save.addUkemiCounter;
         if (count > 0)
         {
             if (count % 6 == 0 && !isMaking)
@@ -71,10 +77,13 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
     void UkemiObjMake(int count)
     {
+        if (count % 12 == 0)
+            em.MovePlCm();
+
         var baseobj = Bard;
         var pos = Vector3.zero;
 
-        var _moveY = (count % 24 + 1) * moveY - 10;
+        var _moveY = (count % 12 + 1) * moveY - 10;
 
         for (int i = 0; i < 6; i++)
         {
@@ -82,6 +91,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
             pos.y = _moveY + moveY * i;
             pos.x = leftX;
+            obj.transform.localEulerAngles = new Vector3(0, 180, 0);
 
             if (i % 2 == 1)
             {
@@ -89,6 +99,8 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
                 var p = obj.GetComponentInChildren<AddUkemiPlane>();
                 p.Power.x *= -1;
+                obj.transform.localEulerAngles = new Vector3(0, 0, 0);
+
             }
 
             obj.transform.position = pos;
@@ -98,7 +110,11 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
             var c = obj.GetComponentInChildren<AddUkemiCheck>();
             c.isInversion = true;
+            c.UkemiStartText = UkemiStartText;
+
+            em.obj.Add(obj);
 
         }
+
     }
 }
