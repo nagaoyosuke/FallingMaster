@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// あるフラグの時だけ表示させたいゲームオブジェクトを管理
+/// </summary>
 public class ViewHideObject : MonoBehaviour
 {
     private bool isHide;
