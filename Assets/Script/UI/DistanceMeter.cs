@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class DistanceMeter : MonoBehaviour
 {
     public RectTransform IconTrs;
+    public Text NumberT;
+    public Text CommmaNumberT;
 
     private Transform PlayerTrs;
     private Transform DistanceTrs;
@@ -19,17 +21,17 @@ public class DistanceMeter : MonoBehaviour
     private bool isGeting;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForEndOfFrame();
 
+        GetTrs();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Save.maingameFlag == Save.MainGameFlag.FALLING)
-            if (!isGeting)
-                GetTrs();
+ 
         //Save.MainGameFlag.FALLINGが5
         if ((int)(Save.maingameFlag) > 4)
             ChengeIcon();
@@ -44,16 +46,38 @@ public class DistanceMeter : MonoBehaviour
         StartPosY = PlayerTrs.position.y;
         AddY = (MaxRectPosY - MinRectPosY) / (StartPosY - DistanceTrs.position.y);
 
+        ChangeText(PlayerTrs.position.y - DistanceTrs.position.y);
+
     }
 
     void ChengeIcon()
     {
-        var distanceY = ((PlayerTrs.position.y - DistanceTrs.position.y) * AddY);
-        var posY = distanceY + MinRectPosY;
+        var distanceY = PlayerTrs.position.y - DistanceTrs.position.y;
+        var posY = (distanceY * AddY) + MinRectPosY;
 
         if (posY < MinRectPosY)
             return;
 
         IconTrs.localPosition = new Vector3(0, posY, 0);
+
+
+        ChangeText(distanceY);
+    }
+
+    void ChangeText(float distance)
+    {
+        if(Save.stageState != Save.StageState.STAGE3)
+            distance = distance / 4;
+
+        var floor = Mathf.FloorToInt(distance);
+        var commma = Mathf.FloorToInt((distance - floor) * 100);
+
+        var ct = commma.ToString();
+
+        if (commma - 10 <= 0)
+            ct = "0" + ct;
+
+        NumberT.text = floor.ToString();
+        CommmaNumberT.text = ct;
     }
 }
