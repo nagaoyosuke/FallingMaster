@@ -13,6 +13,7 @@ TagManager:
   - UkemiStamp
   - Bone
   - Person
+  - distance
   layers:
   - Default
   - TransparentFX

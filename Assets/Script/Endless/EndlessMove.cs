@@ -49,7 +49,8 @@ public class EndlessMove : MonoBehaviour
     public void MovePlCm()
     {
         print("もゔぇもゔぇ");
-        _Camera.position = CmReStartPos;
+        //_Camera.position = CmReStartPos;
+        //368Y座標あがる
         _Player.position = PlReStartPos + new Vector3(0,1,0);
         obj[obj.Count - 1].transform.position = PlReStartPos;
         ObjDestory();
