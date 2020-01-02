@@ -57,12 +57,14 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddEndEffect()
     {
+
         GameObject particle = Instantiate(smokeParticle) as GameObject;
         particle.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1, Player.transform.position.z);
         var ps = particle.GetComponent<ParticleSystem>();
         ps.Stop();
 
         StartCoroutine(PlayParticle(ps, particle));
+
     }
 
     private IEnumerator PlayParticle(ParticleSystem ps, GameObject particle)
@@ -119,6 +121,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         Sound.PlaySe(UkemiSoundName);
 
         AddEndEffect();
+
     }
 
     /// <summary>

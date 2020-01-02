@@ -266,18 +266,23 @@ public class AddUkemiCheck : MonoBehaviour
         switch (Save.addUkemiRank)
         {
             case Save.AddUkemi.NOUKEMI:
+                Save.addUkemiCombo = 0;
                 Effect.AddFailureNoUkemiEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
                 break;
 
             case Save.AddUkemi.GOOD:
                 Save.AddUkemiPoint++;
+                Save.addUkemiCombo = 0;
+
                 Effect.AddPerfectEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.GOOD));
                 break;
 
             case Save.AddUkemi.PERFECT:
                 Save.AddUkemiPoint++;
+                Save.addUkemiCombo++;
+
                 if (Save.stageState == Save.StageState.ENDLESS)
                     Save.AddUkemiPoint++;
 
@@ -285,5 +290,22 @@ public class AddUkemiCheck : MonoBehaviour
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.PARFECT));
                 break;
         }
+
+
+        if (Save.stageState == Save.StageState.ENDLESS)
+        {
+            ComboCheck();
+            ScoreCheck();
+        }
+    }
+
+    void ComboCheck()
+    {
+        GameObject.FindGameObjectWithTag("Combo").GetComponent<ComboCounter>().TextChange();
+    }
+
+    void ScoreCheck()
+    {
+        GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCount>().TextChange();
     }
 }

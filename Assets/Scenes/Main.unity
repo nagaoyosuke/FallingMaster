@@ -1613,8 +1613,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930531866}
+  - component: {fileID: 930531869}
   - component: {fileID: 930531867}
-  - component: {fileID: 930531868}
+  - component: {fileID: 930531870}
   m_Layer: 5
   m_Name: DistanceMeter
   m_TagString: Untagged
@@ -1661,14 +1662,35 @@ MonoBehaviour:
   IconTrs: {fileID: 1646574033}
   NumberT: {fileID: 2027232155}
   CommmaNumberT: {fileID: 1840956541}
---- !u!114 &930531868
+--- !u!223 &930531869
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930531865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &930531870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930531865}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 618db41af59cd4f10ab2fc32e81234d8, type: 3}
   m_Name: 
@@ -1680,7 +1702,7 @@ MonoBehaviour:
   - {fileID: 1143266986}
   - {fileID: 1840956539}
   ViewFlag: 4
-  HideFlag: 0
+  HideFlag: 2
 --- !u!1 &940138149
 GameObject:
   m_ObjectHideFlags: 0

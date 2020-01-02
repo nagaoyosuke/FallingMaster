@@ -60,6 +60,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
     void Update()
     {
         var count = Save.addUkemiCounter;
+
         if (count > 0)
         {
             if (count % 6 == 0 && !isMaking)
