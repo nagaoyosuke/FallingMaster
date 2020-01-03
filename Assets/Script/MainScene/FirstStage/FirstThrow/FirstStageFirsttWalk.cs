@@ -71,10 +71,15 @@ public class FirstStageFirsttWalk : WalkManager
 
     private IEnumerator BowEnd()
     {
-    
-        yield return new WaitUntil(() => aniFlag.BowEndPoint);
-        ani.SetBool("Idle", true);
-        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
-        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+        if (Save.stageState == Save.StageState.SIMPLESTAGE1)
+        {
+            float SImplevar = SimpleAngle.z * Mathf.Deg2Rad;
+        }
+        else{
+            yield return new WaitUntil(() => aniFlag.BowEndPoint);
+            ani.SetBool("Idle", true);
+            StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+            Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+        }
     }
 }

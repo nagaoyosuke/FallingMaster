@@ -75,6 +75,16 @@ public class ResultView : MonoBehaviour
                 MySceneManager.GoResult();
                 yield break;
                 break;
+            case Save.StageState.SIMPLESTAGE1:
+                Save.stageState = Save.StageState.SIMPLESTAGE2;
+                break;
+            case Save.StageState.SIMPLESTAGE2:
+                Save.stageState = Save.StageState.SIMPLESTAGE3;
+                break;
+            case Save.StageState.SIMPLESTAGE3:
+                MySceneManager.GoResult();
+                yield break;
+                break;
         }
 
 

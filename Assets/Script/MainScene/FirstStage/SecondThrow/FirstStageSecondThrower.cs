@@ -27,8 +27,15 @@ public class FirstStageSecondThrower : ThrowManager
     IEnumerator BowEnd()
     {
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
-        ani.SetBool("Idle", true);
-        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+        if (Save.stageState == Save.StageState.SIMPLESTAGE1)
+        {
+            StartCoroutine(anime());
+        }
+        else
+        {
+            ani.SetBool("Idle", true);
+            StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+        }
     }
 
     IEnumerator anime()

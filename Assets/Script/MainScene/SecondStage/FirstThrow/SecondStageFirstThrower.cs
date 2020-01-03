@@ -29,9 +29,15 @@ public class SecondStageFirstThrower : ThrowManager
     IEnumerator BowEnd()
     {
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
-
-        ani.SetBool("Idle", true);
-        StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+        if (Save.stageState == Save.StageState.SIMPLESTAGE2)
+        {
+            StartCoroutine(anime());
+        }
+        else
+        {
+            ani.SetBool("Idle", true);
+            StartCoroutine(DelayClass.DelayCoroutin(1, () => ani.SetBool("Idle", false)));
+        }
     }
 
     IEnumerator anime()
@@ -64,10 +70,18 @@ public class SecondStageFirstThrower : ThrowManager
 
         //rb.constraints = RigidbodyConstraints.None; //物理演算で回転が影響するように
         rb.useGravity = true;   //重力オン
-
-        float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
-        Vector3 vec = new Vector3(0,Mathf.Cos(rad), -Mathf.Sin(rad));
-        rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
+        if (Save.stageState == Save.StageState.SIMPLESTAGE2)
+        {
+            float rad = SimpleAngle.z * Mathf.Deg2Rad;
+            Vector3 vec = new Vector3(0, Mathf.Cos(rad), -Mathf.Sin(rad));
+            rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
+        }
+        else
+        {
+            float rad = AngleArrow.localEulerAngles.z * Mathf.Deg2Rad;
+            Vector3 vec = new Vector3(0, Mathf.Cos(rad), -Mathf.Sin(rad));
+            rb.AddForce(vec * 1000);   //手前に落ちるから力を与えて自然に
+        }
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
