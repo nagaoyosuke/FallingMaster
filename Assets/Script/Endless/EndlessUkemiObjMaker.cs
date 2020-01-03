@@ -34,12 +34,11 @@ public class EndlessUkemiObjMaker : MonoBehaviour
     [SerializeField]
     private GameObject[] ukemiObjs;
 
+    /// 背景のオブシェクトたち
     [SerializeField]
-    private GameObject Container;
-    [SerializeField]
-    private GameObject Bard;
-    [SerializeField]
-    private GameObject UFO;
+    private GameObject[] NoukemiObjs;
+
+
 
     private float leftX = -32.0f;
     private float rightX = -5.0f;
@@ -90,7 +89,9 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
         for (int i = 0; i < 6; i++)
         {
-            var obj = Instantiate(GetUkemiObj());
+            NoUkemiObjeMake(_moveY, i);
+
+            var obj = Instantiate(GetObj(ukemiObjs));
 
             pos.y = _moveY + moveY * i;
             pos.x = leftX;
@@ -117,12 +118,52 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
             em.obj.Add(obj);
 
+
         }
+
 
     }
 
-    GameObject GetUkemiObj()
+
+    /// <summary>
+    /// 背景のオブシェクト生成
+    /// </summary>
+    void NoUkemiObjeMake(float _moveY,int i)
     {
-        return ukemiObjs[Random.Range(0, ukemiObjs.Length)];
+        if (Random.Range(0, 2) == 0)
+            return;
+
+        var obj = Instantiate(GetObj(NoukemiObjs));
+        var pos = Vector3.zero;
+
+        pos.y = _moveY + moveY * i;
+        pos.y += 20;
+
+        pos.x = leftX + 10;
+        pos.z = -10;
+
+        var rx = Random.Range(-10.0f, 10.0f);
+        var ry = Random.Range(-10.0f, 10.0f);
+        var rz = Random.Range(-10.0f, 10.0f);
+
+        obj.transform.localEulerAngles = new Vector3(rx, 180 + ry, rz);
+
+        if (i % 2 == 1)
+        {
+            pos.x = rightX - 10;
+            pos.z = 10;
+
+            obj.transform.localEulerAngles = new Vector3(rx, ry, rz);
+
+        }
+
+        obj.transform.position = pos;
+
+        em.obj.Add(obj);
+    }
+
+    GameObject GetObj(GameObject[] objs)
+    {
+        return objs[Random.Range(0, objs.Length)];
     }
 }

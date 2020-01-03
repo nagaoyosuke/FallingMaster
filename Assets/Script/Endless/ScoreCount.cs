@@ -8,6 +8,9 @@ public class ScoreCount : MonoBehaviour
     [SerializeField]
     private Text ScoreNumber;
 
+    [SerializeField]
+    private Text AddScore;
+
     public void TextChange()
     {
         ScoreChange();
@@ -20,14 +23,23 @@ public class ScoreCount : MonoBehaviour
         switch (Save.addUkemiRank)
         {
             case Save.AddUkemi.PERFECT:
-                basePoint = 2;
+                basePoint = 20;
                 break;
             case Save.AddUkemi.GOOD:
-                basePoint = 1;
+                basePoint = 10;
                 break;
         }
+        var point = Save.addUkemiCombo * basePoint;
 
-        Save.UkemiScore += Save.addUkemiCombo * basePoint;
-        
+        Save.UkemiScore += point;
+        AddScoreChange(point);
+    }
+
+    void AddScoreChange(int point)
+    {
+        AddScore.enabled = true;
+        AddScore.text = "+" + point.ToString() + "点";
+
+        StartCoroutine(DelayClass.DelayCoroutin(90, () => AddScore.enabled = false));
     }
 }
