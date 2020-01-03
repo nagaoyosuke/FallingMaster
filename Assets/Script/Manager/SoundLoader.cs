@@ -44,6 +44,17 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadSe("yeah01","mens-yeah1");
         Sound.LoadSe("itawari01", "kick-middle1");
         Sound.LoadSe("cheer01", "cheer01");
+        Sound.LoadSe("shutter", "shuttersound");
+
+        Sound.LoadSe("walk01", "walk-asphalt2");
+        Sound.LoadSe("dash01", "dash-asphalt2");
+
+        Sound.LoadSe("walk02", "walk3s");
+        Sound.LoadSe("dash02", "dash3s");
+
+
+
+
 
 
 
