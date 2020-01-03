@@ -32,6 +32,9 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
     /// 受身オブシェクトたち
     [SerializeField]
+    private GameObject[] ukemiObjs;
+
+    [SerializeField]
     private GameObject Container;
     [SerializeField]
     private GameObject Bard;
@@ -81,14 +84,13 @@ public class EndlessUkemiObjMaker : MonoBehaviour
         if (count % 12 == 0)
             em.MovePlCm();
 
-        var baseobj = Bard;
         var pos = Vector3.zero;
 
         var _moveY = (count % 12 + 1) * moveY - 10;
 
         for (int i = 0; i < 6; i++)
         {
-            var obj = Instantiate(baseobj);
+            var obj = Instantiate(GetUkemiObj());
 
             pos.y = _moveY + moveY * i;
             pos.x = leftX;
@@ -117,5 +119,10 @@ public class EndlessUkemiObjMaker : MonoBehaviour
 
         }
 
+    }
+
+    GameObject GetUkemiObj()
+    {
+        return ukemiObjs[Random.Range(0, ukemiObjs.Length)];
     }
 }
