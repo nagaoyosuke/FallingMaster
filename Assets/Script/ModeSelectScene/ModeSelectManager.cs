@@ -35,6 +35,7 @@ public class ModeSelectManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         screenFader.isFadeOut = true;
         yield return new WaitForSeconds(1.5f);
+        Sound.StopBgm();
         sceneFunc();
     }
 }

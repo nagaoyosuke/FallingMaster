@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 画面タップを管理するクラス(02/02豊田)
+/// Titleの画面タップを管理するクラス(02/02豊田)
 /// </summary>
 
 public class TapEventManager : MonoBehaviour
@@ -28,9 +28,8 @@ public class TapEventManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         GameObject.Find("Panel").GetComponent<ScreenFader>().isFadeOut = true;
         yield return new WaitForSeconds(1.5f);
-        Sound.StopBgm();
 
-        MySceneManager.GoMain();
+        MySceneManager.GoModeSelect();
     }
 
     public void OnPushedStartButton() 
