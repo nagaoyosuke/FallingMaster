@@ -29,7 +29,7 @@ public class ScoreCount : MonoBehaviour
                 basePoint = 10;
                 break;
         }
-        var point = Save.addUkemiCombo * basePoint;
+        var point = Save.addUkemiCombo * basePoint + basePoint;
 
         Save.UkemiScore += point;
         AddScoreChange(point);
