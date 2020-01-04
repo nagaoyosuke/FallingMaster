@@ -90,5 +90,8 @@ public class SoundLoader : MonoBehaviour {
         Sound.LoadBgm("Result3", "Result2(Fast)");
         Sound.LoadBgm("Result4", "Result3");
 
+
+        //2020/01/05 長尾
+        Sound.LoadSe("Hanabi", "Hanabi");   //かっしーの扉サウンド けいぶ
     }
 }

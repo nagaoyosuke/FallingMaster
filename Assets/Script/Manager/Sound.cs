@@ -152,12 +152,12 @@ public class Sound :MonoBehaviour {
     return true;
   }
 
-  /// SEの再生
-  /// ※事前にLoadSeでロードしておくこと
-	public static bool PlaySe(string key, float pitch = 1, int channel=-1) {
-		return GetInstance()._PlaySe(key,pitch, channel);
+    /// SEの再生
+    /// ※事前にLoadSeでロードしておくこと
+    public static bool PlaySe(string key, float volume = 1.0f, float pitch = 1, int channel=-1) {
+		return GetInstance()._PlaySe(key, volume, pitch, channel);
   }
-	bool _PlaySe(string key, float pitch = 1,int channel=-1) {
+	bool _PlaySe(string key, float volume = 1.0f, float pitch = 1,int channel=-1) {
     if(_poolSe.ContainsKey(key) == false) {
       // 対応するキーがない
       return false;
@@ -172,6 +172,7 @@ public class Sound :MonoBehaviour {
       var source = _GetAudioSource(eType.Se, channel);
       source.clip = _data.Clip;
 	  source.pitch = pitch;
+      source.volume = volume;
       source.Play();
     }
     else
@@ -179,7 +180,8 @@ public class Sound :MonoBehaviour {
       // デフォルトで再生
       var source = _GetAudioSource(eType.Se);
 	  source.pitch = pitch;
-	  source.PlayOneShot(_data.Clip);
+      source.volume = volume;
+      source.PlayOneShot(_data.Clip);
     }
 
     return true;

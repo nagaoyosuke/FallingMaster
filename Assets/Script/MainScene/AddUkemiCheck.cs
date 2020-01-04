@@ -219,6 +219,8 @@ public class AddUkemiCheck : MonoBehaviour
         Effect.AddStartEffect();
 
 
+        Plane.isInversion = isInversion;
+
         //地面に着くまで受身を待ってる
         int time = 0;
         while (true)
@@ -264,7 +266,7 @@ public class AddUkemiCheck : MonoBehaviour
             rb.transform.localEulerAngles = new Vector3(ang.x, ang.y * -1, ang.z);
 
             //それぞれでベクトル反転
-            Plane.isInversion = isInversion;
+            //Plane.isInversion = isInversion;
             Effect.isInversion = isInversion;
         }
     }
