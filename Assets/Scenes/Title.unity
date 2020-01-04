@@ -1659,8 +1659,8 @@ RectTransform:
   m_Father: {fileID: 146563240}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.42910838}
-  m_AnchorMax: {x: 1, y: 0.99996614}
+  m_AnchorMin: {x: 0, y: 0.21939142}
+  m_AnchorMax: {x: 1, y: 0.98935336}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2530,10 +2530,10 @@ RectTransform:
   m_Father: {fileID: 1418533988}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2999878, y: 7.600006}
-  m_SizeDelta: {x: -573.1, y: -324.3}
+  m_AnchorMin: {x: 0.1, y: 0.09840626}
+  m_AnchorMax: {x: 0.90000004, y: 0.89784384}
+  m_AnchoredPosition: {x: -0.30004883, y: -0.000091552734}
+  m_SizeDelta: {x: -147.1, y: -93.026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1651019205
 MonoBehaviour:
@@ -2595,7 +2595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1792861463}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -2651,7 +2651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00005443594, y: -259.2}
+  m_AnchoredPosition: {x: 0.0000042486986, y: -126.10089}
   m_SizeDelta: {x: 856.79, y: 1329}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1795793968
@@ -2813,10 +2813,10 @@ RectTransform:
   m_Father: {fileID: 1651019202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 372.3, y: -0.0000055486}
-  m_SizeDelta: {x: 34.3, y: 764}
+  m_AnchorMin: {x: 0.97900003, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.2000122, y: 0}
+  m_SizeDelta: {x: 1.2999878, y: 95.30005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812407073
 MonoBehaviour:
@@ -2857,8 +2857,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 691111219}
   m_HandleRect: {fileID: 691111218}
   m_Direction: 2
-  m_Value: 0.9999211
-  m_Size: 0.57085776
+  m_Value: 0.95371795
+  m_Size: 0.76996195
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
 {
     public GameObject smokeParticle;
+    [SerializeField] private GameObject passerby;
+    [SerializeField] private GameObject passerby_2;
 
     /// <summary>
     /// 共通の受け身開始時の演出(追加受け身は除く)
@@ -40,6 +42,7 @@ public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
         ps.Stop();
 
         StartCoroutine(PlayParticle(ps, particle));
+        StartCoroutine(aa());
     }
 
     private IEnumerator PlayParticle(ParticleSystem ps, GameObject particle)
@@ -52,8 +55,44 @@ public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
         shape.position = new Vector3(0, 0, -1f);
         ps.Play();
         Destroy(particle, 5f);
+    }
 
+    /// <summary>
+    /// 通行人パシャパシャ
+    /// </summary>
+    /// <returns>The aa.</returns>
+    private IEnumerator aa()
+    {
+        var minoru = GameObject.Find("MinoruBody");
+        var front = Instantiate(passerby, minoru.transform.parent.transform) as GameObject;
+        var back = Instantiate(passerby_2, minoru.transform.parent.transform) as GameObject;
 
+        front.transform.localPosition = new Vector3(0, 0, 0);
+        back.transform.localPosition = new Vector3(0, 0, 0);
+
+        var front_circle = front.GetComponent<CircleDeployer>();
+        var back_circle = back.GetComponent<CircleDeployer>();
+
+        front_circle._radius = 19.50f;
+        back_circle._radius = 21.00f;
+
+        //4.5
+        for (int i = 0; i <= 150; i++)
+        {
+            front_circle._radius -= 0.10f;
+            back_circle._radius -= 0.10f;
+
+            front_circle.OnValidate();
+            back_circle.OnValidate();
+
+            yield return null;
+        }
+        Sound.PlaySe("walk02");
+        Sound.PlaySe("dash02");
+        yield return new WaitForSeconds(2.0f);
+        Sound.PlaySe("shutter");
+
+        yield return null;
     }
 
     /// <summary>
