@@ -16,6 +16,13 @@ public class AddUkemiCheck : MonoBehaviour
     [SerializeField]
     private int parfectingFlame;
 
+    /// <summary>
+    /// GOOD判定の前後のフレーム
+    /// </summary>
+    [SerializeField]
+    private int goodingFlame = 2;
+
+
     [SerializeField]
     private float timeScale;
 
@@ -56,7 +63,7 @@ public class AddUkemiCheck : MonoBehaviour
     /// AddUkemiGeneralとAddUkemiPlaneのisInversionにも渡す
     /// </summary>
     [SerializeField]
-    private bool isInversion;
+    public bool isInversion;
 
 
     void OnEnable()
@@ -86,6 +93,10 @@ public class AddUkemiCheck : MonoBehaviour
             parfectFlame = 20;
         if (parfectingFlame == 0)
             parfectingFlame = 5;
+        if (goodingFlame == 0)
+            parfectingFlame = 2;
+        if (goodingFlame < 0)
+            parfectingFlame = 0;
         if (timeScale <= 0)
             timeScale = 0.4f;
 
@@ -168,7 +179,7 @@ public class AddUkemiCheck : MonoBehaviour
 
                 if (underflame <= flame && flame < topflame)
                     Save.addUkemiRank = Save.AddUkemi.PERFECT;
-                else if ((underflame - 2 <= flame && flame < underflame) || (topflame <= flame && flame < topflame + 2))
+                else if ((underflame - goodingFlame <= flame && flame < underflame) || (topflame <= flame && flame < topflame + goodingFlame))
                     Save.addUkemiRank = Save.AddUkemi.GOOD;
                 else
                     Save.addUkemiRank = Save.AddUkemi.NOUKEMI;
@@ -266,21 +277,46 @@ public class AddUkemiCheck : MonoBehaviour
         switch (Save.addUkemiRank)
         {
             case Save.AddUkemi.NOUKEMI:
+                Save.addUkemiCombo = 0;
                 Effect.AddFailureNoUkemiEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.BAD));
                 break;
 
             case Save.AddUkemi.GOOD:
                 Save.AddUkemiPoint++;
+                Save.addUkemiCombo = 0;
+
                 Effect.AddPerfectEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.GOOD));
                 break;
 
             case Save.AddUkemi.PERFECT:
                 Save.AddUkemiPoint++;
+                Save.addUkemiCombo++;
+
+                if (Save.stageState == Save.StageState.ENDLESS)
+                    Save.AddUkemiPoint++;
+
                 Effect.AddPerfectEffect();
                 StartCoroutine(stampChange.StampChangeView(StampChange.Stamp.PARFECT));
                 break;
         }
+
+
+        if (Save.stageState == Save.StageState.ENDLESS)
+        {
+            ComboCheck();
+            ScoreCheck();
+        }
+    }
+
+    void ComboCheck()
+    {
+        GameObject.FindGameObjectWithTag("Combo").GetComponent<ComboCounter>().TextChange();
+    }
+
+    void ScoreCheck()
+    {
+        GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCount>().TextChange();
     }
 }

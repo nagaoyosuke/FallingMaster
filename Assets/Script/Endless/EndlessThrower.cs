@@ -71,7 +71,7 @@ public class EndlessThrower : ThrowManager
 
         //アニメーションクリップのほうでフラグをオンにしてる
         Sound.PlaySe("bakuhatu");
-        Sound.PlayBgm("Result3");
+        Sound.PlayBgm("Play1");
         //rb.AddForce(new Vector3(0, Save.windZ * 10, 0));
         print("ThrowRBPoint");
 

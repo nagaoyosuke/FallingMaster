@@ -57,12 +57,14 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddEndEffect()
     {
+
         GameObject particle = Instantiate(smokeParticle) as GameObject;
         particle.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1, Player.transform.position.z);
         var ps = particle.GetComponent<ParticleSystem>();
         ps.Stop();
 
         StartCoroutine(PlayParticle(ps, particle));
+
     }
 
     private IEnumerator PlayParticle(ParticleSystem ps, GameObject particle)
@@ -83,6 +85,8 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
     /// </summary>
     public void AddPerfectEffect()
     {
+        Save.addUkemiCounter++;
+
         //跳ねないように一時的にyベクトルを0に
         PlayerRb.velocity = new Vector3(PlayerRb.velocity.x, 0, PlayerRb.velocity.z);
         //受身成功時にかかる力、持続的にかかるやつはAddUkemiPlaneにある
@@ -90,7 +94,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
 
         if (isInversion)
         {
-            PlayerRb.velocity = new Vector3(PlayerRb.velocity.x * -1, 0, PlayerRb.velocity.z * -1);
+            //PlayerRb.velocity = new Vector3(PlayerRb.velocity.x * -1, 0, PlayerRb.velocity.z * -1);
         }
 
         //var pos = Player.transform.position + MoveVector;
@@ -117,6 +121,7 @@ public class AddUkemiGeneral : AddUkemiEffect, IAddUkemiEffect
         Sound.PlaySe(UkemiSoundName);
 
         AddEndEffect();
+
     }
 
     /// <summary>

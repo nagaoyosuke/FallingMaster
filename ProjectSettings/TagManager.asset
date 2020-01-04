@@ -11,7 +11,12 @@ TagManager:
   - Wind
   - UkemiCircle
   - UkemiStamp
-  - VideoPlayer
+  - Bone
+  - Person
+  - Distance
+  - DistancePoint
+  - Combo
+  - Score
   layers:
   - Default
   - TransparentFX
