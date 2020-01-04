@@ -13,7 +13,7 @@ public class TutorialController : MonoBehaviour
 
     public void PlayVideoClip(VideoPlayer videoPlayer)
     {
-        Sound.PlaySe("taiko01");
+        Sound.PlaySe("taiko02");
         tutorialCanvas.enabled = true;
 
         videoPlayer.gameObject.SetActive(true);

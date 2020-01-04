@@ -17,6 +17,7 @@ TagManager:
   - DistancePoint
   - Combo
   - Score
+  - VideoPlayer
   layers:
   - Default
   - TransparentFX
