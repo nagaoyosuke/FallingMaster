@@ -8,19 +8,19 @@ public class AddUkemiCheck : MonoBehaviour
     /// 受け身入力開始からPERFECT判定になるフレーム
     /// </summary>
     [SerializeField]
-    private int parfectFlame;
+    public int parfectFlame;
 
     /// <summary>
     /// PERFECT判定の前後のフレーム
     /// </summary>
     [SerializeField]
-    private int parfectingFlame;
+    public int parfectingFlame;
 
     /// <summary>
     /// GOOD判定の前後のフレーム
     /// </summary>
     [SerializeField]
-    private int goodingFlame = 2;
+    public int goodingFlame = 2;
 
 
     [SerializeField]
@@ -318,5 +318,25 @@ public class AddUkemiCheck : MonoBehaviour
     void ScoreCheck()
     {
         GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCount>().TextChange();
+    }
+
+    /// <summary>
+    /// エンドレスで受身判定を調整する用
+    /// </summary>
+    /// <param name="parfectFlame"></param>
+    /// <param name="parfectingFlame"></param>
+    /// <param name="goodingFlame"></param>
+    public void FrameChange(int parfectFlame, int parfectingFlame, int goodingFlame)
+    {
+        if (parfectFlame == 0)
+            parfectFlame = 16;
+        if (parfectingFlame == 0)
+            parfectingFlame = 1;
+        if (goodingFlame == 0)
+            parfectingFlame = 1;
+
+        this.parfectFlame = parfectFlame;
+        this.parfectingFlame = parfectingFlame;
+        this.goodingFlame = goodingFlame;
     }
 }

@@ -11,5 +11,12 @@ public class ComboCounter : MonoBehaviour
     public void TextChange()
     {
         ComboNumber.text = Save.addUkemiCombo.ToString();
+        MaxComboCheck();
+    }
+
+    void MaxComboCheck()
+    {
+        if (Save.addUkemiCombo > Save.addUkemiMaxCombo)
+            Save.addUkemiMaxCombo = Save.addUkemiCombo;
     }
 }

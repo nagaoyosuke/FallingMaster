@@ -189,6 +189,8 @@ public static class Save{
     /// </summary>
     public static int addUkemiCounter = 0;
     public static int addUkemiCombo = 0;
+    public static int addUkemiMaxCombo = 0;
+
     public static int UkemiScore = 0;
     public static float distance = 0.0f;
 
@@ -236,6 +238,7 @@ public static class Save{
 
         addUkemiCounter = 0;
         addUkemiCombo = 0;
+        addUkemiMaxCombo = 0;
         UkemiScore = 0;
         distance = 0.0f;
     }

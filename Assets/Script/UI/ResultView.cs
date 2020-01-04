@@ -59,7 +59,9 @@ public class ResultView : MonoBehaviour
         Sound.PlaySe("sceneswitch02");
         yield return new WaitUntil(() => fader.isFadeOut == false);
 
-        Save.FlagReSet();
+        if(Save.stageState != Save.StageState.ENDLESS)
+            Save.FlagReSet();
+
         Sound.StopBgm();
         //Sound.PlayBgm("Result1");
 
@@ -76,7 +78,7 @@ public class ResultView : MonoBehaviour
                 yield break;
                 break;
             case Save.StageState.ENDLESS:
-                MySceneManager.GoResult();
+                MySceneManager.GoEndlessResult();
                 yield break;
                 break;
         }

@@ -86,6 +86,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
         var pos = Vector3.zero;
 
         var _moveY = (count % 12 + 1) * moveY - 10;
+        var rd = count / 6;
 
         for (int i = 0; i < 6; i++)
         {
@@ -115,6 +116,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
             var c = obj.GetComponentInChildren<AddUkemiCheck>();
             c.isInversion = true;
             c.UkemiStartText = UkemiStartText;
+            c.FrameChange(c.parfectFlame + Random.Range(-3 - rd, 4 + rd), c.parfectingFlame + Random.Range(-2 - rd, 2 - rd), c.goodingFlame - rd);
 
             em.obj.Add(obj);
 

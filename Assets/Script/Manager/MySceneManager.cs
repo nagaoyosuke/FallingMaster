@@ -37,9 +37,12 @@ public class MySceneManager : SingletonMonoBehaviour<MySceneManager> {
 	public static void GoResult(){
 		SceneManager.LoadScene("Result");
 	}
+    public static void GoEndlessResult()
+    {
+        SceneManager.LoadScene("EndlessResult");
+    }
 
-	public static void GoModeSelect(){
+    public static void GoModeSelect(){
 		SceneManager.LoadScene("ModeSelect");
 	}
-
 }

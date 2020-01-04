@@ -29,6 +29,26 @@ public class SceneMove : MonoBehaviour
         StartCoroutine(_GoMain());
     }
 
+    public void GoEndless()
+    {
+        if (isPush)
+            return;
+        isPush = true;
+        fader.isFadeOut = true;
+        Save.ReSet();
+        Save.PointReset();
+        StartCoroutine(_GoEndless());
+    }
+
+    public void GoModeSelect()
+    {
+        if (isPush)
+            return;
+        isPush = true;
+        fader.isFadeOut = true;
+        StartCoroutine(_GoModeSelecrt());
+    }
+
     IEnumerator _GoMain()
     {
         Sound.PlaySe("taiko01");
@@ -42,5 +62,20 @@ public class SceneMove : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         MySceneManager.GoTitle();
+    }
+
+    IEnumerator _GoEndless()
+    {
+        Sound.PlaySe("taiko01");
+        yield return new WaitForSeconds(1.5f);
+        MySceneManager.GoEndless();
+    }
+
+    IEnumerator _GoModeSelecrt()
+    {
+        Sound.PlaySe("taiko01");
+
+        yield return new WaitForSeconds(1.5f);
+        MySceneManager.GoModeSelect();
     }
 }
