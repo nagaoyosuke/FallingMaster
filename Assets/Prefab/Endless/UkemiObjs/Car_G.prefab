@@ -603,8 +603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 24
-  parfectingFlame: 5
-  goodingFlame: 2
+  parfectingFlame: 15
+  goodingFlame: 6
   timeScale: 0
   EffectObject: {fileID: 4618630015842203647}
   isDanger: 0

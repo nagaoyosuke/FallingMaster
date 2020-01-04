@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 50
-  parfectingFlame: 5
+  parfectingFlame: 15
+  goodingFlame: 6
   timeScale: 0
   EffectObject: {fileID: 143177579}
   isDanger: 0
@@ -391,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266487132}
   m_Layer: 0
-  m_Name: konntena
+  m_Name: KOntena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

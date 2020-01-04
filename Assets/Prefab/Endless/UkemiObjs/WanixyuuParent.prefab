@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 30
-  parfectingFlame: 3
-  goodingFlame: 5
+  parfectingFlame: 9
+  goodingFlame: 15
   timeScale: 0
   EffectObject: {fileID: 3253526454481737968}
   isDanger: 0
@@ -100,6 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2451426189408739095}
+  - component: {fileID: 602911648627606387}
   m_Layer: 0
   m_Name: WanixyuuParent
   m_TagString: Untagged
@@ -122,6 +123,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602911648627606387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024107515636977665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7ea57a6735d445fb2fd64d123c1b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trs: {fileID: 1919136752882356402}
+  flame: 120
+  xyz: 2
 --- !u!1 &7475914338962131534
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,11 +265,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
       objectReference: {fileID: 0}
+    - target: {fileID: 9204862275106358981, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204862275106358981, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204862275106358981, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204862275106358981, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5fc37b7d38ec4cac9e67de6b02bd276, type: 3}
 --- !u!4 &2803051895514298184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4898343080076615999, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
+    type: 3}
+  m_PrefabInstance: {fileID: 7285726666191066743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1919136752882356402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9204862275106358981, guid: d5fc37b7d38ec4cac9e67de6b02bd276,
     type: 3}
   m_PrefabInstance: {fileID: 7285726666191066743}
   m_PrefabAsset: {fileID: 0}

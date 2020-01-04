@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2451426189408739095}
+  - component: {fileID: 3445187245288968976}
   m_Layer: 0
   m_Name: UFParent 1
   m_TagString: Untagged
@@ -31,6 +32,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3445187245288968976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024107515636977665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7ea57a6735d445fb2fd64d123c1b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trs: {fileID: 8882501497103314371}
+  flame: 180
+  xyz: 1
 --- !u!1001 &9166036033169433405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117,7 +133,7 @@ PrefabInstance:
         type: 3}
       propertyPath: EffectObject
       value: 
-      objectReference: {fileID: 5440616813672912036}
+      objectReference: {fileID: 0}
     - target: {fileID: 6449190256860595385, guid: 3d48487037ba94c6e9797f668ca8fa38,
         type: 3}
       propertyPath: isInversion
@@ -133,12 +149,6 @@ PrefabInstance:
 --- !u!4 &8882501497103314371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 319950434209451774, guid: 3d48487037ba94c6e9797f668ca8fa38,
-    type: 3}
-  m_PrefabInstance: {fileID: 9166036033169433405}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5440616813672912036 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3797863931838691225, guid: 3d48487037ba94c6e9797f668ca8fa38,
     type: 3}
   m_PrefabInstance: {fileID: 9166036033169433405}
   m_PrefabAsset: {fileID: 0}

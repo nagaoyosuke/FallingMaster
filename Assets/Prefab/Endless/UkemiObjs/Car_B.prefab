@@ -1013,8 +1013,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 30
-  parfectingFlame: 3
-  goodingFlame: 5
+  parfectingFlame: 9
+  goodingFlame: 15
   timeScale: 0
   EffectObject: {fileID: 8043018537486420751}
   isDanger: 0
