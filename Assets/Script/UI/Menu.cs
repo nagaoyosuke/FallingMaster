@@ -16,12 +16,6 @@ public class Menu : MonoBehaviour
 
     private float timeScale;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void MenuTap()
     {
         if (isBarTap)

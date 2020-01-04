@@ -11,6 +11,7 @@ TagManager:
   - Wind
   - UkemiCircle
   - UkemiStamp
+  - VideoPlayer
   layers:
   - Default
   - TransparentFX
