@@ -839,8 +839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d865085af404e32b49356c20dc295e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _throwTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
-  _windTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
+  _throwTutorialClip: {fileID: 32900000, guid: 150f18cccad734358af5cd11805a8d4e, type: 3}
+  _windTutorialClip: {fileID: 32900000, guid: ffd23c74018274e1b86dd5b6194df90e, type: 3}
   _ukemiTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
   _throwTutorialPlayer: {fileID: 783320588}
   _windTutorialPlayer: {fileID: 435357251}
