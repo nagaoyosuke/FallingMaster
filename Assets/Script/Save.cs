@@ -156,6 +156,11 @@ public static class Save{
     /// </summary>
     public static bool isAddUkemi = false;
 
+    /// <summary>
+    /// チュートリアルであるか。
+    /// </summary>
+    public static bool isTutorial = true;
+
     public enum AddUkemi{
         NONE,
         GOOD,
