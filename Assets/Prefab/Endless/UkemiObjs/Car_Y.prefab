@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parfectFlame: 28
-  parfectingFlame: 9
-  goodingFlame: 9
+  parfectingFlame: 6
+  goodingFlame: 14
   timeScale: 0
   EffectObject: {fileID: 6492396484217184055}
   isDanger: 0

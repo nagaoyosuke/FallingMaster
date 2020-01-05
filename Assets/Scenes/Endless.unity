@@ -174,12 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ComboNumber: {fileID: 284407152}
-  ComboCrear: {fileID: 662231855}
   ComboCrearNumber: {fileID: 968096452}
-  Bounas: {fileID: 0}
-  BounsNumbner: {fileID: 0}
+  Bounas: {fileID: 963101897}
+  BounsNumbner: {fileID: 2009970284}
   comboEffect: {fileID: 1460168802}
-  scoreCount: {fileID: 0}
+  scoreCount: {fileID: 1407747680}
 --- !u!223 &47127380
 Canvas:
   m_ObjectHideFlags: 0
@@ -3300,7 +3299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &963101898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3319,7 +3318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.583, y: 0.60645837}
   m_AnchorMax: {x: 0.583, y: 0.60645837}
-  m_AnchoredPosition: {x: -8.5, y: 5.5399933}
+  m_AnchoredPosition: {x: -8.5, y: 5.539978}
   m_SizeDelta: {x: 1219.8, y: 432.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &963101899
@@ -6391,7 +6390,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456933688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

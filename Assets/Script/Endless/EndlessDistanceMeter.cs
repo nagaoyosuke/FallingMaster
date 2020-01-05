@@ -34,6 +34,7 @@ public class EndlessDistanceMeter : MonoBehaviour
 
     IEnumerator _ChangeText()
     {
+        bool isBGM = false;
 
         while (true)
         {
@@ -57,7 +58,32 @@ public class EndlessDistanceMeter : MonoBehaviour
 
             IconTrs.localPosition = new Vector3(0, posY, 0);
 
+            if ((int)(distance) % 100 == 0 && !isBGM)
+                BGMChange();
+
+            if ((int)(distance) % 100 == 1 && isBGM)
+                isBGM = true;
+
             yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    void BGMChange()
+    {
+        //Sound.StopBgm();
+
+        var b = (int)distance % 300;
+        switch (b)
+        {
+            case 0:
+                Sound.PlayBgm("Play1");
+                break;
+            case 100:
+                Sound.PlayBgm("Play2");
+                break;
+            case 200:
+                Sound.PlayBgm("Result3");
+                break;
         }
     }
 }

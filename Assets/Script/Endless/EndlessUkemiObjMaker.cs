@@ -116,7 +116,7 @@ public class EndlessUkemiObjMaker : MonoBehaviour
             var c = obj.GetComponentInChildren<AddUkemiCheck>();
             c.isInversion = true;
             c.UkemiStartText = UkemiStartText;
-            c.FrameChange(c.parfectFlame + Random.Range(-3 - rd, 4 + rd), c.parfectingFlame + Random.Range(-2 - rd, 2 - rd), c.goodingFlame - rd);
+            c.FrameChange(c.parfectFlame + Random.Range(-3 - rd, 4 + rd), c.parfectingFlame + Random.Range(-1 - rd, 2 - rd), c.goodingFlame - rd);
 
             em.obj.Add(obj);
 
@@ -141,8 +141,8 @@ public class EndlessUkemiObjMaker : MonoBehaviour
         pos.y = _moveY + moveY * i;
         pos.y += 20;
 
-        pos.x = leftX + 10;
-        pos.z = -10;
+        pos.x = leftX + 20;
+        pos.z = -20;
 
         var rx = Random.Range(-10.0f, 10.0f);
         var ry = Random.Range(-10.0f, 10.0f);

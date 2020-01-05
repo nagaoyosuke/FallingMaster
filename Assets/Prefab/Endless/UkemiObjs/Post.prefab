@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66c54f96124648cf830938423186109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parfectFlame: 50
-  parfectingFlame: 15
-  goodingFlame: 6
+  parfectFlame: 40
+  parfectingFlame: 12
+  goodingFlame: 20
   timeScale: 0
   EffectObject: {fileID: 3595357893635637115}
   isDanger: 0

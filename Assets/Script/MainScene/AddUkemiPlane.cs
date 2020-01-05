@@ -21,7 +21,7 @@ public class AddUkemiPlane : MonoBehaviour
     /// AddUkemiCheckで入れられる
     /// </summary>
     [HideInInspector]
-    public bool isInversion;
+    private bool isInversion;
 
     // Start is called before the first frame update
     void Start()
@@ -64,13 +64,6 @@ public class AddUkemiPlane : MonoBehaviour
             {
                 var vec = rb.velocity;
 
-                if (isInversion)
-                {
-
-                    Power_ = new Vector3(Power.x * -1, Power.y, Power.z * -1);
-
-                }
-
                 DelayClass.DelayCoroutin(30,() => 
                 {
                     if(Save.maingameFlag == Save.MainGameFlag.FALLING)
@@ -109,6 +102,7 @@ public class AddUkemiPlane : MonoBehaviour
 
                 //rb.velocity += new Vector3(0, 0,10f);
                 //rb.transform.position += new Vector3(0, 0, 0.25f);
+
                 rb.velocity = Power_;
 
                 print("Power");
@@ -126,6 +120,20 @@ public class AddUkemiPlane : MonoBehaviour
     private void OnDisable()
     {
         GetComponent<BoxCollider>().enabled = false;
+
+    }
+
+    /// <summary>
+    /// ベクトルを反転するかどうか(主にエンドレスを想定)
+    /// AddUkemiCheckで入れられる
+    /// </summary>
+    public void SetInversion(bool isInversion)
+    {
+        if(isInversion)
+            Power_ = new Vector3(Power.x * -1, Power.y, Power.z * -1);
+        else
+            Power_ = Power;
+
 
     }
 }

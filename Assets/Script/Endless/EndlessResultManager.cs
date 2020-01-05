@@ -16,6 +16,10 @@ public class EndlessResultManager : MonoBehaviour
     [SerializeField]
     private Text UkemiComboTextPoint;
     [SerializeField]
+    private Text FallDistanceText;
+    [SerializeField]
+    private Text FallDistanceTextPoint;
+    [SerializeField]
     private Text ScoreText;
 
     [SerializeField]
@@ -63,6 +67,11 @@ public class EndlessResultManager : MonoBehaviour
         //Save.UkemiPoint = 8;
         ani.enabled = false;
         //AlphaSet();
+
+        //落下距離もスコアにくわえる
+        Save.UkemiScore += (int)(Save.distance) * 10;
+
+
         MaxPoint = Save.UkemiScore;
 
         ActiveSet();
@@ -110,6 +119,9 @@ public class EndlessResultManager : MonoBehaviour
         AddUkemiTextPoint.enabled = false;
         UkemiComboText.enabled = false;
         UkemiComboTextPoint.enabled = false;
+        FallDistanceText.enabled = false;
+        FallDistanceTextPoint.enabled = false;
+
         foreach (Text t in ResultWaitText)
         {
             t.enabled = false;
@@ -150,7 +162,22 @@ public class EndlessResultManager : MonoBehaviour
 
         UkemiComboTextPoint.enabled = true;
         Sound.PlaySe("taiko01");
+        yield return new WaitForSeconds(1f);
+
+
+        FallDistanceText.enabled = true;
+        Sound.PlaySe("taiko01");
+        yield return new WaitForSeconds(1);
+
+        if (tapCount > 0)
+            yield break;
+
+        FallDistanceTextPoint.enabled = true;
+        Sound.PlaySe("taiko01");
         yield return new WaitForSeconds(1.25f);
+
+        if (tapCount > 0)
+            yield break;
 
         Sound.PlaySe("taiko01");
 
@@ -192,6 +219,9 @@ public class EndlessResultManager : MonoBehaviour
         AddUkemiTextPoint.enabled = true;
         UkemiComboText.enabled = true;
         UkemiComboTextPoint.enabled = true;
+        FallDistanceText.enabled = true;
+        FallDistanceTextPoint.enabled = true;
+
         foreach (Text t in ResultWaitText)
         {
             t.enabled = true;
@@ -221,6 +251,7 @@ public class EndlessResultManager : MonoBehaviour
 
         UkemiComboTextPoint.text = Save.addUkemiMaxCombo.ToString();
         AddUkemiTextPoint.text = Save.addUkemiCounter.ToString();
+        FallDistanceTextPoint.text = Save.distance.ToString();
         ScoreText.text = Save.UkemiScore.ToString();
 
         if (MaxPoint > 5000 && !isOut)

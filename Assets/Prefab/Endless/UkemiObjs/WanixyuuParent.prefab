@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89821684, y: 12.458931, z: 0.36737108}
-  m_Center: {x: 0.18887602, y: 0, z: 0}
+  m_Size: {x: 0.89821684, y: 14.261816, z: 0.36737108}
+  m_Center: {x: 0.18887602, y: 0.64840794, z: 0}
 --- !u!114 &628266529600575565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 30
   parfectingFlame: 9
-  goodingFlame: 15
+  goodingFlame: 18
   timeScale: 0
   EffectObject: {fileID: 3253526454481737968}
   isDanger: 0

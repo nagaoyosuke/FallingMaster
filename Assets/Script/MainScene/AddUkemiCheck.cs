@@ -219,7 +219,7 @@ public class AddUkemiCheck : MonoBehaviour
         Effect.AddStartEffect();
 
 
-        Plane.isInversion = isInversion;
+        Plane.SetInversion(isInversion);
 
         //地面に着くまで受身を待ってる
         int time = 0;
@@ -330,12 +330,12 @@ public class AddUkemiCheck : MonoBehaviour
     /// <param name="goodingFlame"></param>
     public void FrameChange(int parfectFlame, int parfectingFlame, int goodingFlame)
     {
-        if (parfectFlame == 0)
+        if (parfectFlame < 16)
             parfectFlame = 16;
         if (parfectingFlame == 0)
             parfectingFlame = 1;
         if (goodingFlame == 0)
-            parfectingFlame = 1;
+            goodingFlame = 2;
 
         this.parfectFlame = parfectFlame;
         this.parfectingFlame = parfectingFlame;
