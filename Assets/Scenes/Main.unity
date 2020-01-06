@@ -182,7 +182,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!114 &23649234
@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 332391770}
   - component: {fileID: 332391769}
   - component: {fileID: 332391768}
+  - component: {fileID: 332391771}
   m_Layer: 0
   m_Name: Tutorial Manager
   m_TagString: Untagged
@@ -839,12 +840,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d865085af404e32b49356c20dc295e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _throwTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
-  _windTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
+  _throwTutorialClip: {fileID: 32900000, guid: 150f18cccad734358af5cd11805a8d4e, type: 3}
+  _windTutorialClip: {fileID: 32900000, guid: ffd23c74018274e1b86dd5b6194df90e, type: 3}
   _ukemiTutorialClip: {fileID: 32900000, guid: e7980f4579fd748a8a6266323d9b1c12, type: 3}
   _throwTutorialPlayer: {fileID: 783320588}
   _windTutorialPlayer: {fileID: 435357251}
   _ukemiTutorialPlayer: {fileID: 23649233}
+--- !u!114 &332391771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332391766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55c40f92377b4b3a82558b820bc39f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 332391769}
+  provider: {fileID: 332391770}
+  tutorialCanvas: {fileID: 2043455006}
 --- !u!1 &435357247
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +963,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!1 &458485316
@@ -1963,7 +1979,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!1 &905950879
