@@ -3109,6 +3109,7 @@ MonoBehaviour:
   CornerMovePoint2: {x: 0, y: 0, z: 0}
   CornerMoveRotate2: {x: 0, y: 0, z: 0}
   ThrowMovePoint: {x: 0, y: 0, z: 0}
+  SimpleAngle: {x: 0, y: 90, z: 190}
   UkemiAni: {fileID: 4727272678867572867}
   UnderBody: {fileID: 2667686180922362084}
   UkemiFlag: {fileID: 4355971726104060454}
@@ -3397,7 +3398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHit: 0
   Power: {x: 0, y: 0, z: -10}
-  isInversion: 0
 --- !u!1 &5240709804304427069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,6 +3682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parfectFlame: 50
   parfectingFlame: 5
+  goodingFlame: 2
   timeScale: 0
   EffectObject: {fileID: 6281686434287493365}
   isDanger: 0
@@ -3794,6 +3795,7 @@ MonoBehaviour:
   CornerMovePoint2: {x: 5.3, y: 43.52, z: 28.58}
   CornerMoveRotate2: {x: 0, y: 180, z: 0}
   ThrowMovePoint: {x: 5.3, y: 43.52, z: 16.4}
+  SimpleAngle: {x: 0, y: 0, z: 0}
 --- !u!114 &4355971726104060454
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,6 +40,15 @@ public class StageMakeManager : MonoBehaviour
             case Save.StageState.STAGE3:
                 Stage = Instantiate(Stage3);
                 break;
+            case Save.StageState.SIMPLESTAGE1:
+                Stage = Instantiate(Stage1);
+                break;
+            case Save.StageState.SIMPLESTAGE2:
+                Stage = Instantiate(Stage2);
+                break;
+            case Save.StageState.SIMPLESTAGE3:
+                Stage = Instantiate(Stage3);
+                break;
         }
 
         Stage.transform.position = StagePosition;

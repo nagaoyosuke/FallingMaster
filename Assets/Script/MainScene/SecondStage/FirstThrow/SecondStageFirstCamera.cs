@@ -66,16 +66,23 @@ public class SecondStageFirstCamera : CameraManager,IMainCameraMove
 
     IEnumerator AngleMove()
     {
-        yield return new WaitForSeconds(2.0f);
-        fader.isFadeOut = true;
-        yield return new WaitUntil(() => fader.isFadeOut == false);
-        trans.localPosition = AngleMovePoint;
-        trans.DOLocalRotate(AngleMoveRotate, 0);
-        camera.orthographic = true;
-        camera.orthographicSize = size;
-        fader.isFadeIn = true;
-        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
-        yield return new WaitUntil(() => fader.isFadeIn == false);
+        if (Save.stageState == Save.StageState.SIMPLESTAGE2)
+        {
+
+        }
+        else
+        {
+            yield return new WaitForSeconds(2.0f);
+            fader.isFadeOut = true;
+            yield return new WaitUntil(() => fader.isFadeOut == false);
+            trans.localPosition = AngleMovePoint;
+            trans.DOLocalRotate(AngleMoveRotate, 0);
+            camera.orthographic = true;
+            camera.orthographicSize = size;
+            fader.isFadeIn = true;
+            Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+            yield return new WaitUntil(() => fader.isFadeIn == false);
+        }
     }
 
     public void ThrowAngleCameraMove()

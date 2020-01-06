@@ -49,6 +49,16 @@ public class StageNameView : MonoBehaviour
             case Save.StageState.ENDLESS:
                 text.text = Endless;
                 break;
+            case Save.StageState.SIMPLESTAGE1:
+                text.text = Stage1;
+                break;
+            case Save.StageState.SIMPLESTAGE2:
+                text.text = Stage2;
+                break;
+            case Save.StageState.SIMPLESTAGE3:
+                text.text = Stage3;
+                break;
+
         }
     }
 

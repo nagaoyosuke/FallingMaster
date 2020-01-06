@@ -6,8 +6,8 @@ using DG.Tweening;
 public class FirstStageFirstCamera : CameraManager,IMainCameraMove
 {
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
         trans = transform;
         //StartCameraMove();
     }
@@ -64,17 +64,23 @@ public class FirstStageFirstCamera : CameraManager,IMainCameraMove
 
     IEnumerator AngleMove()
     {
-        yield return new WaitForSeconds(2.0f);
-        fader.isFadeOut = true;
-        yield return new WaitUntil(() => fader.isFadeOut == false);
-        trans.position = AngleMovePoint;
-        trans.DORotate(AngleMoveRotate, 0);
-        camera.orthographic = true;
-        camera.orthographicSize = size;
-        camera.nearClipPlane = -10;
-        fader.isFadeIn = true;
-        Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
-        yield return new WaitUntil(() => fader.isFadeIn == false);
+        if (Save.stageState == Save.StageState.SIMPLESTAGE1)
+        {
+
+        }
+        else{
+            yield return new WaitForSeconds(2.0f);
+            fader.isFadeOut = true;
+            yield return new WaitUntil(() => fader.isFadeOut == false);
+            trans.position = AngleMovePoint;
+            trans.DORotate(AngleMoveRotate, 0);
+            camera.orthographic = true;
+            camera.orthographicSize = size;
+            camera.nearClipPlane = -10;
+            fader.isFadeIn = true;
+            Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
+            yield return new WaitUntil(() => fader.isFadeIn == false);
+        }
     }
 
     public void ThrowAngleCameraMove()

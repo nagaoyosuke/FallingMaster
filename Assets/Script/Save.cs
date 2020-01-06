@@ -11,7 +11,10 @@ public static class Save{
         STAGE1,
         STAGE2,
         STAGE3,
-        ENDLESS
+        ENDLESS,
+        SIMPLESTAGE1,
+        SIMPLESTAGE2,
+        SIMPLESTAGE3,
     };
 
     /// <summary>

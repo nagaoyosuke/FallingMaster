@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// シーンによって処理を変えたいから親クラスにした(06/10長尾)
@@ -44,10 +45,20 @@ public class WalkManager : MonoBehaviour
     [SerializeField]
     protected Vector3 ThrowMovePoint;
 
+    [SerializeField]
+    protected Vector3 SimpleAngle;
+
     virtual protected void Reset()
     {
         ani = GetComponent<Animator>();
         aniFlag = GetComponent<AnimetionFlag>();
 
+    }
+    void Awake()
+    {
+        if (SceneManager.GetActiveScene().name == "Simple")
+        {
+            Save.stageState = Save.StageState.SIMPLESTAGE1;
+        }
     }
 }
