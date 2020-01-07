@@ -13,7 +13,8 @@ public class ModeSelectManager : MonoBehaviour
     //シンプルモード
     public void OnPushedSimpleButton()
     {
-        StartCoroutine(ChangeSceneCroutine(MySceneManager.GoSimple));
+        Save.stageState = Save.StageState.SIMPLESTAGE1;
+        StartCoroutine(ChangeSceneCroutine(MySceneManager.GoMain));
     }
 
     //無間地獄

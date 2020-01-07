@@ -20,6 +20,10 @@ public class MainGameFlagWatcher : MonoBehaviour
         {
             StartCoroutine(ObserveVideoFlagCroutine());
         }
+        if ((Save.stageState == Save.StageState.SIMPLESTAGE1) && Save.isTutorial)
+        {
+            StartCoroutine(SimpleObserveVideoFlagCroutine());
+        }
     }
 
     private IEnumerator ObserveVideoFlagCroutine()
@@ -31,6 +35,13 @@ public class MainGameFlagWatcher : MonoBehaviour
         StartCoroutine(DelayClass.DelayCoroutin(20, () => controller.PlayVideoClip(provider.windTutorialPlayer)));
 
         yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.FALLING);
-        StartCoroutine(DelayClass.DelayCoroutin(60, () => controller.PlayVideoClip(provider.ukemiTutorialPlayer)));
+        StartCoroutine(DelayClass.DelayCoroutin(30, () => controller.PlayVideoClip(provider.ukemiTutorialPlayer)));
+    }
+
+    ///シンプルモード用 長尾 01/07
+    private IEnumerator SimpleObserveVideoFlagCroutine()
+    {
+        yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.FALLING);
+        StartCoroutine(DelayClass.DelayCoroutin(30, () => controller.PlayVideoClip(provider.ukemiTutorialPlayer)));
     }
 }
