@@ -75,7 +75,6 @@ public class SecondStageFirsttWalk : WalkManager
         if (Save.stageState == Save.StageState.SIMPLESTAGE2)
         {
             Save.maingameFlag = Save.MainGameFlag.STARTWAIT;
-
         }
         else
         {
