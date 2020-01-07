@@ -194,13 +194,15 @@ public class EndlessResultManager : MonoBehaviour
         if (tapCount > 0)
             yield break;
 
-        HighScoreCheck();
 
         StartCoroutine(Attack());
     }
 
     IEnumerator Attack()
     {
+
+        HighScoreCheck();
+
         Save.FlagReSet();
 
         ani.enabled = true;
@@ -234,6 +236,9 @@ public class EndlessResultManager : MonoBehaviour
 
     void HighScoreCheck()
     {
+        print(Save.UkemiHighScore);
+        print(Save.UkemiScore);
+
         if (Save.UkemiScore > Save.UkemiHighScore)
             Save.UkemiHighScore = Save.UkemiScore;
     }
@@ -261,13 +266,13 @@ public class EndlessResultManager : MonoBehaviour
         FallDistanceTextPoint.text = Save.distance.ToString();
         ScoreText.text = Save.UkemiScore.ToString();
 
-        if (MaxPoint > 5000 && !isOut)
+        if (MaxPoint > 30000 && !isOut)
         {
             rank = Rank.PARFECT;
             Hanko.sprite = Kiwami;
 
         }
-        else if (MaxPoint > 1000 && !isOut)
+        else if (MaxPoint > 5000 && !isOut)
             rank = Rank.GOOD;
         else
         {

@@ -13,6 +13,8 @@ public class ModeSelectManager : MonoBehaviour
     //シンプルモード
     public void OnPushedSimpleButton()
     {
+        Save.ReSet();
+        Save.PointReset();
         Save.stageState = Save.StageState.SIMPLESTAGE1;
         StartCoroutine(ChangeSceneCroutine(MySceneManager.GoMain));
     }
@@ -20,6 +22,9 @@ public class ModeSelectManager : MonoBehaviour
     //無間地獄
     public void OnPushedEndlessButton()
     {
+        Save.ReSet();
+        Save.PointReset();
+        Save.stageState = Save.StageState.ENDLESS;
         StartCoroutine(ChangeSceneCroutine(MySceneManager.GoEndless));
     }
 
@@ -27,6 +32,9 @@ public class ModeSelectManager : MonoBehaviour
     //段位認定モード
     public void OnPushedCertificationRankButton()
     {
+        Save.ReSet();
+        Save.PointReset();
+        Save.stageState = Save.StageState.STAGE1;
         StartCoroutine(ChangeSceneCroutine(MySceneManager.GoMain));
     }
 

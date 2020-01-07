@@ -15,7 +15,9 @@ public class SceneMove : MonoBehaviour
             return;
         isPush = true;
         fader.isFadeOut = true;
-        Save.ReSet();
+        //Save.ReSet();
+        Save.FlagReSet();
+
         Save.PointReset();
         StartCoroutine(_GoMenu());
     }
@@ -35,7 +37,9 @@ public class SceneMove : MonoBehaviour
             return;
         isPush = true;
         fader.isFadeOut = true;
-        Save.ReSet();
+        //Save.ReSet();
+        Save.FlagReSet();
+
         Save.PointReset();
         StartCoroutine(_GoEndless());
     }

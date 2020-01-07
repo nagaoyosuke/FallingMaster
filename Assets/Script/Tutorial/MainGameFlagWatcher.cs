@@ -31,6 +31,6 @@ public class MainGameFlagWatcher : MonoBehaviour
         StartCoroutine(DelayClass.DelayCoroutin(25, () => controller.PlayVideoClip(provider.windTutorialPlayer)));
 
         yield return new WaitUntil(() => Save.maingameFlag == Save.MainGameFlag.FALLING);
-        StartCoroutine(DelayClass.DelayCoroutin(30, () => controller.PlayVideoClip(provider.ukemiTutorialPlayer)));
+        StartCoroutine(DelayClass.DelayCoroutin(20, () => controller.PlayVideoClip(provider.ukemiTutorialPlayer)));
     }
 }

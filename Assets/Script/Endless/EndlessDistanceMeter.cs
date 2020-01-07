@@ -64,6 +64,8 @@ public class EndlessDistanceMeter : MonoBehaviour
             if ((int)(distance) % 100 == 1 && isBGM)
                 isBGM = true;
 
+            Save.distance = distance;
+
             yield return new WaitForSeconds(0.01f);
         }
     }

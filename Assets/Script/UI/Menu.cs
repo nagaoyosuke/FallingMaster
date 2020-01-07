@@ -61,7 +61,8 @@ public class Menu : MonoBehaviour
     {
         yield return StartCoroutine(FadeOut());
         Time.timeScale = 1.0f;
-        Save.ReSet();
+        //Save.ReSet();
+        Save.FlagReSet();
         Save.PointReset();
         MySceneManager.GoTitle();
     }
@@ -80,7 +81,9 @@ public class Menu : MonoBehaviour
     {
         yield return StartCoroutine(FadeOut());
         Time.timeScale = 1.0f;
-        Save.ReSet();
+        //Save.ReSet();
+        Save.FlagReSet();
+
         MySceneManager.GoResult();
     }
 
@@ -93,6 +96,24 @@ public class Menu : MonoBehaviour
         MenuChange(false);
         Sound.PlaySe("taiko01");
         Time.timeScale = timeScale;
+    }
+
+    public void EndlessResultTap()
+    {
+        if (isBarTap)
+            return;
+        isBarTap = true;
+        Sound.PlaySe("taiko01");
+        StartCoroutine(EndlessResult());
+
+    }
+
+    IEnumerator EndlessResult()
+    {
+        yield return StartCoroutine(FadeOut());
+        Time.timeScale = 1.0f;
+        MySceneManager.GoEndlessResult();
+
     }
 
     IEnumerator FadeOut()

@@ -201,7 +201,7 @@ public static class Save{
     public static int addUkemiMaxCombo = 0;
 
     public static int UkemiScore = 0;
-    public static int UkemiHighScore = 0;
+    public static int UkemiHighScore = 1000;
 
     public static float distance = 0.0f;
 
