@@ -258,6 +258,7 @@ public class ResultManager : MonoBehaviour
         Sound.PlaySe("beshi");
         yield return new WaitForSeconds(0.6f);
 
+        HighScoreCheck();
 
         switch (rank)
         {
@@ -289,6 +290,16 @@ public class ResultManager : MonoBehaviour
         }
         Sound.PlaySe("taiko01");
 
+    }
+
+    void HighScoreCheck()
+    {
+        if(Save.stageState == Save.StageState.STAGE1 || Save.stageState == Save.StageState.STAGE2 || Save.stageState == Save.StageState.STAGE3)
+            if (Save.rank > Save.HighRank)
+                Save.HighRank = Save.rank;
+        if (Save.stageState == Save.StageState.SIMPLESTAGE1 || Save.stageState == Save.StageState.SIMPLESTAGE2 || Save.stageState == Save.StageState.SIMPLESTAGE3)
+            if (Save.rank > Save.HighSimpleRank)
+                Save.HighSimpleRank = Save.rank;
     }
 
 

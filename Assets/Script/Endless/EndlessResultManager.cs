@@ -194,6 +194,8 @@ public class EndlessResultManager : MonoBehaviour
         if (tapCount > 0)
             yield break;
 
+        HighScoreCheck();
+
         StartCoroutine(Attack());
     }
 
@@ -230,6 +232,11 @@ public class EndlessResultManager : MonoBehaviour
 
     }
 
+    void HighScoreCheck()
+    {
+        if (Save.UkemiScore > Save.UkemiHighScore)
+            Save.UkemiHighScore = Save.UkemiScore;
+    }
 
     void UkemiPointCheck()
     {

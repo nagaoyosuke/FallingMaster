@@ -41,7 +41,8 @@ public static class Save{
     /// </summary>
     public static Rank rank = Rank.FIRST;
 
-    public static Rank HightRank = Rank.FIRST;
+    public static Rank HighRank = Rank.FIRST;
+    public static Rank HighSimpleRank = Rank.FIRST;
 
     /// <summary>
     ///02/20の時点で仮決めされてるのを書いたから変更されるかも(02/20yosuke)
@@ -200,6 +201,8 @@ public static class Save{
     public static int addUkemiMaxCombo = 0;
 
     public static int UkemiScore = 0;
+    public static int UkemiHighScore = 0;
+
     public static float distance = 0.0f;
 
     /// <summary>
