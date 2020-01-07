@@ -31,6 +31,7 @@ public class SecondStageFirstThrower : ThrowManager
         yield return new WaitUntil(() => aniFlag.BowEndPoint);
         if (Save.stageState == Save.StageState.SIMPLESTAGE2)
         {
+            Save.maingameFlag = Save.MainGameFlag.THROW;
             StartCoroutine(anime());
         }
         else
