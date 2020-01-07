@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
 {
     public GameObject smokeParticle;
+    [SerializeField] private GameObject smartPhoneParticle;
     [SerializeField] private GameObject passerby;
     [SerializeField] private GameObject passerby_2;
 
@@ -42,6 +43,7 @@ public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
         ps.Stop();
 
         StartCoroutine(PlayParticle(ps, particle));
+
         StartCoroutine(aa());
     }
 
@@ -63,12 +65,15 @@ public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
     /// <returns>The aa.</returns>
     private IEnumerator aa()
     {
-        var minoru = GameObject.Find("MinoruBody");
+        //別スクリプトに分ける
+        var minoru = GameObject.Find("UkemiMaster").transform.Find("Person");
         var front = Instantiate(passerby, minoru.transform.parent.transform) as GameObject;
         var back = Instantiate(passerby_2, minoru.transform.parent.transform) as GameObject;
 
+
         front.transform.localPosition = new Vector3(0, 0, 0);
         back.transform.localPosition = new Vector3(0, 0, 0);
+        back.transform.Rotate(0, 180, 0);
 
         var front_circle = front.GetComponent<CircleDeployer>();
         var back_circle = back.GetComponent<CircleDeployer>();
@@ -87,9 +92,16 @@ public class SecondStageFirstUkemiEffect : UkemiEffect, IUkemiEffect
 
             yield return null;
         }
+
+        back.transform.Rotate(0, 180, 0);
+
+        GameObject particleObject = Instantiate(smartPhoneParticle) as GameObject;
+        particleObject.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2, Player.transform.position.z);
+
         Sound.PlaySe("walk02");
         Sound.PlaySe("dash02");
         yield return new WaitForSeconds(2.0f);
+        particleObject.GetComponent<ParticleSystem>().Play();
         Sound.PlaySe("shutter");
 
         yield return null;
