@@ -3616,6 +3616,7 @@ MonoBehaviour:
   - {fileID: 2016580861143826971, guid: 6a77cec8a258c4ff8ba7a30d6ac8ffc7, type: 3}
   - {fileID: 4024107515636977665, guid: f8f463ca4b3a24132a7e04135ba97558, type: 3}
   - {fileID: 4024107515636977665, guid: a9379dc1df71a4fe795645eb421f76d1, type: 3}
+  - {fileID: 6455378123349726838, guid: 222072d1f902347ca8b11979fcc453f5, type: 3}
 --- !u!4 &1021830772
 Transform:
   m_ObjectHideFlags: 0
@@ -5193,6 +5194,7 @@ MonoBehaviour:
   CornerMovePoint2: {x: 0, y: 0, z: 0}
   CornerMoveRotate2: {x: 0, y: 0, z: 0}
   ThrowMovePoint: {x: 0, y: 0, z: 0}
+  SimpleAngle: {x: 0, y: 0, z: 0}
 --- !u!114 &1125552834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7460,6 +7462,7 @@ MonoBehaviour:
   CornerMovePoint2: {x: 0, y: 0, z: 0}
   CornerMoveRotate2: {x: 0, y: 0, z: 0}
   ThrowMovePoint: {x: 0, y: 0, z: 0}
+  SimpleAngle: {x: 0, y: 0, z: 0}
   UkemiAni: {fileID: 1125552829}
   UnderBody: {fileID: 1125552832}
   UkemiFlag: {fileID: 1125552834}

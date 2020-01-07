@@ -132,8 +132,8 @@ public class EndlessUkemiObjMaker : MonoBehaviour
     /// </summary>
     void NoUkemiObjeMake(float _moveY,int i)
     {
-        if (Random.Range(0, 2) == 0)
-            return;
+        //if (Random.Range(0, 2) == 0)
+        //    return;
 
         var obj = Instantiate(GetObj(NoukemiObjs));
         var pos = Vector3.zero;
