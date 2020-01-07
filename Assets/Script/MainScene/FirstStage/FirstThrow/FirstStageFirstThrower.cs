@@ -32,6 +32,7 @@ public class FirstStageFirstThrower : ThrowManager
 
         if (Save.stageState == Save.StageState.SIMPLESTAGE1)
         {
+            Save.maingameFlag = Save.MainGameFlag.THROW;
             StartCoroutine(anime());
         }
         else
