@@ -205,6 +205,27 @@ public static class Save{
 
     public static float distance = 0.0f;
 
+    //ネット用
+    public static string URL = "https://ukemimasterserver.herokuapp.com/post";
+    //public static string URL = "http://localhost:8000/post";
+
+    /// <summary>
+    /// 段位で自分のスコアが何位か
+    /// </summary>
+    public static int DaniMyRanking;
+
+    /// <summary>
+    /// エンドレスで自分のスコアが何位か
+    /// </summary>
+    public static int EndlessMyRanking;
+
+    /// <summary>
+    /// エンドレスと段位の全国ランキングtop5
+    /// </summary>
+    public static JsonManager.Receive.ScoreRankingJson CountryRanking5;
+
+    public static string userName = "Unity";
+
     /// <summary>
     /// ハイスコア以外を初期化する。初めから遊ぶときに使う
     /// </summary>

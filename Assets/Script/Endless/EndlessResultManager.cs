@@ -236,8 +236,6 @@ public class EndlessResultManager : MonoBehaviour
 
     void HighScoreCheck()
     {
-        print(Save.UkemiHighScore);
-        print(Save.UkemiScore);
 
         if (Save.UkemiScore > Save.UkemiHighScore)
             Save.UkemiHighScore = Save.UkemiScore;
