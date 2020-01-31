@@ -203,7 +203,7 @@ public class EndlessResultManager : MonoBehaviour
 
         HighScoreCheck();
 
-        Save.FlagReSet();
+        //Save.FlagReSet();
 
         ani.enabled = true;
 

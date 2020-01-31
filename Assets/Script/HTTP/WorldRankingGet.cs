@@ -1,12 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System;
-using System.Collections.Generic;
 
-public class ScoreSend : MonoBehaviour
+public class WorldRankingGet : MonoBehaviour
 {
     //接続するURL
     private string URL;
@@ -21,9 +19,6 @@ public class ScoreSend : MonoBehaviour
         URL = Save.URL;
         request = new UnityWebRequest(URL, "POST");
 
-        //Save.userName = "testunity";
-        //Save.rank = Save.Rank.TENTH;
-        //Save.stageState = Save.StageState.STAGE3;
         //Send();
     }
 
@@ -36,12 +31,13 @@ public class ScoreSend : MonoBehaviour
     //コルーチン
     IEnumerator OnSend()
     {
-        isComplating = false;
+        request = new UnityWebRequest(URL, "POST");
 
+        isComplating = false;
         //POSTする情報
         var j = SendJson;
 
-        request = new UnityWebRequest(URL, "POST");
+
         //jsonはstring型やからbytesに変換しないといけない　サーバで認識できないから
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(j);
         request.uploadHandler = new UploadHandlerRaw(postData);
@@ -61,33 +57,20 @@ public class ScoreSend : MonoBehaviour
             //通信成功
             Debug.Log(data);
 
-            var s = JsonUtility.FromJson<JsonManager.Receive.ScoreJson>(data);
-            if (s.mode == "endless")
-                Save.EndlessMyRanking = s.ranking;
-            else
-                Save.DaniMyRanking = s.ranking;
+            var s = JsonUtility.FromJson<JsonManager.Receive.ScoreRankingJson>(data);
+            Array.Sort(s.endless,(a,b) => b.score - a.score);
+            Array.Sort(s.dani, (a, b) => b.score - a.score);
 
+            Save.CountryRanking5 = s;
             isComplating = true;
+
         }
 
     }
 
     void JsonSet()
     {
-        int score = (int)Save.rank + 1;
-        string name = Save.userName;
-        //string mode = "dani";
-        string mode = "endless";
-
-        if (Save.stageState == Save.StageState.ENDLESS)
-        {
-            score = Save.UkemiScore;
-            mode = "endless";
-        }
-
-        SendJson = new JsonManager.Send.ScoreJson(score, name, mode).ToJson();
-        print(SendJson);
-        print(score);
+        SendJson = new JsonManager.Send.APIJson("GetScore").ToJson();
 
     }
 }

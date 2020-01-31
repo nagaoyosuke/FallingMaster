@@ -50,6 +50,8 @@ public class SceneMove : MonoBehaviour
             return;
         isPush = true;
         fader.isFadeOut = true;
+        Save.FlagReSet();
+
         StartCoroutine(_GoModeSelecrt());
     }
 
