@@ -41,6 +41,8 @@ public class SendingView : MonoBehaviour
         if (isErr || !isSending)
         {
             inputView.SetActive(false);
+            Sound.PlaySe("taiko01");
+
             if (isErr)
             {
                 isErr = false;
@@ -57,6 +59,9 @@ public class SendingView : MonoBehaviour
         isSending = true;
         StartCoroutine(StartSending());
         scoreSend.Send();
+
+        Sound.PlaySe("taiko01");
+
     }
 
     IEnumerator StartSending()

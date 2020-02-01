@@ -42,6 +42,8 @@ public class WorldRankingView : MonoBehaviour
         isComplating = false;
         StartCoroutine(StartSending());
         World.Send();
+        Sound.PlaySe("taiko01");
+
     }
 
     IEnumerator StartSending()

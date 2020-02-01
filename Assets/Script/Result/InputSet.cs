@@ -9,4 +9,9 @@ public class InputSet : MonoBehaviour
     {
         Save.userName = name;
     }
+
+    public void TaikoSE()
+    {
+        Sound.PlaySe("taiko01");
+    }
 }
